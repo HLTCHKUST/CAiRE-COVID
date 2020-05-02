@@ -1,0 +1,16 @@
+# Search Engine
+pyserini==0.8.1.0
+
+# Question Answering
+tensorflow-gpu == 1.13.1
+numpy
+unidecode
+requests
+six
+tqdm
+sentencepiece
+jsonlines
+nltk
+
+# Summarization
+easydict

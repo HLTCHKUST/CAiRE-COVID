@@ -1,0 +1,1782 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x000000000059cc34, pid=31072, tid=31072
+#
+# JRE version: OpenJDK Runtime Environment (11.0.6+10) (build 11.0.6+10-post-Ubuntu-1ubuntu118.04.1)
+# Java VM: OpenJDK 64-Bit Server VM (11.0.6+10-post-Ubuntu-1ubuntu118.04.1, mixed mode, sharing, tiered, compressed oops, g1 gc, linux-amd64)
+# Problematic frame:
+# C  [python3+0x19cc34]
+#
+# Core dump will be written. Default location: Core dumps may be processed with "/usr/share/apport/apport %p %s %c %d %P %E" (or dumping to /home/emos-admin/Documents/covid19_kaggle/searchEngine/core.31072)
+#
+# If you would like to submit a bug report, please visit:
+#   https://bugs.launchpad.net/ubuntu/+source/openjdk-lts
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: 
+
+Host: Intel(R) Core(TM) i7-3820 CPU @ 3.60GHz, 8 cores, 31G, Ubuntu 18.04.4 LTS
+Time: Thu Apr  2 15:41:55 2020 HKT elapsed time: 145547 seconds (1d 16h 25m 47s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000000047f2800):  JavaThread "main" [_thread_in_native, id=31072, stack(0x00007ffca1726000,0x00007ffca1826000)]
+
+Stack: [0x00007ffca1726000,0x00007ffca1826000],  sp=0x00007ffca1824418,  free space=1017k
+Native frames: (J=compiled Java code, A=aot compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [python3+0x19cc34]
+
+
+siginfo: si_signo: 11 (SIGSEGV), si_code: 1 (SEGV_MAPERR), si_addr: 0x00000000000000a9
+
+Register to memory mapping:
+
+RAX=0x0 is NULL
+RBX=0x00007fbc4f8d19e0 points into unknown readable memory: 40 26 11 bd bc 7f 00 00
+RCX=0x000000000059cc30: <offset 0x000000000019cc30> in /usr/bin/python3 at 0x0000000000400000
+RDX=0x0000000000000002 is an unknown value
+RSP=0x00007ffca1824418 is pointing into the stack for thread: 0x00000000047f2800
+RBP=0x000000000059cc30: <offset 0x000000000019cc30> in /usr/bin/python3 at 0x0000000000400000
+RSI=0x0 is NULL
+RDI=
+[error occurred during error reporting (printing register info), id 0xb, SIGSEGV (0xb) at pc=0x00007fbcc1a4f0c8]
+
+Registers:
+RAX=0x0000000000000000, RBX=0x00007fbc4f8d19e0, RCX=0x000000000059cc30, RDX=0x0000000000000002
+RSP=0x00007ffca1824418, RBP=0x000000000059cc30, RSI=0x0000000000000000, RDI=0x00007fbcbd112640
+R8 =0x00007fbcc00b7260, R9 =0x0000000000000000, R10=0x00007fbcc00b7260, R11=0x0000000002044a48
+R12=0x0000000000000000, R13=0x0000000000000002, R14=0x0000000000000006, R15=0x00007fbcc005a468
+RIP=0x000000000059cc34, EFLAGS=0x0000000000010202, CSGSFS=0x002b000000000033, ERR=0x0000000000000004
+  TRAPNO=0x000000000000000e
+
+Top of Stack: (sp=0x00007ffca1824418)
+0x00007ffca1824418:   0000000000567f13 00007fbcc1e99c28
+0x00007ffca1824428:   0000000000000016 00007fbcc00bfc18
+0x00007ffca1824438:   0000000000000040 00000000009d2840
+0x00007ffca1824448:   00000000009d33e0 0000000000000002 
+
+Instructions: (pc=0x000000000059cc34)
+0x000000000059cb34:   31 c0 48 85 d2 7e 41 48 3b 7e 18 74 36 48 83 fa
+0x000000000059cb44:   01 74 35 48 3b 7e 20 74 2a 48 83 fa 02 74 29 48
+0x000000000059cb54:   3b 7e 28 74 1e b8 02 00 00 00 48 83 c0 01 48 39
+0x000000000059cb64:   d0 75 09 31 c0 c3 66 0f 1f 44 00 00 48 39 7c c6
+0x000000000059cb74:   18 75 e7 b8 01 00 00 00 c3 0f 1f 00 48 8b 47 08
+0x000000000059cb84:   f6 80 a9 00 00 00 40 75 03 31 c0 c3 53 48 89 fb
+0x000000000059cb94:   48 83 ec 10 48 8b 80 48 01 00 00 48 85 c0 75 5c
+0x000000000059cba4:   4c 8b 43 f8 4c 89 c2 48 d1 fa 74 3a 48 83 fa fc
+0x000000000059cbb4:   74 0a 48 83 c4 10 31 c0 5b c3 66 90 48 8b 7b f0
+0x000000000059cbc4:   4c 8b 4b e8 48 8d 4b e8 41 83 e0 01 4c 89 0f 49
+0x000000000059cbd4:   89 79 08 4c 8b 56 08 4c 89 53 f0 48 89 4e 08 49
+0x000000000059cbe4:   89 0a 48 89 73 e8 49 83 c8 02 31 c0 4c 89 43 f8
+0x000000000059cbf4:   48 83 c4 10 5b c3 66 0f 1f 44 00 00 48 3d d0 a4
+0x000000000059cc04:   61 00 75 0b f6 87 a9 00 00 00 02 74 a5 eb 91 48
+0x000000000059cc14:   89 74 24 08 ff d0 85 c0 74 98 48 8b 74 24 08 e9
+0x000000000059cc24:   7c ff ff ff 0f 1f 84 00 00 00 00 00 48 8b 47 08
+0x000000000059cc34:   f6 80 a9 00 00 00 40 75 03 31 c0 c3 53 48 8b 80
+0x000000000059cc44:   48 01 00 00 48 89 fb 48 85 c0 75 20 48 8b 53 f8
+0x000000000059cc54:   48 83 fa 01 7e 08 48 83 ea 02 48 89 53 f8 31 c0
+0x000000000059cc64:   5b c3 66 2e 0f 1f 84 00 00 00 00 00 48 3d d0 a4
+0x000000000059cc74:   61 00 75 11 8b 87 a8 00 00 00 25 00 02 00 00 85
+0x000000000059cc84:   c0 75 c9 eb d9 ff d0 eb f6 0f 1f 00 48 83 ec 08
+0x000000000059cc94:   48 89 f0 48 89 d6 48 8b 57 18 48 83 c6 10 48 89
+0x000000000059cca4:   c7 e8 76 37 e8 ff 85 c0 0f 94 c2 48 83 c4 08 0f
+0x000000000059ccb4:   b6 c2 c3 66 0f 1f 84 00 00 00 00 00 48 85 f6 0f
+0x000000000059ccc4:   84 09 04 00 00 41 56 41 55 41 54 55 48 89 f5 53
+0x000000000059ccd4:   48 83 ec 30 48 8b 47 20 48 3d 40 af 5a 00 0f 85
+0x000000000059cce4:   98 01 00 00 48 89 f7 e8 80 4e f1 ff 48 8b 1d 91
+0x000000000059ccf4:   9f 4d 00 48 89 df e8 01 22 e8 ff 83 f8 ff 0f 84
+0x000000000059cd04:   82 66 f0 ff 83 f8 04 0f 84 5b 66 f0 ff 85 c0 0f
+0x000000000059cd14:   85 34 66 f0 ff 8b 15 1d fa 4a 00 48 89 6c 24 08
+0x000000000059cd24:   48 8b 1d 45 9f 4d 00 85 d2 0f 85 c5 03 00 00 4c 
+
+
+Stack slot to memory mapping:
+stack at sp + 0 slots: 0x0000000000567f13: <offset 0x0000000000167f13> in /usr/bin/python3 at 0x0000000000400000
+stack at sp + 1 slots: 0x00007fbcc1e99c28 points into unknown readable memory: 05 00 00 00 00 00 00 00
+stack at sp + 2 slots: 0x0000000000000016 is an unknown value
+stack at sp + 3 slots: 0x00007fbcc00bfc18 points into unknown readable memory: 01 00 00 00 00 00 00 00
+stack at sp + 4 slots: 0x0000000000000040 is an unknown value
+stack at sp + 5 slots: 0x00000000009d2840: <offset 0x00000000005d2840> in /usr/bin/python3 at 0x0000000000400000
+stack at sp + 6 slots: 0x00000000009d33e0: PyDict_Type+0x0000000000000000 in /usr/bin/python3 at 0x0000000000400000
+stack at sp + 7 slots: 0x0000000000000002 is an unknown value
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007fb9f80e11e0, length=160, elements={
+0x00000000047f2800, 0x0000000005f4a800, 0x0000000005f4c800, 0x0000000005f50800,
+0x0000000005f52800, 0x0000000005f55000, 0x0000000005f57000, 0x0000000005fad800,
+0x0000000005fbe800, 0x00007fb9f8009000, 0x00007fbbc40da800, 0x00007fb9fc065000,
+0x00007fb9f80ac000, 0x00007fbbc4c2a800, 0x00007fb9fc066000, 0x00007fb9fc0dd800,
+0x00007fb9f80e9800, 0x00007fb9fc062800, 0x00007fb9fc135000, 0x00007fb9fcafb000,
+0x00007fb9fc11e000, 0x00007fb9fcae6000, 0x00007fb9fcafd000, 0x00007fb9fc12d800,
+0x00007fb9fc14f000, 0x00007fb9fc06b000, 0x00007fb9fcae2000, 0x00007fb9fca24800,
+0x00007fb9fcae4000, 0x00007fb9fc0cd000, 0x00007fb9fcace000, 0x00007fb9fc0cf000,
+0x00007fb9fc071800, 0x00007fb9fc06d000, 0x00007fb9fc127000, 0x00007fb9fc128800,
+0x00007fb9fc137800, 0x00007fb9fc13a000, 0x00007fb9fc136000, 0x00007fb9fcad6000,
+0x00007fb9fcad7000, 0x00007fb9fcae7000, 0x00007fb9fcae9000, 0x00007fb9fcadd800,
+0x00007fb9fc188800, 0x00007fb9fc189800, 0x00007fb9fc186800, 0x00007fb9fcad0000,
+0x00007fb9fc0b6000, 0x00007fb9fcad2000, 0x00007fb9fcad2800, 0x00007fb9fc0b8000,
+0x00007fb9fc0b8800, 0x00007fb9fc006000, 0x00007fb9fc008000, 0x00007fb9fc0b0800,
+0x00007fb9fc0b1800, 0x00007fb9fc0b3800, 0x00007fb9fc17e000, 0x00007fb9fcaf5000,
+0x00007fb9fc041000, 0x00007fb9fc043000, 0x00007fb9fcaf6800, 0x00007fb9fcaf8800,
+0x00007fb9fcb2c800, 0x00007fb9fc044800, 0x00007fb9fca0e800, 0x00007fb9fcafe800,
+0x00007fb9fc0be800, 0x00007fb9fc0ba000, 0x00007fb9fc045000, 0x00007fb9fc046000,
+0x00007fb9fc047000, 0x00007fb9fc049000, 0x00007fb9fcb17000, 0x00007fb9fcb18800,
+0x00007fb9fc0df000, 0x00007fb9fc0e0000, 0x00007fb9fc00a800, 0x00007fb9fc117000,
+0x00007fb9fc11c800, 0x00007fb9fcb26000, 0x00007fb9fcb27000, 0x00007fb9fc162000,
+0x00007fb9fc106000, 0x00007fb9fc107800, 0x00007fb9fcb5c000, 0x00007fb9fcb5a000,
+0x00007fb9fc109000, 0x00007fb9fc156000, 0x00007fb9fc157000, 0x00007fb9fc159800,
+0x00007fb9fc0d8000, 0x00007fb9fc0da800, 0x00007fb9fca11000, 0x00007fb9fca12800,
+0x00007fb9fcb24800, 0x00007fb9fcaeb000, 0x00007fb9fcb1d000, 0x00007fb9fcb1e800,
+0x00007fb9fcb1f800, 0x00007fb9fc92b800, 0x00007fb9fc92c000, 0x00007fb9fc010000,
+0x00007fb9fcb21800, 0x00007fb9fc175800, 0x00007fb9fc177000, 0x00007fb9fc0f6800,
+0x00007fb9fc179000, 0x00007fb9fca1e800, 0x00007fb9fca20000, 0x00007fb9fc13b000,
+0x00007fb9fc0d3800, 0x00007fb9fc163800, 0x00007fb9fc0d5000, 0x00007fb9fc0d6800,
+0x00007fb9fcb4b800, 0x00007fb9fcb4d000, 0x00007fb9fcaed800, 0x00007fb9fcaf4000,
+0x00007fb9fc79b800, 0x00007fb9fc79d800, 0x00007fb9fc79e800, 0x00007fb9fcaf0000,
+0x00007fb9fc0c3000, 0x00007fb9fc0c4800, 0x00007fb9f80b8800, 0x00007fb9f80a3000,
+0x00007fb9f80a4000, 0x00007fb9f8084800, 0x00007fb9f80bd800, 0x00007fb9f80ca800,
+0x00007fb9f80cc000, 0x00007fb9f8097800, 0x00007fb9f8098800, 0x00007fb9f80ce800,
+0x00007fb9f80e4000, 0x00007fb9f80e7000, 0x00007fb9f809b800, 0x00007fb9f809c800,
+0x00007fb9f809e000, 0x00007fb9f80a0000, 0x00007fb9f8081800, 0x00007fb9f8082800,
+0x00007fb9f80b2800, 0x00007fb9f8137000, 0x00007fb9f80af800, 0x00007fb9f80b1800,
+0x00007fb9f81fe800, 0x00007fb9f826b000, 0x00007fb9f80b5000, 0x00007fb9f80b7000,
+0x00007fb9f8132000, 0x00007fb9f8134800, 0x00007fb9f8136000, 0x00007fb9f80ec000,
+0x00007fb9f80de000, 0x00007fb9f80d0800, 0x00007fb9f81a1800, 0x00007fb9f80e0000
+}
+
+Java Threads: ( => current thread )
+=>0x00000000047f2800 JavaThread "main" [_thread_in_native, id=31072, stack(0x00007ffca1726000,0x00007ffca1826000)]
+  0x0000000005f4a800 JavaThread "Reference Handler" daemon [_thread_blocked, id=31093, stack(0x00007fbc004e7000,0x00007fbc005e8000)]
+  0x0000000005f4c800 JavaThread "Finalizer" daemon [_thread_blocked, id=31094, stack(0x00007fbc003e6000,0x00007fbc004e7000)]
+  0x0000000005f50800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=31095, stack(0x00007fbc002e5000,0x00007fbc003e6000)]
+  0x0000000005f52800 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=31096, stack(0x00007fbc001e4000,0x00007fbc002e5000)]
+  0x0000000005f55000 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=31097, stack(0x00007fbc000e3000,0x00007fbc001e4000)]
+  0x0000000005f57000 JavaThread "Sweeper thread" daemon [_thread_blocked, id=31098, stack(0x00007fbbdbeff000,0x00007fbbdc000000)]
+  0x0000000005fad800 JavaThread "Service Thread" daemon [_thread_blocked, id=31099, stack(0x00007fbbdbdfe000,0x00007fbbdbeff000)]
+  0x0000000005fbe800 JavaThread "Common-Cleaner" daemon [_thread_blocked, id=31101, stack(0x00007fbbdbbfb000,0x00007fbbdbcfc000)]
+  0x00007fb9f8009000 JavaThread "Thread-0" [_thread_in_native, id=31111, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fbbc40da800 JavaThread "Thread-1" [_thread_in_native, id=809, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc065000 JavaThread "Thread-2" [_thread_in_native, id=812, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9f80ac000 JavaThread "Thread-3" [_thread_in_native, id=820, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fbbc4c2a800 JavaThread "Thread-4" [_thread_in_native, id=825, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc066000 JavaThread "Thread-5" [_thread_in_native, id=828, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc0dd800 JavaThread "Thread-6" [_thread_in_native, id=830, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9f80e9800 JavaThread "Thread-7" [_thread_in_native, id=832, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc062800 JavaThread "Thread-8" [_thread_in_native, id=835, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc135000 JavaThread "Thread-9" [_thread_in_native, id=836, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fcafb000 JavaThread "Thread-10" [_thread_in_native, id=839, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc11e000 JavaThread "Thread-11" [_thread_in_native, id=841, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fcae6000 JavaThread "Thread-12" [_thread_in_native, id=842, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fcafd000 JavaThread "Thread-13" [_thread_in_native, id=843, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc12d800 JavaThread "Thread-14" [_thread_in_native, id=853, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc14f000 JavaThread "Thread-15" [_thread_in_native, id=855, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc06b000 JavaThread "Thread-16" [_thread_in_native, id=926, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fcae2000 JavaThread "Thread-17" [_thread_in_native, id=956, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fca24800 JavaThread "Thread-18" [_thread_in_native, id=958, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fcae4000 JavaThread "Thread-19" [_thread_in_native, id=970, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc0cd000 JavaThread "Thread-20" [_thread_in_native, id=971, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fcace000 JavaThread "Thread-21" [_thread_in_native, id=973, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc0cf000 JavaThread "Thread-22" [_thread_in_native, id=974, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc071800 JavaThread "Thread-23" [_thread_in_native, id=986, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc06d000 JavaThread "Thread-24" [_thread_in_native, id=1000, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc127000 JavaThread "Thread-25" [_thread_in_native, id=1006, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc128800 JavaThread "Thread-26" [_thread_in_native, id=1008, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc137800 JavaThread "Thread-27" [_thread_in_native, id=1009, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc13a000 JavaThread "Thread-28" [_thread_in_native, id=1013, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc136000 JavaThread "Thread-29" [_thread_in_native, id=1068, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fcad6000 JavaThread "Thread-30" [_thread_in_native, id=1071, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fcad7000 JavaThread "Thread-31" [_thread_in_native, id=1072, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fcae7000 JavaThread "Thread-32" [_thread_in_native, id=1073, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fcae9000 JavaThread "Thread-33" [_thread_in_native, id=1083, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fcadd800 JavaThread "Thread-34" [_thread_in_native, id=1136, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc188800 JavaThread "Thread-35" [_thread_in_native, id=1137, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc189800 JavaThread "Thread-36" [_thread_in_native, id=1139, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc186800 JavaThread "Thread-37" [_thread_in_native, id=1145, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fcad0000 JavaThread "Thread-38" [_thread_in_native, id=1147, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc0b6000 JavaThread "Thread-39" [_thread_in_native, id=1161, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fcad2000 JavaThread "Thread-40" [_thread_in_native, id=1163, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fcad2800 JavaThread "Thread-41" [_thread_in_native, id=1164, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc0b8000 JavaThread "Thread-42" [_thread_in_native, id=1169, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc0b8800 JavaThread "Thread-43" [_thread_in_native, id=1182, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc006000 JavaThread "Thread-44" [_thread_in_native, id=1184, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc008000 JavaThread "Thread-45" [_thread_in_native, id=1185, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc0b0800 JavaThread "Thread-46" [_thread_in_native, id=1186, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc0b1800 JavaThread "Thread-47" [_thread_in_native, id=1191, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc0b3800 JavaThread "Thread-48" [_thread_in_native, id=1450, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc17e000 JavaThread "Thread-49" [_thread_in_native, id=1490, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fcaf5000 JavaThread "Thread-50" [_thread_in_native, id=1511, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc041000 JavaThread "Thread-51" [_thread_in_native, id=1514, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc043000 JavaThread "Thread-52" [_thread_in_native, id=1520, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fcaf6800 JavaThread "Thread-53" [_thread_in_native, id=1521, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fcaf8800 JavaThread "Thread-54" [_thread_in_native, id=1522, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fcb2c800 JavaThread "Thread-55" [_thread_in_native, id=1525, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc044800 JavaThread "Thread-56" [_thread_in_native, id=1531, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fca0e800 JavaThread "Thread-57" [_thread_in_native, id=1532, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fcafe800 JavaThread "Thread-58" [_thread_in_native, id=1542, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc0be800 JavaThread "Thread-59" [_thread_in_native, id=1551, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc0ba000 JavaThread "Thread-60" [_thread_in_native, id=1552, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc045000 JavaThread "Thread-61" [_thread_in_native, id=1553, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc046000 JavaThread "Thread-62" [_thread_in_native, id=1554, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc047000 JavaThread "Thread-63" [_thread_in_native, id=1555, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc049000 JavaThread "Thread-64" [_thread_in_native, id=1556, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fcb17000 JavaThread "Thread-65" [_thread_in_native, id=1557, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fcb18800 JavaThread "Thread-66" [_thread_in_native, id=1560, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc0df000 JavaThread "Thread-67" [_thread_in_native, id=1561, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc0e0000 JavaThread "Thread-68" [_thread_in_native, id=1562, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc00a800 JavaThread "Thread-69" [_thread_in_native, id=1563, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc117000 JavaThread "Thread-70" [_thread_in_native, id=1564, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc11c800 JavaThread "Thread-71" [_thread_in_native, id=1565, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fcb26000 JavaThread "Thread-72" [_thread_in_native, id=1566, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fcb27000 JavaThread "Thread-73" [_thread_in_native, id=1567, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc162000 JavaThread "Thread-74" [_thread_in_native, id=1568, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc106000 JavaThread "Thread-75" [_thread_in_native, id=1569, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc107800 JavaThread "Thread-76" [_thread_in_native, id=1570, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fcb5c000 JavaThread "Thread-77" [_thread_in_native, id=1571, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fcb5a000 JavaThread "Thread-78" [_thread_in_native, id=1572, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc109000 JavaThread "Thread-79" [_thread_in_native, id=1574, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc156000 JavaThread "Thread-80" [_thread_in_native, id=1579, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc157000 JavaThread "Thread-81" [_thread_in_native, id=1580, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc159800 JavaThread "Thread-82" [_thread_in_native, id=1581, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc0d8000 JavaThread "Thread-83" [_thread_in_native, id=1582, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc0da800 JavaThread "Thread-84" [_thread_in_native, id=1588, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fca11000 JavaThread "Thread-85" [_thread_in_native, id=1591, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fca12800 JavaThread "Thread-86" [_thread_in_native, id=1594, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fcb24800 JavaThread "Thread-87" [_thread_in_native, id=1595, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fcaeb000 JavaThread "Thread-88" [_thread_in_native, id=1596, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fcb1d000 JavaThread "Thread-89" [_thread_in_native, id=1597, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fcb1e800 JavaThread "Thread-90" [_thread_in_native, id=1598, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fcb1f800 JavaThread "Thread-91" [_thread_in_native, id=1599, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc92b800 JavaThread "Thread-92" [_thread_in_native, id=1600, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc92c000 JavaThread "Thread-93" [_thread_in_native, id=1601, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc010000 JavaThread "Thread-94" [_thread_in_native, id=1602, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fcb21800 JavaThread "Thread-95" [_thread_in_native, id=1603, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc175800 JavaThread "Thread-96" [_thread_in_native, id=1604, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc177000 JavaThread "Thread-97" [_thread_in_native, id=1605, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc0f6800 JavaThread "Thread-98" [_thread_in_native, id=1606, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc179000 JavaThread "Thread-99" [_thread_in_native, id=1607, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fca1e800 JavaThread "Thread-100" [_thread_in_native, id=1608, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fca20000 JavaThread "Thread-101" [_thread_in_native, id=1609, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc13b000 JavaThread "Thread-102" [_thread_in_native, id=1610, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc0d3800 JavaThread "Thread-103" [_thread_in_native, id=1611, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc163800 JavaThread "Thread-104" [_thread_in_native, id=1612, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc0d5000 JavaThread "Thread-105" [_thread_in_native, id=1615, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc0d6800 JavaThread "Thread-106" [_thread_in_native, id=1621, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fcb4b800 JavaThread "Thread-107" [_thread_in_native, id=1624, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fcb4d000 JavaThread "Thread-108" [_thread_in_native, id=1627, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fcaed800 JavaThread "Thread-109" [_thread_in_native, id=1628, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fcaf4000 JavaThread "Thread-110" [_thread_in_native, id=1629, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc79b800 JavaThread "Thread-111" [_thread_in_native, id=1633, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc79d800 JavaThread "Thread-112" [_thread_in_native, id=1641, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc79e800 JavaThread "Thread-113" [_thread_in_native, id=1642, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fcaf0000 JavaThread "Thread-114" [_thread_in_native, id=1648, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc0c3000 JavaThread "Thread-115" [_thread_in_native, id=1660, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9fc0c4800 JavaThread "Thread-116" [_thread_in_native, id=1725, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9f80b8800 JavaThread "Thread-117" [_thread_in_native, id=1742, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9f80a3000 JavaThread "Thread-118" [_thread_in_native, id=1743, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9f80a4000 JavaThread "Thread-119" [_thread_in_native, id=1752, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9f8084800 JavaThread "Thread-120" [_thread_in_native, id=1757, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9f80bd800 JavaThread "Thread-121" [_thread_in_native, id=1758, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9f80ca800 JavaThread "Thread-122" [_thread_in_native, id=1761, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9f80cc000 JavaThread "Thread-123" [_thread_in_native, id=1815, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9f8097800 JavaThread "Thread-124" [_thread_in_native, id=1819, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9f8098800 JavaThread "Thread-125" [_thread_in_native, id=1820, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9f80ce800 JavaThread "Thread-126" [_thread_in_native, id=1832, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9f80e4000 JavaThread "Thread-127" [_thread_in_native, id=1839, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9f80e7000 JavaThread "Thread-128" [_thread_in_native, id=1895, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9f809b800 JavaThread "Thread-129" [_thread_in_native, id=1909, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9f809c800 JavaThread "Thread-130" [_thread_in_native, id=1940, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9f809e000 JavaThread "Thread-131" [_thread_in_native, id=1943, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9f80a0000 JavaThread "Thread-132" [_thread_in_native, id=1944, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9f8081800 JavaThread "Thread-133" [_thread_in_native, id=1948, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9f8082800 JavaThread "Thread-134" [_thread_in_native, id=1949, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9f80b2800 JavaThread "Thread-135" [_thread_in_native, id=1958, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9f8137000 JavaThread "Thread-136" [_thread_in_native, id=1959, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9f80af800 JavaThread "Thread-137" [_thread_in_native, id=1975, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9f80b1800 JavaThread "Thread-138" [_thread_in_native, id=2006, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9f81fe800 JavaThread "Thread-139" [_thread_in_native, id=2398, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9f826b000 JavaThread "Thread-140" [_thread_in_native, id=2407, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9f80b5000 JavaThread "Thread-141" [_thread_in_native, id=2420, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9f80b7000 JavaThread "Thread-142" [_thread_in_native, id=2438, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9f8132000 JavaThread "Thread-143" [_thread_in_native, id=2445, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9f8134800 JavaThread "Thread-144" [_thread_in_native, id=2464, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9f8136000 JavaThread "Thread-145" [_thread_in_native, id=2467, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9f80ec000 JavaThread "Thread-146" [_thread_in_native, id=2471, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9f80de000 JavaThread "Thread-147" [_thread_in_native, id=2483, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9f80d0800 JavaThread "Thread-148" [_thread_in_native, id=2547, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9f81a1800 JavaThread "Thread-149" [_thread_in_native, id=2559, stack(0x00007fbba4943000,0x00007fbba5142000)]
+  0x00007fb9f80e0000 JavaThread "Thread-150" [_thread_in_native, id=3053, stack(0x00007fbba4943000,0x00007fbba5142000)]
+
+Other Threads:
+  0x0000000005f48000 VMThread "VM Thread" [stack: 0x00007fbc19fa5000,0x00007fbc1a0a5000] [id=31092]
+  0x0000000005faf800 WatcherThread [stack: 0x00007fbbdbcfe000,0x00007fbbdbdfe000] [id=31100]
+  0x0000000004802800 GCTaskThread "GC Thread#0" [stack: 0x00007fbc1b55e000,0x00007fbc1b65e000] [id=31087]
+  0x00007fbbf0001000 GCTaskThread "GC Thread#1" [stack: 0x00007fbbdafc7000,0x00007fbbdb0c7000] [id=31103]
+  0x00007fbbf0002800 GCTaskThread "GC Thread#2" [stack: 0x00007fbbdaec5000,0x00007fbbdafc5000] [id=31104]
+  0x00007fbbf0004000 GCTaskThread "GC Thread#3" [stack: 0x00007fbbdadc3000,0x00007fbbdaec3000] [id=31105]
+  0x00007fbbf0006000 GCTaskThread "GC Thread#4" [stack: 0x00007fbbdacc1000,0x00007fbbdadc1000] [id=31106]
+  0x00007fbbf0007800 GCTaskThread "GC Thread#5" [stack: 0x00007fbbdabbf000,0x00007fbbdacbf000] [id=31107]
+  0x00007fbbf0009000 GCTaskThread "GC Thread#6" [stack: 0x00007fbbdaabd000,0x00007fbbdabbd000] [id=31108]
+  0x00007fbbf000a800 GCTaskThread "GC Thread#7" [stack: 0x00007fbbda9bb000,0x00007fbbdaabb000] [id=31109]
+  0x0000000005448800 ConcurrentGCThread "G1 Main Marker" [stack: 0x00007fbc1a3ad000,0x00007fbc1a4ad000] [id=31088]
+  0x000000000544a000 ConcurrentGCThread "G1 Conc#0" [stack: 0x00007fbc1a2ab000,0x00007fbc1a3ab000] [id=31089]
+  0x0000000005dca000 ConcurrentGCThread "G1 Refine#0" [stack: 0x00007fbc1a1a9000,0x00007fbc1a2a9000] [id=31090]
+  0x0000000005dcc000 ConcurrentGCThread "G1 Young RemSet Sampling" [stack: 0x00007fbc1a0a7000,0x00007fbc1a1a7000] [id=31091]
+
+Threads with active compile tasks:
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap address: 0x000000060a800000, size: 8024 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+Narrow klass base: 0x0000000800000000, Narrow klass shift: 3
+Compressed class space size: 1073741824 Address: 0x0000000840000000
+
+Heap:
+ garbage-first heap   total 518144K, used 254465K [0x000000060a800000, 0x0000000800000000)
+  region size 2048K, 118 young (241664K), 5 survivors (10240K)
+ Metaspace       used 14477K, capacity 14887K, committed 15232K, reserved 1062912K
+  class space    used 1716K, capacity 1896K, committed 1920K, reserved 1048576K
+Heap Regions: E=young(eden), S=young(survivor), O=old, HS=humongous(starts), HC=humongous(continues), CS=collection set, F=free, A=archive, TAMS=top-at-mark-start (previous, next)
+|   0|0x000000060a800000, 0x000000060aa00000, 0x000000060aa00000|100%|HS|  |TAMS 0x000000060a800000, 0x000000060a800000| Complete 
+|   1|0x000000060aa00000, 0x000000060ac00000, 0x000000060ac00000|100%|HC|  |TAMS 0x000000060aa00000, 0x000000060aa00000| Complete 
+|   2|0x000000060ac00000, 0x000000060ae00000, 0x000000060ae00000|100%|HS|  |TAMS 0x000000060ac00000, 0x000000060ac00000| Complete 
+|   3|0x000000060ae00000, 0x000000060b000000, 0x000000060b000000|100%|HC|  |TAMS 0x000000060ae00000, 0x000000060ae00000| Complete 
+|   4|0x000000060b000000, 0x000000060b200000, 0x000000060b200000|100%|HS|  |TAMS 0x000000060b000000, 0x000000060b000000| Complete 
+|   5|0x000000060b200000, 0x000000060b400000, 0x000000060b400000|100%|HS|  |TAMS 0x000000060b200000, 0x000000060b200000| Complete 
+|   6|0x000000060b400000, 0x000000060b600000, 0x000000060b600000|100%|HS|  |TAMS 0x000000060b400000, 0x000000060b400000| Complete 
+|   7|0x000000060b600000, 0x000000060b800000, 0x000000060b800000|100%|HS|  |TAMS 0x000000060b600000, 0x000000060b600000| Complete 
+|   8|0x000000060b800000, 0x000000060b800000, 0x000000060ba00000|  0%| F|  |TAMS 0x000000060b800000, 0x000000060b800000| Untracked 
+|   9|0x000000060ba00000, 0x000000060ba00000, 0x000000060bc00000|  0%| F|  |TAMS 0x000000060ba00000, 0x000000060ba00000| Untracked 
+|  10|0x000000060bc00000, 0x000000060bc00000, 0x000000060be00000|  0%| F|  |TAMS 0x000000060bc00000, 0x000000060bc00000| Untracked 
+|  11|0x000000060be00000, 0x000000060be00000, 0x000000060c000000|  0%| F|  |TAMS 0x000000060be00000, 0x000000060be00000| Untracked 
+|  12|0x000000060c000000, 0x000000060c000000, 0x000000060c200000|  0%| F|  |TAMS 0x000000060c000000, 0x000000060c000000| Untracked 
+|  13|0x000000060c200000, 0x000000060c200000, 0x000000060c400000|  0%| F|  |TAMS 0x000000060c200000, 0x000000060c200000| Untracked 
+|  14|0x000000060c400000, 0x000000060c400000, 0x000000060c600000|  0%| F|  |TAMS 0x000000060c400000, 0x000000060c400000| Untracked 
+|  15|0x000000060c600000, 0x000000060c600000, 0x000000060c800000|  0%| F|  |TAMS 0x000000060c600000, 0x000000060c600000| Untracked 
+|  16|0x000000060c800000, 0x000000060c800000, 0x000000060ca00000|  0%| F|  |TAMS 0x000000060c800000, 0x000000060c800000| Untracked 
+|  17|0x000000060ca00000, 0x000000060ca00000, 0x000000060cc00000|  0%| F|  |TAMS 0x000000060ca00000, 0x000000060ca00000| Untracked 
+|  18|0x000000060cc00000, 0x000000060cc00000, 0x000000060ce00000|  0%| F|  |TAMS 0x000000060cc00000, 0x000000060cc00000| Untracked 
+|  19|0x000000060ce00000, 0x000000060ce00000, 0x000000060d000000|  0%| F|  |TAMS 0x000000060ce00000, 0x000000060ce00000| Untracked 
+|  20|0x000000060d000000, 0x000000060d000000, 0x000000060d200000|  0%| F|  |TAMS 0x000000060d000000, 0x000000060d000000| Untracked 
+|  21|0x000000060d200000, 0x000000060d200000, 0x000000060d400000|  0%| F|  |TAMS 0x000000060d200000, 0x000000060d200000| Untracked 
+|  22|0x000000060d400000, 0x000000060d400000, 0x000000060d600000|  0%| F|  |TAMS 0x000000060d400000, 0x000000060d400000| Untracked 
+|  23|0x000000060d600000, 0x000000060d600000, 0x000000060d800000|  0%| F|  |TAMS 0x000000060d600000, 0x000000060d600000| Untracked 
+|  24|0x000000060d800000, 0x000000060d800000, 0x000000060da00000|  0%| F|  |TAMS 0x000000060d800000, 0x000000060d800000| Untracked 
+|  25|0x000000060da00000, 0x000000060da00000, 0x000000060dc00000|  0%| F|  |TAMS 0x000000060da00000, 0x000000060da00000| Untracked 
+|  26|0x000000060dc00000, 0x000000060dc00000, 0x000000060de00000|  0%| F|  |TAMS 0x000000060dc00000, 0x000000060dc00000| Untracked 
+|  27|0x000000060de00000, 0x000000060de00000, 0x000000060e000000|  0%| F|  |TAMS 0x000000060de00000, 0x000000060de00000| Untracked 
+|  28|0x000000060e000000, 0x000000060e000000, 0x000000060e200000|  0%| F|  |TAMS 0x000000060e000000, 0x000000060e000000| Untracked 
+|  29|0x000000060e200000, 0x000000060e200000, 0x000000060e400000|  0%| F|  |TAMS 0x000000060e200000, 0x000000060e200000| Untracked 
+|  30|0x000000060e400000, 0x000000060e400000, 0x000000060e600000|  0%| F|  |TAMS 0x000000060e400000, 0x000000060e400000| Untracked 
+|  31|0x000000060e600000, 0x000000060e600000, 0x000000060e800000|  0%| F|  |TAMS 0x000000060e600000, 0x000000060e600000| Untracked 
+|  32|0x000000060e800000, 0x000000060e800000, 0x000000060ea00000|  0%| F|  |TAMS 0x000000060e800000, 0x000000060e800000| Untracked 
+|  33|0x000000060ea00000, 0x000000060ea00000, 0x000000060ec00000|  0%| F|  |TAMS 0x000000060ea00000, 0x000000060ea00000| Untracked 
+|  34|0x000000060ec00000, 0x000000060ec00000, 0x000000060ee00000|  0%| F|  |TAMS 0x000000060ec00000, 0x000000060ec00000| Untracked 
+|  35|0x000000060ee00000, 0x000000060ee00000, 0x000000060f000000|  0%| F|  |TAMS 0x000000060ee00000, 0x000000060ee00000| Untracked 
+|  36|0x000000060f000000, 0x000000060f000000, 0x000000060f200000|  0%| F|  |TAMS 0x000000060f000000, 0x000000060f000000| Untracked 
+|  37|0x000000060f200000, 0x000000060f200000, 0x000000060f400000|  0%| F|  |TAMS 0x000000060f200000, 0x000000060f200000| Untracked 
+|  38|0x000000060f400000, 0x000000060f400000, 0x000000060f600000|  0%| F|  |TAMS 0x000000060f400000, 0x000000060f400000| Untracked 
+|  39|0x000000060f600000, 0x000000060f600000, 0x000000060f800000|  0%| F|  |TAMS 0x000000060f600000, 0x000000060f600000| Untracked 
+|  40|0x000000060f800000, 0x000000060f800000, 0x000000060fa00000|  0%| F|  |TAMS 0x000000060f800000, 0x000000060f800000| Untracked 
+|  41|0x000000060fa00000, 0x000000060fa00000, 0x000000060fc00000|  0%| F|  |TAMS 0x000000060fa00000, 0x000000060fa00000| Untracked 
+|  42|0x000000060fc00000, 0x000000060fc00000, 0x000000060fe00000|  0%| F|  |TAMS 0x000000060fc00000, 0x000000060fc00000| Untracked 
+|  43|0x000000060fe00000, 0x000000060fe00000, 0x0000000610000000|  0%| F|  |TAMS 0x000000060fe00000, 0x000000060fe00000| Untracked 
+|  44|0x0000000610000000, 0x0000000610000000, 0x0000000610200000|  0%| F|  |TAMS 0x0000000610000000, 0x0000000610000000| Untracked 
+|  45|0x0000000610200000, 0x0000000610200000, 0x0000000610400000|  0%| F|  |TAMS 0x0000000610200000, 0x0000000610200000| Untracked 
+|  46|0x0000000610400000, 0x0000000610400000, 0x0000000610600000|  0%| F|  |TAMS 0x0000000610400000, 0x0000000610400000| Untracked 
+|  47|0x0000000610600000, 0x0000000610600000, 0x0000000610800000|  0%| F|  |TAMS 0x0000000610600000, 0x0000000610600000| Untracked 
+|  48|0x0000000610800000, 0x0000000610800000, 0x0000000610a00000|  0%| F|  |TAMS 0x0000000610800000, 0x0000000610800000| Untracked 
+|  49|0x0000000610a00000, 0x0000000610a00000, 0x0000000610c00000|  0%| F|  |TAMS 0x0000000610a00000, 0x0000000610a00000| Untracked 
+|  50|0x0000000610c00000, 0x0000000610c00000, 0x0000000610e00000|  0%| F|  |TAMS 0x0000000610c00000, 0x0000000610c00000| Untracked 
+|  51|0x0000000610e00000, 0x0000000610e00000, 0x0000000611000000|  0%| F|  |TAMS 0x0000000610e00000, 0x0000000610e00000| Untracked 
+|  52|0x0000000611000000, 0x0000000611000000, 0x0000000611200000|  0%| F|  |TAMS 0x0000000611000000, 0x0000000611000000| Untracked 
+|  53|0x0000000611200000, 0x0000000611200000, 0x0000000611400000|  0%| F|  |TAMS 0x0000000611200000, 0x0000000611200000| Untracked 
+|  54|0x0000000611400000, 0x0000000611400000, 0x0000000611600000|  0%| F|  |TAMS 0x0000000611400000, 0x0000000611400000| Untracked 
+|  55|0x0000000611600000, 0x0000000611600000, 0x0000000611800000|  0%| F|  |TAMS 0x0000000611600000, 0x0000000611600000| Untracked 
+|  56|0x0000000611800000, 0x0000000611800000, 0x0000000611a00000|  0%| F|  |TAMS 0x0000000611800000, 0x0000000611800000| Untracked 
+|  57|0x0000000611a00000, 0x0000000611a00000, 0x0000000611c00000|  0%| F|  |TAMS 0x0000000611a00000, 0x0000000611a00000| Untracked 
+|  58|0x0000000611c00000, 0x0000000611c00000, 0x0000000611e00000|  0%| F|  |TAMS 0x0000000611c00000, 0x0000000611c00000| Untracked 
+|  59|0x0000000611e00000, 0x0000000611e00000, 0x0000000612000000|  0%| F|  |TAMS 0x0000000611e00000, 0x0000000611e00000| Untracked 
+|  60|0x0000000612000000, 0x0000000612000000, 0x0000000612200000|  0%| F|  |TAMS 0x0000000612000000, 0x0000000612000000| Untracked 
+|  61|0x0000000612200000, 0x0000000612200000, 0x0000000612400000|  0%| F|  |TAMS 0x0000000612200000, 0x0000000612200000| Untracked 
+|  62|0x0000000612400000, 0x0000000612400000, 0x0000000612600000|  0%| F|  |TAMS 0x0000000612400000, 0x0000000612400000| Untracked 
+|  63|0x0000000612600000, 0x0000000612600000, 0x0000000612800000|  0%| F|  |TAMS 0x0000000612600000, 0x0000000612600000| Untracked 
+|  64|0x0000000612800000, 0x0000000612800000, 0x0000000612a00000|  0%| F|  |TAMS 0x0000000612800000, 0x0000000612800000| Untracked 
+|  65|0x0000000612a00000, 0x0000000612a00000, 0x0000000612c00000|  0%| F|  |TAMS 0x0000000612a00000, 0x0000000612a00000| Untracked 
+|  66|0x0000000612c00000, 0x0000000612c00000, 0x0000000612e00000|  0%| F|  |TAMS 0x0000000612c00000, 0x0000000612c00000| Untracked 
+|  67|0x0000000612e00000, 0x0000000612e00000, 0x0000000613000000|  0%| F|  |TAMS 0x0000000612e00000, 0x0000000612e00000| Untracked 
+|  68|0x0000000613000000, 0x0000000613000000, 0x0000000613200000|  0%| F|  |TAMS 0x0000000613000000, 0x0000000613000000| Untracked 
+|  69|0x0000000613200000, 0x0000000613200000, 0x0000000613400000|  0%| F|  |TAMS 0x0000000613200000, 0x0000000613200000| Untracked 
+|  70|0x0000000613400000, 0x0000000613400000, 0x0000000613600000|  0%| F|  |TAMS 0x0000000613400000, 0x0000000613400000| Untracked 
+|  71|0x0000000613600000, 0x0000000613600000, 0x0000000613800000|  0%| F|  |TAMS 0x0000000613600000, 0x0000000613600000| Untracked 
+|  72|0x0000000613800000, 0x0000000613800000, 0x0000000613a00000|  0%| F|  |TAMS 0x0000000613800000, 0x0000000613800000| Untracked 
+|  73|0x0000000613a00000, 0x0000000613a00000, 0x0000000613c00000|  0%| F|  |TAMS 0x0000000613a00000, 0x0000000613a00000| Untracked 
+|  74|0x0000000613c00000, 0x0000000613c00000, 0x0000000613e00000|  0%| F|  |TAMS 0x0000000613c00000, 0x0000000613c00000| Untracked 
+|  75|0x0000000613e00000, 0x0000000613e00000, 0x0000000614000000|  0%| F|  |TAMS 0x0000000613e00000, 0x0000000613e00000| Untracked 
+|  76|0x0000000614000000, 0x0000000614000000, 0x0000000614200000|  0%| F|  |TAMS 0x0000000614000000, 0x0000000614000000| Untracked 
+|  77|0x0000000614200000, 0x0000000614200000, 0x0000000614400000|  0%| F|  |TAMS 0x0000000614200000, 0x0000000614200000| Untracked 
+|  78|0x0000000614400000, 0x0000000614400000, 0x0000000614600000|  0%| F|  |TAMS 0x0000000614400000, 0x0000000614400000| Untracked 
+|  79|0x0000000614600000, 0x0000000614600000, 0x0000000614800000|  0%| F|  |TAMS 0x0000000614600000, 0x0000000614600000| Untracked 
+|  80|0x0000000614800000, 0x0000000614800000, 0x0000000614a00000|  0%| F|  |TAMS 0x0000000614800000, 0x0000000614800000| Untracked 
+|  81|0x0000000614a00000, 0x0000000614a00000, 0x0000000614c00000|  0%| F|  |TAMS 0x0000000614a00000, 0x0000000614a00000| Untracked 
+|  82|0x0000000614c00000, 0x0000000614c00000, 0x0000000614e00000|  0%| F|  |TAMS 0x0000000614c00000, 0x0000000614c00000| Untracked 
+|  83|0x0000000614e00000, 0x0000000614e00000, 0x0000000615000000|  0%| F|  |TAMS 0x0000000614e00000, 0x0000000614e00000| Untracked 
+|  84|0x0000000615000000, 0x0000000615000000, 0x0000000615200000|  0%| F|  |TAMS 0x0000000615000000, 0x0000000615000000| Untracked 
+|  85|0x0000000615200000, 0x0000000615200000, 0x0000000615400000|  0%| F|  |TAMS 0x0000000615200000, 0x0000000615200000| Untracked 
+|  86|0x0000000615400000, 0x0000000615400000, 0x0000000615600000|  0%| F|  |TAMS 0x0000000615400000, 0x0000000615400000| Untracked 
+|  87|0x0000000615600000, 0x0000000615600000, 0x0000000615800000|  0%| F|  |TAMS 0x0000000615600000, 0x0000000615600000| Untracked 
+|  88|0x0000000615800000, 0x0000000615800000, 0x0000000615a00000|  0%| F|  |TAMS 0x0000000615800000, 0x0000000615800000| Untracked 
+|  89|0x0000000615a00000, 0x0000000615a00000, 0x0000000615c00000|  0%| F|  |TAMS 0x0000000615a00000, 0x0000000615a00000| Untracked 
+|  90|0x0000000615c00000, 0x0000000615c00000, 0x0000000615e00000|  0%| F|  |TAMS 0x0000000615c00000, 0x0000000615c00000| Untracked 
+|  91|0x0000000615e00000, 0x0000000615e00000, 0x0000000616000000|  0%| F|  |TAMS 0x0000000615e00000, 0x0000000615e00000| Untracked 
+|  92|0x0000000616000000, 0x0000000616000000, 0x0000000616200000|  0%| F|  |TAMS 0x0000000616000000, 0x0000000616000000| Untracked 
+|  93|0x0000000616200000, 0x0000000616200000, 0x0000000616400000|  0%| F|  |TAMS 0x0000000616200000, 0x0000000616200000| Untracked 
+|  94|0x0000000616400000, 0x0000000616400000, 0x0000000616600000|  0%| F|  |TAMS 0x0000000616400000, 0x0000000616400000| Untracked 
+|  95|0x0000000616600000, 0x0000000616600000, 0x0000000616800000|  0%| F|  |TAMS 0x0000000616600000, 0x0000000616600000| Untracked 
+|  96|0x0000000616800000, 0x0000000616800000, 0x0000000616a00000|  0%| F|  |TAMS 0x0000000616800000, 0x0000000616800000| Untracked 
+|  97|0x0000000616a00000, 0x0000000616a00000, 0x0000000616c00000|  0%| F|  |TAMS 0x0000000616a00000, 0x0000000616a00000| Untracked 
+|  98|0x0000000616c00000, 0x0000000616c00000, 0x0000000616e00000|  0%| F|  |TAMS 0x0000000616c00000, 0x0000000616c00000| Untracked 
+|  99|0x0000000616e00000, 0x0000000616e00000, 0x0000000617000000|  0%| F|  |TAMS 0x0000000616e00000, 0x0000000616e00000| Untracked 
+| 100|0x0000000617000000, 0x0000000617000000, 0x0000000617200000|  0%| F|  |TAMS 0x0000000617000000, 0x0000000617000000| Untracked 
+| 101|0x0000000617200000, 0x00000006173cf5f0, 0x0000000617400000| 90%| S|CS|TAMS 0x0000000617200000, 0x0000000617200000| Complete 
+| 102|0x0000000617400000, 0x0000000617600000, 0x0000000617600000|100%| S|CS|TAMS 0x0000000617400000, 0x0000000617400000| Complete 
+| 103|0x0000000617600000, 0x0000000617800000, 0x0000000617800000|100%| S|CS|TAMS 0x0000000617600000, 0x0000000617600000| Complete 
+| 104|0x0000000617800000, 0x0000000617a00000, 0x0000000617a00000|100%| S|CS|TAMS 0x0000000617800000, 0x0000000617800000| Complete 
+| 105|0x0000000617a00000, 0x0000000617c00000, 0x0000000617c00000|100%| S|CS|TAMS 0x0000000617a00000, 0x0000000617a00000| Complete 
+| 106|0x0000000617c00000, 0x0000000617c00000, 0x0000000617e00000|  0%| F|  |TAMS 0x0000000617c00000, 0x0000000617c00000| Untracked 
+| 107|0x0000000617e00000, 0x0000000617e00000, 0x0000000618000000|  0%| F|  |TAMS 0x0000000617e00000, 0x0000000617e00000| Untracked 
+| 108|0x0000000618000000, 0x0000000618000000, 0x0000000618200000|  0%| F|  |TAMS 0x0000000618000000, 0x0000000618000000| Untracked 
+| 109|0x0000000618200000, 0x0000000618200000, 0x0000000618400000|  0%| F|  |TAMS 0x0000000618200000, 0x0000000618200000| Untracked 
+| 110|0x0000000618400000, 0x0000000618400000, 0x0000000618600000|  0%| F|  |TAMS 0x0000000618400000, 0x0000000618400000| Untracked 
+| 111|0x0000000618600000, 0x0000000618600000, 0x0000000618800000|  0%| F|  |TAMS 0x0000000618600000, 0x0000000618600000| Untracked 
+| 112|0x0000000618800000, 0x0000000618800000, 0x0000000618a00000|  0%| F|  |TAMS 0x0000000618800000, 0x0000000618800000| Untracked 
+| 113|0x0000000618a00000, 0x0000000618a00000, 0x0000000618c00000|  0%| F|  |TAMS 0x0000000618a00000, 0x0000000618a00000| Untracked 
+| 114|0x0000000618c00000, 0x0000000618c00000, 0x0000000618e00000|  0%| F|  |TAMS 0x0000000618c00000, 0x0000000618c00000| Untracked 
+| 115|0x0000000618e00000, 0x0000000618e00000, 0x0000000619000000|  0%| F|  |TAMS 0x0000000618e00000, 0x0000000618e00000| Untracked 
+| 116|0x0000000619000000, 0x0000000619000000, 0x0000000619200000|  0%| F|  |TAMS 0x0000000619000000, 0x0000000619000000| Untracked 
+| 117|0x0000000619200000, 0x0000000619200000, 0x0000000619400000|  0%| F|  |TAMS 0x0000000619200000, 0x0000000619200000| Untracked 
+| 118|0x0000000619400000, 0x0000000619400000, 0x0000000619600000|  0%| F|  |TAMS 0x0000000619400000, 0x0000000619400000| Untracked 
+| 119|0x0000000619600000, 0x0000000619600000, 0x0000000619800000|  0%| F|  |TAMS 0x0000000619600000, 0x0000000619600000| Untracked 
+| 120|0x0000000619800000, 0x0000000619800000, 0x0000000619a00000|  0%| F|  |TAMS 0x0000000619800000, 0x0000000619800000| Untracked 
+| 121|0x0000000619a00000, 0x0000000619a00000, 0x0000000619c00000|  0%| F|  |TAMS 0x0000000619a00000, 0x0000000619a00000| Untracked 
+| 122|0x0000000619c00000, 0x0000000619c00000, 0x0000000619e00000|  0%| F|  |TAMS 0x0000000619c00000, 0x0000000619c00000| Untracked 
+| 123|0x0000000619e00000, 0x0000000619e00000, 0x000000061a000000|  0%| F|  |TAMS 0x0000000619e00000, 0x0000000619e00000| Untracked 
+| 124|0x000000061a000000, 0x000000061a000000, 0x000000061a200000|  0%| F|  |TAMS 0x000000061a000000, 0x000000061a000000| Untracked 
+| 125|0x000000061a200000, 0x000000061a200000, 0x000000061a400000|  0%| F|  |TAMS 0x000000061a200000, 0x000000061a200000| Untracked 
+| 126|0x000000061a400000, 0x000000061a400000, 0x000000061a600000|  0%| F|  |TAMS 0x000000061a400000, 0x000000061a400000| Untracked 
+| 127|0x000000061a600000, 0x000000061a600000, 0x000000061a800000|  0%| F|  |TAMS 0x000000061a600000, 0x000000061a600000| Untracked 
+| 128|0x000000061a800000, 0x000000061a800000, 0x000000061aa00000|  0%| F|  |TAMS 0x000000061a800000, 0x000000061a800000| Untracked 
+| 129|0x000000061aa00000, 0x000000061aa00000, 0x000000061ac00000|  0%| F|  |TAMS 0x000000061aa00000, 0x000000061aa00000| Untracked 
+| 130|0x000000061ac00000, 0x000000061ac00000, 0x000000061ae00000|  0%| F|  |TAMS 0x000000061ac00000, 0x000000061ac00000| Untracked 
+| 131|0x000000061ae00000, 0x000000061ae00000, 0x000000061b000000|  0%| F|  |TAMS 0x000000061ae00000, 0x000000061ae00000| Untracked 
+| 132|0x000000061b000000, 0x000000061b000000, 0x000000061b200000|  0%| F|  |TAMS 0x000000061b000000, 0x000000061b000000| Untracked 
+| 133|0x000000061b200000, 0x000000061b200000, 0x000000061b400000|  0%| F|  |TAMS 0x000000061b200000, 0x000000061b200000| Untracked 
+| 134|0x000000061b400000, 0x000000061b400000, 0x000000061b600000|  0%| F|  |TAMS 0x000000061b400000, 0x000000061b400000| Untracked 
+| 135|0x000000061b600000, 0x000000061b600000, 0x000000061b800000|  0%| F|  |TAMS 0x000000061b600000, 0x000000061b600000| Untracked 
+| 136|0x000000061b800000, 0x000000061b800000, 0x000000061ba00000|  0%| F|  |TAMS 0x000000061b800000, 0x000000061b800000| Untracked 
+| 137|0x000000061ba00000, 0x000000061ba00000, 0x000000061bc00000|  0%| F|  |TAMS 0x000000061ba00000, 0x000000061ba00000| Untracked 
+| 138|0x000000061bc00000, 0x000000061bce5b60, 0x000000061be00000| 44%| E|  |TAMS 0x000000061bc00000, 0x000000061bc00000| Complete 
+| 139|0x000000061be00000, 0x000000061c000000, 0x000000061c000000|100%| E|CS|TAMS 0x000000061be00000, 0x000000061be00000| Complete 
+| 140|0x000000061c000000, 0x000000061c200000, 0x000000061c200000|100%| E|  |TAMS 0x000000061c000000, 0x000000061c000000| Complete 
+| 141|0x000000061c200000, 0x000000061c400000, 0x000000061c400000|100%| E|CS|TAMS 0x000000061c200000, 0x000000061c200000| Complete 
+| 142|0x000000061c400000, 0x000000061c600000, 0x000000061c600000|100%| E|CS|TAMS 0x000000061c400000, 0x000000061c400000| Complete 
+| 143|0x000000061c600000, 0x000000061c800000, 0x000000061c800000|100%| E|CS|TAMS 0x000000061c600000, 0x000000061c600000| Complete 
+| 144|0x000000061c800000, 0x000000061ca00000, 0x000000061ca00000|100%| E|CS|TAMS 0x000000061c800000, 0x000000061c800000| Complete 
+| 145|0x000000061ca00000, 0x000000061cc00000, 0x000000061cc00000|100%| E|CS|TAMS 0x000000061ca00000, 0x000000061ca00000| Complete 
+| 146|0x000000061cc00000, 0x000000061ce00000, 0x000000061ce00000|100%| E|CS|TAMS 0x000000061cc00000, 0x000000061cc00000| Complete 
+| 147|0x000000061ce00000, 0x000000061d000000, 0x000000061d000000|100%| E|CS|TAMS 0x000000061ce00000, 0x000000061ce00000| Complete 
+| 148|0x000000061d000000, 0x000000061d200000, 0x000000061d200000|100%| E|CS|TAMS 0x000000061d000000, 0x000000061d000000| Complete 
+| 149|0x000000061d200000, 0x000000061d400000, 0x000000061d400000|100%| E|CS|TAMS 0x000000061d200000, 0x000000061d200000| Complete 
+| 150|0x000000061d400000, 0x000000061d600000, 0x000000061d600000|100%| E|CS|TAMS 0x000000061d400000, 0x000000061d400000| Complete 
+| 151|0x000000061d600000, 0x000000061d800000, 0x000000061d800000|100%| E|CS|TAMS 0x000000061d600000, 0x000000061d600000| Complete 
+| 152|0x000000061d800000, 0x000000061da00000, 0x000000061da00000|100%| E|CS|TAMS 0x000000061d800000, 0x000000061d800000| Complete 
+| 153|0x000000061da00000, 0x000000061dc00000, 0x000000061dc00000|100%| E|CS|TAMS 0x000000061da00000, 0x000000061da00000| Complete 
+| 154|0x000000061dc00000, 0x000000061de00000, 0x000000061de00000|100%| E|CS|TAMS 0x000000061dc00000, 0x000000061dc00000| Complete 
+| 155|0x000000061de00000, 0x000000061e000000, 0x000000061e000000|100%| E|CS|TAMS 0x000000061de00000, 0x000000061de00000| Complete 
+| 156|0x000000061e000000, 0x000000061e200000, 0x000000061e200000|100%| E|CS|TAMS 0x000000061e000000, 0x000000061e000000| Complete 
+| 157|0x000000061e200000, 0x000000061e400000, 0x000000061e400000|100%| E|CS|TAMS 0x000000061e200000, 0x000000061e200000| Complete 
+| 158|0x000000061e400000, 0x000000061e600000, 0x000000061e600000|100%| E|CS|TAMS 0x000000061e400000, 0x000000061e400000| Complete 
+| 159|0x000000061e600000, 0x000000061e800000, 0x000000061e800000|100%| E|CS|TAMS 0x000000061e600000, 0x000000061e600000| Complete 
+| 160|0x000000061e800000, 0x000000061ea00000, 0x000000061ea00000|100%| E|CS|TAMS 0x000000061e800000, 0x000000061e800000| Complete 
+| 161|0x000000061ea00000, 0x000000061ec00000, 0x000000061ec00000|100%| E|CS|TAMS 0x000000061ea00000, 0x000000061ea00000| Complete 
+| 162|0x000000061ec00000, 0x000000061ee00000, 0x000000061ee00000|100%| E|CS|TAMS 0x000000061ec00000, 0x000000061ec00000| Complete 
+| 163|0x000000061ee00000, 0x000000061f000000, 0x000000061f000000|100%| E|CS|TAMS 0x000000061ee00000, 0x000000061ee00000| Complete 
+| 164|0x000000061f000000, 0x000000061f200000, 0x000000061f200000|100%| E|CS|TAMS 0x000000061f000000, 0x000000061f000000| Complete 
+| 165|0x000000061f200000, 0x000000061f400000, 0x000000061f400000|100%| E|CS|TAMS 0x000000061f200000, 0x000000061f200000| Complete 
+| 166|0x000000061f400000, 0x000000061f600000, 0x000000061f600000|100%| E|CS|TAMS 0x000000061f400000, 0x000000061f400000| Complete 
+| 167|0x000000061f600000, 0x000000061f800000, 0x000000061f800000|100%| E|CS|TAMS 0x000000061f600000, 0x000000061f600000| Complete 
+| 168|0x000000061f800000, 0x000000061fa00000, 0x000000061fa00000|100%| E|CS|TAMS 0x000000061f800000, 0x000000061f800000| Complete 
+| 169|0x000000061fa00000, 0x000000061fc00000, 0x000000061fc00000|100%| E|CS|TAMS 0x000000061fa00000, 0x000000061fa00000| Complete 
+| 170|0x000000061fc00000, 0x000000061fe00000, 0x000000061fe00000|100%| E|CS|TAMS 0x000000061fc00000, 0x000000061fc00000| Complete 
+| 171|0x000000061fe00000, 0x0000000620000000, 0x0000000620000000|100%| E|CS|TAMS 0x000000061fe00000, 0x000000061fe00000| Complete 
+| 172|0x0000000620000000, 0x0000000620200000, 0x0000000620200000|100%| E|CS|TAMS 0x0000000620000000, 0x0000000620000000| Complete 
+| 173|0x0000000620200000, 0x0000000620400000, 0x0000000620400000|100%| E|CS|TAMS 0x0000000620200000, 0x0000000620200000| Complete 
+| 174|0x0000000620400000, 0x0000000620600000, 0x0000000620600000|100%| E|CS|TAMS 0x0000000620400000, 0x0000000620400000| Complete 
+| 175|0x0000000620600000, 0x0000000620800000, 0x0000000620800000|100%| E|CS|TAMS 0x0000000620600000, 0x0000000620600000| Complete 
+| 176|0x0000000620800000, 0x0000000620a00000, 0x0000000620a00000|100%| E|CS|TAMS 0x0000000620800000, 0x0000000620800000| Complete 
+| 177|0x0000000620a00000, 0x0000000620c00000, 0x0000000620c00000|100%| E|CS|TAMS 0x0000000620a00000, 0x0000000620a00000| Complete 
+| 178|0x0000000620c00000, 0x0000000620e00000, 0x0000000620e00000|100%| E|CS|TAMS 0x0000000620c00000, 0x0000000620c00000| Complete 
+| 179|0x0000000620e00000, 0x0000000621000000, 0x0000000621000000|100%| E|CS|TAMS 0x0000000620e00000, 0x0000000620e00000| Complete 
+| 180|0x0000000621000000, 0x0000000621200000, 0x0000000621200000|100%| E|CS|TAMS 0x0000000621000000, 0x0000000621000000| Complete 
+| 181|0x0000000621200000, 0x0000000621400000, 0x0000000621400000|100%| E|CS|TAMS 0x0000000621200000, 0x0000000621200000| Complete 
+| 182|0x0000000621400000, 0x0000000621600000, 0x0000000621600000|100%| E|CS|TAMS 0x0000000621400000, 0x0000000621400000| Complete 
+| 183|0x0000000621600000, 0x0000000621800000, 0x0000000621800000|100%| E|CS|TAMS 0x0000000621600000, 0x0000000621600000| Complete 
+| 184|0x0000000621800000, 0x0000000621a00000, 0x0000000621a00000|100%| E|CS|TAMS 0x0000000621800000, 0x0000000621800000| Complete 
+| 185|0x0000000621a00000, 0x0000000621c00000, 0x0000000621c00000|100%| E|CS|TAMS 0x0000000621a00000, 0x0000000621a00000| Complete 
+| 186|0x0000000621c00000, 0x0000000621e00000, 0x0000000621e00000|100%| E|CS|TAMS 0x0000000621c00000, 0x0000000621c00000| Complete 
+| 187|0x0000000621e00000, 0x0000000622000000, 0x0000000622000000|100%| E|CS|TAMS 0x0000000621e00000, 0x0000000621e00000| Complete 
+| 188|0x0000000622000000, 0x0000000622200000, 0x0000000622200000|100%| E|CS|TAMS 0x0000000622000000, 0x0000000622000000| Complete 
+| 189|0x0000000622200000, 0x0000000622400000, 0x0000000622400000|100%| E|CS|TAMS 0x0000000622200000, 0x0000000622200000| Complete 
+| 190|0x0000000622400000, 0x0000000622600000, 0x0000000622600000|100%| E|CS|TAMS 0x0000000622400000, 0x0000000622400000| Complete 
+| 191|0x0000000622600000, 0x0000000622800000, 0x0000000622800000|100%| E|CS|TAMS 0x0000000622600000, 0x0000000622600000| Complete 
+| 192|0x0000000622800000, 0x0000000622a00000, 0x0000000622a00000|100%| E|CS|TAMS 0x0000000622800000, 0x0000000622800000| Complete 
+| 193|0x0000000622a00000, 0x0000000622c00000, 0x0000000622c00000|100%| E|CS|TAMS 0x0000000622a00000, 0x0000000622a00000| Complete 
+| 194|0x0000000622c00000, 0x0000000622e00000, 0x0000000622e00000|100%| E|CS|TAMS 0x0000000622c00000, 0x0000000622c00000| Complete 
+| 195|0x0000000622e00000, 0x0000000623000000, 0x0000000623000000|100%| E|CS|TAMS 0x0000000622e00000, 0x0000000622e00000| Complete 
+| 196|0x0000000623000000, 0x0000000623200000, 0x0000000623200000|100%| E|CS|TAMS 0x0000000623000000, 0x0000000623000000| Complete 
+| 197|0x0000000623200000, 0x0000000623400000, 0x0000000623400000|100%| E|CS|TAMS 0x0000000623200000, 0x0000000623200000| Complete 
+| 198|0x0000000623400000, 0x0000000623600000, 0x0000000623600000|100%| E|CS|TAMS 0x0000000623400000, 0x0000000623400000| Complete 
+| 199|0x0000000623600000, 0x0000000623800000, 0x0000000623800000|100%| E|CS|TAMS 0x0000000623600000, 0x0000000623600000| Complete 
+| 200|0x0000000623800000, 0x0000000623a00000, 0x0000000623a00000|100%| E|CS|TAMS 0x0000000623800000, 0x0000000623800000| Complete 
+| 201|0x0000000623a00000, 0x0000000623c00000, 0x0000000623c00000|100%| E|CS|TAMS 0x0000000623a00000, 0x0000000623a00000| Complete 
+| 202|0x0000000623c00000, 0x0000000623e00000, 0x0000000623e00000|100%| E|CS|TAMS 0x0000000623c00000, 0x0000000623c00000| Complete 
+| 203|0x0000000623e00000, 0x0000000624000000, 0x0000000624000000|100%| E|CS|TAMS 0x0000000623e00000, 0x0000000623e00000| Complete 
+| 204|0x0000000624000000, 0x0000000624200000, 0x0000000624200000|100%| E|CS|TAMS 0x0000000624000000, 0x0000000624000000| Complete 
+| 205|0x0000000624200000, 0x0000000624400000, 0x0000000624400000|100%| E|CS|TAMS 0x0000000624200000, 0x0000000624200000| Complete 
+| 206|0x0000000624400000, 0x0000000624600000, 0x0000000624600000|100%| E|CS|TAMS 0x0000000624400000, 0x0000000624400000| Complete 
+| 207|0x0000000624600000, 0x0000000624800000, 0x0000000624800000|100%| E|CS|TAMS 0x0000000624600000, 0x0000000624600000| Complete 
+| 208|0x0000000624800000, 0x0000000624a00000, 0x0000000624a00000|100%| E|CS|TAMS 0x0000000624800000, 0x0000000624800000| Complete 
+| 209|0x0000000624a00000, 0x0000000624c00000, 0x0000000624c00000|100%| E|CS|TAMS 0x0000000624a00000, 0x0000000624a00000| Complete 
+| 210|0x0000000624c00000, 0x0000000624e00000, 0x0000000624e00000|100%| E|CS|TAMS 0x0000000624c00000, 0x0000000624c00000| Complete 
+| 211|0x0000000624e00000, 0x0000000625000000, 0x0000000625000000|100%| E|CS|TAMS 0x0000000624e00000, 0x0000000624e00000| Complete 
+| 212|0x0000000625000000, 0x0000000625200000, 0x0000000625200000|100%| E|CS|TAMS 0x0000000625000000, 0x0000000625000000| Complete 
+| 213|0x0000000625200000, 0x0000000625400000, 0x0000000625400000|100%| E|CS|TAMS 0x0000000625200000, 0x0000000625200000| Complete 
+| 214|0x0000000625400000, 0x0000000625600000, 0x0000000625600000|100%| E|CS|TAMS 0x0000000625400000, 0x0000000625400000| Complete 
+| 215|0x0000000625600000, 0x0000000625800000, 0x0000000625800000|100%| E|CS|TAMS 0x0000000625600000, 0x0000000625600000| Complete 
+| 216|0x0000000625800000, 0x0000000625a00000, 0x0000000625a00000|100%| E|CS|TAMS 0x0000000625800000, 0x0000000625800000| Complete 
+| 217|0x0000000625a00000, 0x0000000625c00000, 0x0000000625c00000|100%| E|CS|TAMS 0x0000000625a00000, 0x0000000625a00000| Complete 
+| 218|0x0000000625c00000, 0x0000000625e00000, 0x0000000625e00000|100%| E|CS|TAMS 0x0000000625c00000, 0x0000000625c00000| Complete 
+| 219|0x0000000625e00000, 0x0000000626000000, 0x0000000626000000|100%| E|CS|TAMS 0x0000000625e00000, 0x0000000625e00000| Complete 
+| 220|0x0000000626000000, 0x0000000626200000, 0x0000000626200000|100%| E|CS|TAMS 0x0000000626000000, 0x0000000626000000| Complete 
+| 221|0x0000000626200000, 0x0000000626400000, 0x0000000626400000|100%| E|CS|TAMS 0x0000000626200000, 0x0000000626200000| Complete 
+| 222|0x0000000626400000, 0x0000000626600000, 0x0000000626600000|100%| E|CS|TAMS 0x0000000626400000, 0x0000000626400000| Complete 
+| 223|0x0000000626600000, 0x0000000626800000, 0x0000000626800000|100%| E|CS|TAMS 0x0000000626600000, 0x0000000626600000| Complete 
+| 224|0x0000000626800000, 0x0000000626a00000, 0x0000000626a00000|100%| E|CS|TAMS 0x0000000626800000, 0x0000000626800000| Complete 
+| 225|0x0000000626a00000, 0x0000000626c00000, 0x0000000626c00000|100%| E|CS|TAMS 0x0000000626a00000, 0x0000000626a00000| Complete 
+| 226|0x0000000626c00000, 0x0000000626e00000, 0x0000000626e00000|100%| E|CS|TAMS 0x0000000626c00000, 0x0000000626c00000| Complete 
+| 227|0x0000000626e00000, 0x0000000627000000, 0x0000000627000000|100%| E|CS|TAMS 0x0000000626e00000, 0x0000000626e00000| Complete 
+| 228|0x0000000627000000, 0x0000000627200000, 0x0000000627200000|100%| E|CS|TAMS 0x0000000627000000, 0x0000000627000000| Complete 
+| 229|0x0000000627200000, 0x0000000627400000, 0x0000000627400000|100%| E|CS|TAMS 0x0000000627200000, 0x0000000627200000| Complete 
+| 230|0x0000000627400000, 0x0000000627600000, 0x0000000627600000|100%| E|CS|TAMS 0x0000000627400000, 0x0000000627400000| Complete 
+| 231|0x0000000627600000, 0x0000000627800000, 0x0000000627800000|100%| E|CS|TAMS 0x0000000627600000, 0x0000000627600000| Complete 
+| 232|0x0000000627800000, 0x0000000627a00000, 0x0000000627a00000|100%| E|CS|TAMS 0x0000000627800000, 0x0000000627800000| Complete 
+| 233|0x0000000627a00000, 0x0000000627c00000, 0x0000000627c00000|100%| E|CS|TAMS 0x0000000627a00000, 0x0000000627a00000| Complete 
+| 234|0x0000000627c00000, 0x0000000627e00000, 0x0000000627e00000|100%| E|CS|TAMS 0x0000000627c00000, 0x0000000627c00000| Complete 
+| 235|0x0000000627e00000, 0x0000000628000000, 0x0000000628000000|100%| E|CS|TAMS 0x0000000627e00000, 0x0000000627e00000| Complete 
+| 236|0x0000000628000000, 0x0000000628200000, 0x0000000628200000|100%| E|CS|TAMS 0x0000000628000000, 0x0000000628000000| Complete 
+| 237|0x0000000628200000, 0x0000000628400000, 0x0000000628400000|100%| E|CS|TAMS 0x0000000628200000, 0x0000000628200000| Complete 
+| 238|0x0000000628400000, 0x0000000628600000, 0x0000000628600000|100%| E|CS|TAMS 0x0000000628400000, 0x0000000628400000| Complete 
+| 239|0x0000000628600000, 0x0000000628800000, 0x0000000628800000|100%| E|CS|TAMS 0x0000000628600000, 0x0000000628600000| Complete 
+| 240|0x0000000628800000, 0x0000000628a00000, 0x0000000628a00000|100%| E|CS|TAMS 0x0000000628800000, 0x0000000628800000| Complete 
+| 241|0x0000000628a00000, 0x0000000628c00000, 0x0000000628c00000|100%| E|CS|TAMS 0x0000000628a00000, 0x0000000628a00000| Complete 
+| 242|0x0000000628c00000, 0x0000000628e00000, 0x0000000628e00000|100%| E|CS|TAMS 0x0000000628c00000, 0x0000000628c00000| Complete 
+| 243|0x0000000628e00000, 0x0000000629000000, 0x0000000629000000|100%| E|CS|TAMS 0x0000000628e00000, 0x0000000628e00000| Complete 
+| 244|0x0000000629000000, 0x0000000629200000, 0x0000000629200000|100%| E|CS|TAMS 0x0000000629000000, 0x0000000629000000| Complete 
+| 245|0x0000000629200000, 0x0000000629400000, 0x0000000629400000|100%| E|CS|TAMS 0x0000000629200000, 0x0000000629200000| Complete 
+| 246|0x0000000629400000, 0x0000000629600000, 0x0000000629600000|100%| E|CS|TAMS 0x0000000629400000, 0x0000000629400000| Complete 
+| 247|0x0000000629600000, 0x0000000629800000, 0x0000000629800000|100%| E|CS|TAMS 0x0000000629600000, 0x0000000629600000| Complete 
+| 248|0x0000000629800000, 0x0000000629a00000, 0x0000000629a00000|100%| E|CS|TAMS 0x0000000629800000, 0x0000000629800000| Complete 
+| 249|0x0000000629a00000, 0x0000000629c00000, 0x0000000629c00000|100%| E|CS|TAMS 0x0000000629a00000, 0x0000000629a00000| Complete 
+| 250|0x0000000629c00000, 0x0000000629e00000, 0x0000000629e00000|100%| E|CS|TAMS 0x0000000629c00000, 0x0000000629c00000| Complete 
+|3498|0x00000007bfc00000, 0x00000007bfc47000, 0x00000007bfe00000| 13%|OA|  |TAMS 0x00000007bfc00000, 0x00000007bfc00000| Untracked 
+|3499|0x00000007bfe00000, 0x00000007bfe6a000, 0x00000007c0000000| 20%|CA|  |TAMS 0x00000007bfe00000, 0x00000007bfe00000| Untracked 
+
+Card table byte_map: [0x00007fbc13054000,0x00007fbc14000000] _byte_map_base: 0x00007fbc10000000
+
+Marking Bits (Prev, Next): (CMBitMap*) 0x0000000004828c18, (CMBitMap*) 0x0000000004828c50
+ Prev Bits: [0x00007fbc0a348000, 0x00007fbc120a8000)
+ Next Bits: [0x00007fbc025e8000, 0x00007fbc0a348000)
+
+Polling page: 0x00007fbcc1ef7000
+
+Metaspace:
+
+Usage:
+  Non-class:     12.69 MB capacity,    12.46 MB ( 98%) used,   196.37 KB (  2%) free+waste,    33.06 KB ( <1%) overhead. 
+      Class:      1.85 MB capacity,     1.68 MB ( 91%) used,   163.34 KB (  9%) free+waste,    16.50 KB ( <1%) overhead. 
+       Both:     14.54 MB capacity,    14.14 MB ( 97%) used,   359.70 KB (  2%) free+waste,    49.56 KB ( <1%) overhead. 
+
+Virtual space:
+  Non-class space:       14.00 MB reserved,      13.00 MB ( 93%) committed 
+      Class space:        1.00 GB reserved,       1.88 MB ( <1%) committed 
+             Both:        1.01 GB reserved,      14.88 MB (  1%) committed 
+
+Chunk freelists:
+   Non-Class:  125.00 KB
+       Class:  24.00 KB
+        Both:  149.00 KB
+
+MaxMetaspaceSize: unlimited
+CompressedClassSpaceSize: 1.00 GB
+
+CodeHeap 'non-profiled nmethods': size=120032Kb used=2213Kb max_used=2213Kb free=117819Kb
+ bounds [0x00007fbc232fc000, 0x00007fbc2356c000, 0x00007fbc2a834000]
+CodeHeap 'profiled nmethods': size=120028Kb used=5144Kb max_used=5144Kb free=114883Kb
+ bounds [0x00007fbc1bdc5000, 0x00007fbc1c2d5000, 0x00007fbc232fc000]
+CodeHeap 'non-nmethods': size=5700Kb used=1168Kb max_used=1244Kb free=4531Kb
+ bounds [0x00007fbc1b834000, 0x00007fbc1baa4000, 0x00007fbc1bdc5000]
+ total_blobs=4399 nmethods=2839 adapters=423
+ compilation: enabled
+              stopped_count=0, restarted_count=0
+ full_count=0
+
+Compilation events (20 events):
+Event: 63799.989 Thread 0x0000000005f55000 2853   !   3       org.apache.lucene.util.CloseableThreadLocal::set (51 bytes)
+Event: 63799.990 Thread 0x0000000005f55000 nmethod 2853 0x00007fbc1c2c3d10 code [0x00007fbc1c2c3f40, 0x00007fbc1c2c48c8]
+Event: 64879.448 Thread 0x0000000005f52800 2854       4       org.apache.lucene.search.BooleanQuery$Builder::add (36 bytes)
+Event: 64879.461 Thread 0x0000000005f52800 nmethod 2854 0x00007fbc23522690 code [0x00007fbc23522840, 0x00007fbc23522e68]
+Event: 70414.230 Thread 0x0000000005f52800 2855       4       jdk.internal.misc.InnocuousThread::eraseThreadLocals (23 bytes)
+Event: 70414.232 Thread 0x0000000005f52800 nmethod 2855 0x00007fbc23523110 code [0x00007fbc235232a0, 0x00007fbc235233b8]
+Event: 74928.225 Thread 0x0000000005f55000 2856       3       io.anserini.search.SimpleSearcher::search (466 bytes)
+Event: 74928.228 Thread 0x0000000005f55000 nmethod 2856 0x00007fbc1c2c4c10 code [0x00007fbc1c2c5120, 0x00007fbc1c2c7b88]
+Event: 75080.322 Thread 0x0000000005f52800 2857       4       org.apache.lucene.analysis.CharacterUtils::toLowerCase (72 bytes)
+Event: 75080.338 Thread 0x0000000005f52800 nmethod 2857 0x00007fbc23523410 code [0x00007fbc235235c0, 0x00007fbc235239f8]
+Event: 75165.488 Thread 0x0000000005f55000 2858       3       org.apache.lucene.util.packed.BulkOperationPacked18::decode (235 bytes)
+Event: 75165.489 Thread 0x0000000005f55000 nmethod 2858 0x00007fbc1c2c8d90 code [0x00007fbc1c2c8f60, 0x00007fbc1c2c9450]
+Event: 75755.981 Thread 0x0000000005f52800 2859       4       java.util.HashMap$HashIterator::nextNode (100 bytes)
+Event: 75755.986 Thread 0x0000000005f52800 nmethod 2859 0x00007fbc23523c90 code [0x00007fbc23523e20, 0x00007fbc23524218]
+Event: 75755.986 Thread 0x0000000005f52800 2860       4       org.apache.lucene.util.PriorityQueue::<init> (151 bytes)
+Event: 75755.991 Thread 0x0000000005f52800 nmethod 2860 0x00007fbc23524390 code [0x00007fbc23524560, 0x00007fbc23524b38]
+Event: 79711.337 Thread 0x0000000005f55000 2861       3       org.apache.lucene.util.AttributeSource::addAttributeImpl (97 bytes)
+Event: 79711.339 Thread 0x0000000005f55000 nmethod 2861 0x00007fbc1c2c9710 code [0x00007fbc1c2c9a00, 0x00007fbc1c2cad28]
+Event: 142774.399 Thread 0x0000000005f52800 2862       4       java.lang.ref.ReferenceQueue::reallyPoll (65 bytes)
+Event: 142774.406 Thread 0x0000000005f52800 nmethod 2862 0x00007fbc23524e10 code [0x00007fbc23524fc0, 0x00007fbc23525328]
+
+GC Heap History (6 events):
+Event: 0.640 GC heap before
+{Heap before GC invocations=0 (full 0):
+ garbage-first heap   total 518144K, used 29380K [0x000000060a800000, 0x0000000800000000)
+  region size 2048K, 12 young (24576K), 0 survivors (0K)
+ Metaspace       used 10499K, capacity 10856K, committed 11008K, reserved 1058816K
+  class space    used 1287K, capacity 1427K, committed 1536K, reserved 1048576K
+}
+Event: 0.649 GC heap after
+{Heap after GC invocations=1 (full 0):
+ garbage-first heap   total 518144K, used 8324K [0x000000060a800000, 0x0000000800000000)
+  region size 2048K, 2 young (4096K), 2 survivors (4096K)
+ Metaspace       used 10499K, capacity 10856K, committed 11008K, reserved 1058816K
+  class space    used 1287K, capacity 1427K, committed 1536K, reserved 1048576K
+}
+Event: 51994.181 GC heap before
+{Heap before GC invocations=1 (full 0):
+ garbage-first heap   total 518144K, used 313476K [0x000000060a800000, 0x0000000800000000)
+  region size 2048K, 150 young (307200K), 2 survivors (4096K)
+ Metaspace       used 14347K, capacity 14754K, committed 14976K, reserved 1062912K
+  class space    used 1715K, capacity 1894K, committed 1920K, reserved 1048576K
+}
+Event: 51994.186 GC heap after
+{Heap after GC invocations=2 (full 0):
+ garbage-first heap   total 518144K, used 18515K [0x000000060a800000, 0x0000000800000000)
+  region size 2048K, 5 young (10240K), 5 survivors (10240K)
+ Metaspace       used 14347K, capacity 14754K, committed 14976K, reserved 1062912K
+  class space    used 1715K, capacity 1894K, committed 1920K, reserved 1048576K
+}
+Event: 53979.920 GC heap before
+{Heap before GC invocations=2 (full 0):
+ garbage-first heap   total 518144K, used 313427K [0x000000060a800000, 0x0000000800000000)
+  region size 2048K, 150 young (307200K), 5 survivors (10240K)
+ Metaspace       used 14436K, capacity 14883K, committed 15232K, reserved 1062912K
+  class space    used 1715K, capacity 1894K, committed 1920K, reserved 1048576K
+}
+Event: 53979.925 GC heap after
+{Heap after GC invocations=3 (full 0):
+ garbage-first heap   total 518144K, used 18945K [0x000000060a800000, 0x0000000800000000)
+  region size 2048K, 5 young (10240K), 5 survivors (10240K)
+ Metaspace       used 14436K, capacity 14883K, committed 15232K, reserved 1062912K
+  class space    used 1715K, capacity 1894K, committed 1920K, reserved 1048576K
+}
+
+Deoptimization events (20 events):
+Event: 58781.531 Thread 0x00007fb9fc0c4800 Uncommon trap: trap_request=0xffffff4d fr.pc=0x00007fbc23434888 relative=0x0000000000000188
+Event: 58781.531 Thread 0x00007fb9fc0c4800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fbc23434888 method=org.apache.lucene.search.ImpactsDISI.advanceTarget(I)I @ 62 c2
+Event: 58781.531 Thread 0x00007fb9fc0c4800 DEOPT PACKING pc=0x00007fbc23434888 sp=0x00007fbba513d360
+Event: 58781.531 Thread 0x00007fb9fc0c4800 DEOPT UNPACKING pc=0x00007fbc1b85ca25 sp=0x00007fbba513d2b8 mode 2
+Event: 58781.531 Thread 0x00007fb9fc0c4800 Uncommon trap: trap_request=0xffffff4d fr.pc=0x00007fbc23430ab0 relative=0x0000000000000150
+Event: 58781.531 Thread 0x00007fb9fc0c4800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fbc23430ab0 method=org.apache.lucene.search.ImpactsDISI.advanceTarget(I)I @ 62 c2
+Event: 58781.531 Thread 0x00007fb9fc0c4800 DEOPT PACKING pc=0x00007fbc23430ab0 sp=0x00007fbba513d330
+Event: 58781.531 Thread 0x00007fb9fc0c4800 DEOPT UNPACKING pc=0x00007fbc1b85ca25 sp=0x00007fbba513d2e8 mode 2
+Event: 58781.545 Thread 0x00007fb9fc0c4800 Uncommon trap: trap_request=0xffffffe4 fr.pc=0x00007fbc234cb5dc relative=0x0000000000000a9c
+Event: 58781.545 Thread 0x00007fb9fc0c4800 Uncommon trap: reason=range_check action=make_not_entrant pc=0x00007fbc234cb5dc method=org.apache.lucene.search.DisiPriorityQueue.downHeap(I)V @ 7 c2
+Event: 58781.545 Thread 0x00007fb9fc0c4800 DEOPT PACKING pc=0x00007fbc234cb5dc sp=0x00007fbba513d690
+Event: 58781.545 Thread 0x00007fb9fc0c4800 DEOPT UNPACKING pc=0x00007fbc1b85ca25 sp=0x00007fbba513d568 mode 2
+Event: 59327.721 Thread 0x00007fb9f80b8800 Uncommon trap: trap_request=0xffffffc6 fr.pc=0x00007fbc23358418 relative=0x00000000000007f8
+Event: 59327.721 Thread 0x00007fb9f80b8800 Uncommon trap: reason=bimorphic_or_optimized_type_check action=maybe_recompile pc=0x00007fbc23358418 method=java.util.HashMap.putVal(ILjava/lang/Object;Ljava/lang/Object;ZZ)Ljava/lang/Object; @ 91 c2
+Event: 59327.721 Thread 0x00007fb9f80b8800 DEOPT PACKING pc=0x00007fbc23358418 sp=0x00007fbba513d750
+Event: 59327.721 Thread 0x00007fb9f80b8800 DEOPT UNPACKING pc=0x00007fbc1b85ca25 sp=0x00007fbba513d660 mode 2
+Event: 59340.598 Thread 0x00007fb9f80a3000 Uncommon trap: trap_request=0xffffffc6 fr.pc=0x00007fbc233548b8 relative=0x0000000000000798
+Event: 59340.598 Thread 0x00007fb9f80a3000 Uncommon trap: reason=bimorphic_or_optimized_type_check action=maybe_recompile pc=0x00007fbc233548b8 method=java.util.HashMap.putVal(ILjava/lang/Object;Ljava/lang/Object;ZZ)Ljava/lang/Object; @ 91 c2
+Event: 59340.598 Thread 0x00007fb9f80a3000 DEOPT PACKING pc=0x00007fbc233548b8 sp=0x00007fbba513d6c0
+Event: 59340.598 Thread 0x00007fb9f80a3000 DEOPT UNPACKING pc=0x00007fbc1b85ca25 sp=0x00007fbba513d640 mode 2
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (18 events):
+Event: 0.222 Thread 0x00000000047f2800 Exception <a 'java/lang/NoSuchMethodError'{0x00000006299f5560}: 'java.lang.Object java.lang.invoke.DirectMethodHandle$Holder.invokeStaticInit(java.lang.Object, java.lang.Object, java.lang.Object)'> (0x00000006299f5560) thrown at [/build/openjdk-lts-iuKaMP
+Event: 0.398 Thread 0x00000000047f2800 Exception <a 'java/lang/NoSuchMethodError'{0x0000000628f48308}: 'java.lang.Object java.lang.invoke.DirectMethodHandle$Holder.invokeStatic(java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang
+Event: 0.399 Thread 0x00000000047f2800 Exception <a 'java/lang/NoSuchMethodError'{0x0000000628f56068}: 'java.lang.Object java.lang.invoke.DirectMethodHandle$Holder.invokeStatic(java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang
+Event: 0.401 Thread 0x00000000047f2800 Exception <a 'java/lang/NoSuchMethodError'{0x0000000628f65168}: 'java.lang.Object java.lang.invoke.DirectMethodHandle$Holder.invokeSpecial(java.lang.Object, java.lang.Object, int, int, java.lang.Object, java.lang.Object, java.lang.Object)'> (0x0000000628f
+Event: 0.401 Thread 0x00000000047f2800 Exception <a 'java/lang/NoSuchMethodError'{0x0000000628f686f8}: 'java.lang.Object java.lang.invoke.DelegatingMethodHandle$Holder.reinvoke_L(java.lang.Object, int, int, java.lang.Object, java.lang.Object, java.lang.Object)'> (0x0000000628f686f8) thrown at 
+Event: 0.402 Thread 0x00000000047f2800 Exception <a 'java/lang/NoSuchMethodError'{0x0000000628f6cb00}: 'java.lang.Object java.lang.invoke.DirectMethodHandle$Holder.invokeStatic(java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, int)'> (0x0000000628f6cb00) thrown at [/build
+Event: 0.444 Thread 0x00000000047f2800 Exception <a 'java/lang/NoSuchMethodError'{0x0000000628cf2f90}: 'java.lang.Object java.lang.invoke.DirectMethodHandle$Holder.invokeStatic(java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang
+Event: 0.446 Thread 0x00000000047f2800 Exception <a 'java/lang/NoSuchMethodError'{0x0000000628d110d0}: 'java.lang.Object java.lang.invoke.DirectMethodHandle$Holder.invokeStatic(java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang
+Event: 0.447 Thread 0x00000000047f2800 Exception <a 'java/lang/NoSuchMethodError'{0x0000000628d2fe60}: 'java.lang.Object java.lang.invoke.DirectMethodHandle$Holder.invokeStatic(java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang
+Event: 0.449 Thread 0x00000000047f2800 Exception <a 'java/lang/NoSuchMethodError'{0x0000000628d50278}: 'java.lang.Object java.lang.invoke.DirectMethodHandle$Holder.invokeStatic(java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang
+Event: 0.460 Thread 0x00000000047f2800 Exception <a 'java/lang/NoSuchMethodError'{0x0000000628d98e70}: 'int java.lang.invoke.DirectMethodHandle$Holder.invokeStatic(java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object)'> (0x0000000628d98e70) thrown at [/build
+Event: 0.513 Thread 0x00000000047f2800 Exception <a 'java/lang/NoSuchMethodError'{0x0000000628bd5888}: 'int java.lang.invoke.DirectMethodHandle$Holder.invokeInterface(java.lang.Object, java.lang.Object)'> (0x0000000628bd5888) thrown at [/build/openjdk-lts-iuKaMP/openjdk-lts-11.0.6+10/src/hotsp
+Event: 0.514 Thread 0x00000000047f2800 Exception <a 'java/lang/IncompatibleClassChangeError'{0x0000000628bd84e8}: Found class java.lang.Object, but interface was expected> (0x0000000628bd84e8) thrown at [/build/openjdk-lts-iuKaMP/openjdk-lts-11.0.6+10/src/hotspot/share/interpreter/linkResolver
+Event: 0.638 Thread 0x00000000047f2800 Exception <a 'java/lang/NoSuchMethodError'{0x00000006287db530}: 'void java.lang.invoke.DirectMethodHandle$Holder.invokeStaticInit(java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object)'> (0x00000006287db530) thrown at [/
+Event: 0.676 Thread 0x00000000047f2800 Exception <a 'java/lang/NoSuchMethodError'{0x0000000629df3bb0}: 'void java.lang.invoke.Invokers$Holder.invokeExact_MT(java.lang.Object, java.lang.Object, java.lang.Object)'> (0x0000000629df3bb0) thrown at [/build/openjdk-lts-iuKaMP/openjdk-lts-11.0.6+10/s
+Event: 0.825 Thread 0x00007fb9f8009000 Exception <a 'java/lang/NoSuchMethodError'{0x0000000629166da0}: 'long java.lang.invoke.DirectMethodHandle$Holder.invokeVirtual(java.lang.Object, java.lang.Object)'> (0x0000000629166da0) thrown at [/build/openjdk-lts-iuKaMP/openjdk-lts-11.0.6+10/src/hotspo
+Event: 0.826 Thread 0x00007fb9f8009000 Exception <a 'java/lang/NoSuchMethodError'{0x000000062916ce78}: 'long java.lang.invoke.DirectMethodHandle$Holder.invokeStatic(java.lang.Object, long, long)'> (0x000000062916ce78) thrown at [/build/openjdk-lts-iuKaMP/openjdk-lts-11.0.6+10/src/hotspot/share
+Event: 0.828 Thread 0x00007fb9f8009000 Exception <a 'java/lang/NoSuchMethodError'{0x000000062917d258}: 'java.lang.Object java.lang.invoke.DirectMethodHandle$Holder.invokeVirtual(java.lang.Object, java.lang.Object, java.lang.Object)'> (0x000000062917d258) thrown at [/build/openjdk-lts-iuKaMP/op
+
+Events (20 events):
+Event: 73116.784 Protecting memory [0x00007fbba4943000,0x00007fbba4947000] with protection modes 0
+Event: 73116.784 Thread 0x00007fb9f80b5000 Thread added: 0x00007fb9f80b5000
+Event: 73724.161 Protecting memory [0x00007fbba4943000,0x00007fbba4947000] with protection modes 0
+Event: 73724.161 Thread 0x00007fb9f80b7000 Thread added: 0x00007fb9f80b7000
+Event: 74179.178 Protecting memory [0x00007fbba4943000,0x00007fbba4947000] with protection modes 0
+Event: 74179.178 Thread 0x00007fb9f8132000 Thread added: 0x00007fb9f8132000
+Event: 74928.203 Protecting memory [0x00007fbba4943000,0x00007fbba4947000] with protection modes 0
+Event: 74928.203 Thread 0x00007fb9f8134800 Thread added: 0x00007fb9f8134800
+Event: 75080.321 Protecting memory [0x00007fbba4943000,0x00007fbba4947000] with protection modes 0
+Event: 75080.322 Thread 0x00007fb9f8136000 Thread added: 0x00007fb9f8136000
+Event: 75165.468 Protecting memory [0x00007fbba4943000,0x00007fbba4947000] with protection modes 0
+Event: 75165.468 Thread 0x00007fb9f80ec000 Thread added: 0x00007fb9f80ec000
+Event: 75755.967 Protecting memory [0x00007fbba4943000,0x00007fbba4947000] with protection modes 0
+Event: 75755.967 Thread 0x00007fb9f80de000 Thread added: 0x00007fb9f80de000
+Event: 79108.370 Protecting memory [0x00007fbba4943000,0x00007fbba4947000] with protection modes 0
+Event: 79108.370 Thread 0x00007fb9f80d0800 Thread added: 0x00007fb9f80d0800
+Event: 79711.337 Protecting memory [0x00007fbba4943000,0x00007fbba4947000] with protection modes 0
+Event: 79711.337 Thread 0x00007fb9f81a1800 Thread added: 0x00007fb9f81a1800
+Event: 94001.801 Protecting memory [0x00007fbba4943000,0x00007fbba4947000] with protection modes 0
+Event: 94001.801 Thread 0x00007fb9f80e0000 Thread added: 0x00007fb9f80e0000
+
+
+Dynamic libraries:
+00400000-007b4000 r-xp 00000000 08:06 11404146                           /usr/bin/python3.6
+009b3000-009b4000 r--p 003b3000 08:06 11404146                           /usr/bin/python3.6
+009b4000-00a51000 rw-p 003b4000 08:06 11404146                           /usr/bin/python3.6
+00a51000-00a84000 rw-p 00000000 00:00 0 
+01f75000-06419000 rw-p 00000000 00:00 0                                  [heap]
+60a800000-629e00000 rw-p 00000000 00:00 0 
+629e00000-7bfc00000 ---p 00000000 00:00 0 
+7bfc00000-7bfc47000 rw-p 01105000 08:06 11668973                         /usr/lib/jvm/java-11-openjdk-amd64/lib/server/classes.jsa
+7bfc47000-7bfe00000 rw-p 00000000 00:00 0 
+7bfe00000-7bfe6a000 rw-p 0109b000 08:06 11668973                         /usr/lib/jvm/java-11-openjdk-amd64/lib/server/classes.jsa
+7bfe6a000-7c0000000 rw-p 00000000 00:00 0 
+7c0000000-800000000 ---p 00000000 00:00 0 
+800000000-800002000 rwxp 00001000 08:06 11668973                         /usr/lib/jvm/java-11-openjdk-amd64/lib/server/classes.jsa
+800002000-8003b8000 rw-p 00003000 08:06 11668973                         /usr/lib/jvm/java-11-openjdk-amd64/lib/server/classes.jsa
+8003b8000-800a8d000 r--p 003b9000 08:06 11668973                         /usr/lib/jvm/java-11-openjdk-amd64/lib/server/classes.jsa
+800a8d000-800a8e000 rw-p 00a8e000 08:06 11668973                         /usr/lib/jvm/java-11-openjdk-amd64/lib/server/classes.jsa
+800a8e000-80109a000 r--p 00a8f000 08:06 11668973                         /usr/lib/jvm/java-11-openjdk-amd64/lib/server/classes.jsa
+840000000-8401e0000 rw-p 00000000 00:00 0 
+8401e0000-880000000 ---p 00000000 00:00 0 
+7fb9f8000000-7fb9f9da5000 rw-p 00000000 00:00 0 
+7fb9f9da5000-7fb9fc000000 ---p 00000000 00:00 0 
+7fb9fc000000-7fb9fd42d000 rw-p 00000000 00:00 0 
+7fb9fd42d000-7fba00000000 ---p 00000000 00:00 0 
+7fba00000000-7fba00021000 rw-p 00000000 00:00 0 
+7fba00021000-7fba04000000 ---p 00000000 00:00 0 
+7fba0700d000-7fba0a43b000 r--s 00000000 08:06 24117308                   /home/emos-admin/Documents/covid19data/lucene-index-covid-2020-03-20/_0.tvd
+7fba0a43b000-7fba12e4a000 r--s 40000000 08:06 24117317                   /home/emos-admin/Documents/covid19data/lucene-index-covid-2020-03-20/_0.fdt
+7fba12e4a000-7fba52e4a000 r--s 00000000 08:06 24117317                   /home/emos-admin/Documents/covid19data/lucene-index-covid-2020-03-20/_0.fdt
+7fba52e4a000-7fba7b229000 r--s 40000000 08:06 24379398                   /home/emos-admin/Documents/covid19data/lucene-index-covid-paragraph-2020-03-20/_0.tvd
+7fba7b229000-7fbabb229000 r--s 00000000 08:06 24379398                   /home/emos-admin/Documents/covid19data/lucene-index-covid-paragraph-2020-03-20/_0.tvd
+7fbabb229000-7fbad490a000 r--s 80000000 08:06 24379407                   /home/emos-admin/Documents/covid19data/lucene-index-covid-paragraph-2020-03-20/_0.fdt
+7fbad490a000-7fbb1490a000 r--s 40000000 08:06 24379407                   /home/emos-admin/Documents/covid19data/lucene-index-covid-paragraph-2020-03-20/_0.fdt
+7fbb1490a000-7fbb5490a000 r--s 00000000 08:06 24379407                   /home/emos-admin/Documents/covid19data/lucene-index-covid-paragraph-2020-03-20/_0.fdt
+7fbb5490a000-7fbb7c627000 r--s 00000000 08:06 24379400                   /home/emos-admin/Documents/covid19data/lucene-index-covid-paragraph-2020-03-20/_0_Lucene50_0.pos
+7fbb7c627000-7fbba0000000 r--s 00000000 08:06 24379405                   /home/emos-admin/Documents/covid19data/lucene-index-covid-paragraph-2020-03-20/_0_Lucene50_0.doc
+7fbba0000000-7fbba0021000 rw-p 00000000 00:00 0 
+7fbba0021000-7fbba4000000 ---p 00000000 00:00 0 
+7fbba4481000-7fbba4501000 rw-p 00000000 00:00 0 
+7fbba4541000-7fbba4581000 rw-p 00000000 00:00 0 
+7fbba45c1000-7fbba4601000 rw-p 00000000 00:00 0 
+7fbba4641000-7fbba46c1000 rw-p 00000000 00:00 0 
+7fbba4701000-7fbba4841000 rw-p 00000000 00:00 0 
+7fbba4841000-7fbba4941000 ---p 00000000 00:00 0 
+7fbba4941000-7fbba4942000 ---p 00000000 00:00 0 
+7fbba4942000-7fbba4943000 rw-p 00000000 00:00 0 
+7fbba4943000-7fbba4947000 ---p 00000000 00:00 0 
+7fbba4947000-7fbba5142000 rw-p 00000000 00:00 0 
+7fbba5142000-7fbba592d000 r--s 00000000 08:06 24117312                   /home/emos-admin/Documents/covid19data/lucene-index-covid-2020-03-20/_0_Lucene50_0.tim
+7fbba592d000-7fbba6d87000 r--s 00000000 08:06 24117310                   /home/emos-admin/Documents/covid19data/lucene-index-covid-2020-03-20/_0_Lucene50_0.pos
+7fbba6d87000-7fbba8000000 r--s 00000000 08:06 24117315                   /home/emos-admin/Documents/covid19data/lucene-index-covid-2020-03-20/_0_Lucene50_0.doc
+7fbba8000000-7fbba8021000 rw-p 00000000 00:00 0 
+7fbba8021000-7fbbac000000 ---p 00000000 00:00 0 
+7fbbac000000-7fbbac021000 rw-p 00000000 00:00 0 
+7fbbac021000-7fbbb0000000 ---p 00000000 00:00 0 
+7fbbb0000000-7fbbb0021000 rw-p 00000000 00:00 0 
+7fbbb0021000-7fbbb4000000 ---p 00000000 00:00 0 
+7fbbb4000000-7fbbb4021000 rw-p 00000000 00:00 0 
+7fbbb4021000-7fbbb8000000 ---p 00000000 00:00 0 
+7fbbb8000000-7fbbb8021000 rw-p 00000000 00:00 0 
+7fbbb8021000-7fbbbc000000 ---p 00000000 00:00 0 
+7fbbbc000000-7fbbbc021000 rw-p 00000000 00:00 0 
+7fbbbc021000-7fbbc0000000 ---p 00000000 00:00 0 
+7fbbc0000000-7fbbc0021000 rw-p 00000000 00:00 0 
+7fbbc0021000-7fbbc4000000 ---p 00000000 00:00 0 
+7fbbc4000000-7fbbc591f000 rw-p 00000000 00:00 0 
+7fbbc591f000-7fbbc8000000 ---p 00000000 00:00 0 
+7fbbc8000000-7fbbc8021000 rw-p 00000000 00:00 0 
+7fbbc8021000-7fbbcc000000 ---p 00000000 00:00 0 
+7fbbcc000000-7fbbcc021000 rw-p 00000000 00:00 0 
+7fbbcc021000-7fbbd0000000 ---p 00000000 00:00 0 
+7fbbd0000000-7fbbd0021000 rw-p 00000000 00:00 0 
+7fbbd0021000-7fbbd4000000 ---p 00000000 00:00 0 
+7fbbd4000000-7fbbd4323000 rw-p 00000000 00:00 0 
+7fbbd4323000-7fbbd8000000 ---p 00000000 00:00 0 
+7fbbd807c000-7fbbd8080000 ---p 00000000 00:00 0 
+7fbbd8080000-7fbbd81bd000 rw-p 00000000 00:00 0 
+7fbbd81bd000-7fbbd87ef000 r--s 00000000 08:06 24379410                   /home/emos-admin/Documents/covid19data/lucene-index-covid-paragraph-2020-03-20/_0_Lucene80_0.dvd
+7fbbd87ef000-7fbbd8e35000 r--s 00000000 08:06 24379403                   /home/emos-admin/Documents/covid19data/lucene-index-covid-paragraph-2020-03-20/_0.nvd
+7fbbd8e35000-7fbbda7b9000 r--s 00000000 08:06 24379402                   /home/emos-admin/Documents/covid19data/lucene-index-covid-paragraph-2020-03-20/_0_Lucene50_0.tim
+7fbbda7b9000-7fbbda9b9000 rw-p 00000000 00:00 0 
+7fbbda9b9000-7fbbda9ba000 ---p 00000000 00:00 0 
+7fbbda9ba000-7fbbdaabb000 rw-p 00000000 00:00 0 
+7fbbdaabb000-7fbbdaabc000 ---p 00000000 00:00 0 
+7fbbdaabc000-7fbbdabbd000 rw-p 00000000 00:00 0 
+7fbbdabbd000-7fbbdabbe000 ---p 00000000 00:00 0 
+7fbbdabbe000-7fbbdacbf000 rw-p 00000000 00:00 0 
+7fbbdacbf000-7fbbdacc0000 ---p 00000000 00:00 0 
+7fbbdacc0000-7fbbdadc1000 rw-p 00000000 00:00 0 
+7fbbdadc1000-7fbbdadc2000 ---p 00000000 00:00 0 
+7fbbdadc2000-7fbbdaec3000 rw-p 00000000 00:00 0 
+7fbbdaec3000-7fbbdaec4000 ---p 00000000 00:00 0 
+7fbbdaec4000-7fbbdafc5000 rw-p 00000000 00:00 0 
+7fbbdafc5000-7fbbdafc6000 ---p 00000000 00:00 0 
+7fbbdafc6000-7fbbdb2c7000 rw-p 00000000 00:00 0 
+7fbbdb2c7000-7fbbdb2cc000 r-xp 00000000 08:06 11667638                   /usr/lib/jvm/java-11-openjdk-amd64/lib/libmanagement_ext.so
+7fbbdb2cc000-7fbbdb4cb000 ---p 00005000 08:06 11667638                   /usr/lib/jvm/java-11-openjdk-amd64/lib/libmanagement_ext.so
+7fbbdb4cb000-7fbbdb4cc000 r--p 00004000 08:06 11667638                   /usr/lib/jvm/java-11-openjdk-amd64/lib/libmanagement_ext.so
+7fbbdb4cc000-7fbbdb4cd000 rw-p 00005000 08:06 11667638                   /usr/lib/jvm/java-11-openjdk-amd64/lib/libmanagement_ext.so
+7fbbdb4cd000-7fbbdb4d1000 r-xp 00000000 08:06 11667636                   /usr/lib/jvm/java-11-openjdk-amd64/lib/libmanagement.so
+7fbbdb4d1000-7fbbdb6d0000 ---p 00004000 08:06 11667636                   /usr/lib/jvm/java-11-openjdk-amd64/lib/libmanagement.so
+7fbbdb6d0000-7fbbdb6d1000 r--p 00003000 08:06 11667636                   /usr/lib/jvm/java-11-openjdk-amd64/lib/libmanagement.so
+7fbbdb6d1000-7fbbdb6d2000 rw-p 00004000 08:06 11667636                   /usr/lib/jvm/java-11-openjdk-amd64/lib/libmanagement.so
+7fbbdb6d2000-7fbbdb6d6000 ---p 00000000 00:00 0 
+7fbbdb6d6000-7fbbdb7d3000 rw-p 00000000 00:00 0 
+7fbbdb7d3000-7fbbdb7e9000 r-xp 00000000 08:06 11667640                   /usr/lib/jvm/java-11-openjdk-amd64/lib/libnet.so
+7fbbdb7e9000-7fbbdb9e8000 ---p 00016000 08:06 11667640                   /usr/lib/jvm/java-11-openjdk-amd64/lib/libnet.so
+7fbbdb9e8000-7fbbdb9e9000 r--p 00015000 08:06 11667640                   /usr/lib/jvm/java-11-openjdk-amd64/lib/libnet.so
+7fbbdb9e9000-7fbbdb9ea000 rw-p 00016000 08:06 11667640                   /usr/lib/jvm/java-11-openjdk-amd64/lib/libnet.so
+7fbbdb9ea000-7fbbdb9fa000 r-xp 00000000 08:06 11667641                   /usr/lib/jvm/java-11-openjdk-amd64/lib/libnio.so
+7fbbdb9fa000-7fbbdbbf9000 ---p 00010000 08:06 11667641                   /usr/lib/jvm/java-11-openjdk-amd64/lib/libnio.so
+7fbbdbbf9000-7fbbdbbfa000 r--p 0000f000 08:06 11667641                   /usr/lib/jvm/java-11-openjdk-amd64/lib/libnio.so
+7fbbdbbfa000-7fbbdbbfb000 rw-p 00010000 08:06 11667641                   /usr/lib/jvm/java-11-openjdk-amd64/lib/libnio.so
+7fbbdbbfb000-7fbbdbbff000 ---p 00000000 00:00 0 
+7fbbdbbff000-7fbbdbcfc000 rw-p 00000000 00:00 0 
+7fbbdbcfc000-7fbbdbcfd000 ---p 00000000 00:00 0 
+7fbbdbcfd000-7fbbdbdfe000 rw-p 00000000 00:00 0 
+7fbbdbdfe000-7fbbdbe02000 ---p 00000000 00:00 0 
+7fbbdbe02000-7fbbdbeff000 rw-p 00000000 00:00 0 
+7fbbdbeff000-7fbbdbf03000 ---p 00000000 00:00 0 
+7fbbdbf03000-7fbbdc000000 rw-p 00000000 00:00 0 
+7fbbdc000000-7fbbdc021000 rw-p 00000000 00:00 0 
+7fbbdc021000-7fbbe0000000 ---p 00000000 00:00 0 
+7fbbe0000000-7fbbe1b41000 rw-p 00000000 00:00 0 
+7fbbe1b41000-7fbbe4000000 ---p 00000000 00:00 0 
+7fbbe4000000-7fbbe4021000 rw-p 00000000 00:00 0 
+7fbbe4021000-7fbbe8000000 ---p 00000000 00:00 0 
+7fbbe8000000-7fbbe8021000 rw-p 00000000 00:00 0 
+7fbbe8021000-7fbbec000000 ---p 00000000 00:00 0 
+7fbbec000000-7fbbec021000 rw-p 00000000 00:00 0 
+7fbbec021000-7fbbf0000000 ---p 00000000 00:00 0 
+7fbbf0000000-7fbbf0021000 rw-p 00000000 00:00 0 
+7fbbf0021000-7fbbf4000000 ---p 00000000 00:00 0 
+7fbbf4000000-7fbbf4021000 rw-p 00000000 00:00 0 
+7fbbf4021000-7fbbf8000000 ---p 00000000 00:00 0 
+7fbbf8000000-7fbbf8021000 rw-p 00000000 00:00 0 
+7fbbf8021000-7fbbfc000000 ---p 00000000 00:00 0 
+7fbbfc000000-7fbbfc021000 rw-p 00000000 00:00 0 
+7fbbfc021000-7fbc00000000 ---p 00000000 00:00 0 
+7fbc00008000-7fbc00049000 r--s 00000000 08:06 24117313                   /home/emos-admin/Documents/covid19data/lucene-index-covid-2020-03-20/_0.nvd
+7fbc00049000-7fbc000e3000 r--s 00000000 08:06 24379401                   /home/emos-admin/Documents/covid19data/lucene-index-covid-paragraph-2020-03-20/_0_Lucene50_0.tip
+7fbc000e3000-7fbc000e7000 ---p 00000000 00:00 0 
+7fbc000e7000-7fbc001e4000 rw-p 00000000 00:00 0 
+7fbc001e4000-7fbc001e8000 ---p 00000000 00:00 0 
+7fbc001e8000-7fbc002e5000 rw-p 00000000 00:00 0 
+7fbc002e5000-7fbc002e9000 ---p 00000000 00:00 0 
+7fbc002e9000-7fbc003e6000 rw-p 00000000 00:00 0 
+7fbc003e6000-7fbc003ea000 ---p 00000000 00:00 0 
+7fbc003ea000-7fbc004e7000 rw-p 00000000 00:00 0 
+7fbc004e7000-7fbc004eb000 ---p 00000000 00:00 0 
+7fbc004eb000-7fbc02dc0000 rw-p 00000000 00:00 0 
+7fbc02dc0000-7fbc09338000 ---p 00000000 00:00 0 
+7fbc09338000-7fbc09348000 rw-p 00000000 00:00 0 
+7fbc09348000-7fbc0a348000 ---p 00000000 00:00 0 
+7fbc0a348000-7fbc0ab20000 rw-p 00000000 00:00 0 
+7fbc0ab20000-7fbc11098000 ---p 00000000 00:00 0 
+7fbc11098000-7fbc110a8000 rw-p 00000000 00:00 0 
+7fbc110a8000-7fbc120a8000 ---p 00000000 00:00 0 
+7fbc120a8000-7fbc121a3000 rw-p 00000000 00:00 0 
+7fbc121a3000-7fbc12e52000 ---p 00000000 00:00 0 
+7fbc12e52000-7fbc12e54000 rw-p 00000000 00:00 0 
+7fbc12e54000-7fbc13054000 ---p 00000000 00:00 0 
+7fbc13054000-7fbc1314f000 rw-p 00000000 00:00 0 
+7fbc1314f000-7fbc13dfe000 ---p 00000000 00:00 0 
+7fbc13dfe000-7fbc13e00000 rw-p 00000000 00:00 0 
+7fbc13e00000-7fbc14000000 ---p 00000000 00:00 0 
+7fbc14000000-7fbc14021000 rw-p 00000000 00:00 0 
+7fbc14021000-7fbc18000000 ---p 00000000 00:00 0 
+7fbc18011000-7fbc18040000 r--s 00000000 08:06 24117320                   /home/emos-admin/Documents/covid19data/lucene-index-covid-2020-03-20/_0_Lucene80_0.dvd
+7fbc18040000-7fbc18069000 r--s 00000000 08:06 24117311                   /home/emos-admin/Documents/covid19data/lucene-index-covid-2020-03-20/_0_Lucene50_0.tip
+7fbc18069000-7fbc188e9000 rw-p 00000000 00:00 0 
+7fbc188e9000-7fbc199c2000 r-xp 00000000 08:06 11667655                   /usr/lib/jvm/java-11-openjdk-amd64/lib/server/libjvm.so
+7fbc199c2000-7fbc19bc1000 ---p 010d9000 08:06 11667655                   /usr/lib/jvm/java-11-openjdk-amd64/lib/server/libjvm.so
+7fbc19bc1000-7fbc19c7e000 r--p 010d8000 08:06 11667655                   /usr/lib/jvm/java-11-openjdk-amd64/lib/server/libjvm.so
+7fbc19c7e000-7fbc19cb8000 rw-p 01195000 08:06 11667655                   /usr/lib/jvm/java-11-openjdk-amd64/lib/server/libjvm.so
+7fbc19cb8000-7fbc19d0e000 rw-p 00000000 00:00 0 
+7fbc19d0e000-7fbc19d95000 r-xp 00000000 08:06 24121425                   /home/emos-admin/.local/lib/python3.6/site-packages/jnius/jnius.cpython-36m-x86_64-linux-gnu.so
+7fbc19d95000-7fbc19f94000 ---p 00087000 08:06 24121425                   /home/emos-admin/.local/lib/python3.6/site-packages/jnius/jnius.cpython-36m-x86_64-linux-gnu.so
+7fbc19f94000-7fbc19f95000 r--p 00086000 08:06 24121425                   /home/emos-admin/.local/lib/python3.6/site-packages/jnius/jnius.cpython-36m-x86_64-linux-gnu.so
+7fbc19f95000-7fbc19f9c000 rw-p 00087000 08:06 24121425                   /home/emos-admin/.local/lib/python3.6/site-packages/jnius/jnius.cpython-36m-x86_64-linux-gnu.so
+7fbc19f9c000-7fbc19f9d000 rw-p 00000000 00:00 0 
+7fbc19fa3000-7fbc19fa4000 ---p 00000000 00:00 0 
+7fbc19fa4000-7fbc1a0a5000 rw-p 00000000 00:00 0 
+7fbc1a0a5000-7fbc1a0a6000 ---p 00000000 00:00 0 
+7fbc1a0a6000-7fbc1a1a7000 rw-p 00000000 00:00 0 
+7fbc1a1a7000-7fbc1a1a8000 ---p 00000000 00:00 0 
+7fbc1a1a8000-7fbc1a2a9000 rw-p 00000000 00:00 0 
+7fbc1a2a9000-7fbc1a2aa000 ---p 00000000 00:00 0 
+7fbc1a2aa000-7fbc1a3ab000 rw-p 00000000 00:00 0 
+7fbc1a3ab000-7fbc1a3ac000 ---p 00000000 00:00 0 
+7fbc1a3ac000-7fbc1a6ab000 rw-p 00000000 00:00 0 
+7fbc1a6ab000-7fbc1b35a000 ---p 00000000 00:00 0 
+7fbc1b35a000-7fbc1b35c000 rw-p 00000000 00:00 0 
+7fbc1b35c000-7fbc1b55c000 ---p 00000000 00:00 0 
+7fbc1b55c000-7fbc1b55d000 ---p 00000000 00:00 0 
+7fbc1b55d000-7fbc1b663000 rw-p 00000000 00:00 0 
+7fbc1b663000-7fbc1b749000 ---p 00000000 00:00 0 
+7fbc1b749000-7fbc1b754000 rw-p 00000000 00:00 0 
+7fbc1b754000-7fbc1b834000 ---p 00000000 00:00 0 
+7fbc1b834000-7fbc1baa4000 rwxp 00000000 00:00 0 
+7fbc1baa4000-7fbc1bdc5000 ---p 00000000 00:00 0 
+7fbc1bdc5000-7fbc1c2d5000 rwxp 00000000 00:00 0 
+7fbc1c2d5000-7fbc232fc000 ---p 00000000 00:00 0 
+7fbc232fc000-7fbc2356c000 rwxp 00000000 00:00 0 
+7fbc2356c000-7fbc2a834000 ---p 00000000 00:00 0 
+7fbc2a834000-7fbc32f24000 r--s 00000000 08:06 11667650                   /usr/lib/jvm/java-11-openjdk-amd64/lib/modules
+7fbc32f24000-7fbc32f29000 r-xp 00000000 08:06 11667632                   /usr/lib/jvm/java-11-openjdk-amd64/lib/libjimage.so
+7fbc32f29000-7fbc33128000 ---p 00005000 08:06 11667632                   /usr/lib/jvm/java-11-openjdk-amd64/lib/libjimage.so
+7fbc33128000-7fbc33129000 r--p 00004000 08:06 11667632                   /usr/lib/jvm/java-11-openjdk-amd64/lib/libjimage.so
+7fbc33129000-7fbc3312a000 rw-p 00005000 08:06 11667632                   /usr/lib/jvm/java-11-openjdk-amd64/lib/libjimage.so
+7fbc3312a000-7fbc33131000 r-xp 00000000 08:06 11667649                   /usr/lib/jvm/java-11-openjdk-amd64/lib/libzip.so
+7fbc33131000-7fbc33330000 ---p 00007000 08:06 11667649                   /usr/lib/jvm/java-11-openjdk-amd64/lib/libzip.so
+7fbc33330000-7fbc33331000 r--p 00006000 08:06 11667649                   /usr/lib/jvm/java-11-openjdk-amd64/lib/libzip.so
+7fbc33331000-7fbc33332000 rw-p 00007000 08:06 11667649                   /usr/lib/jvm/java-11-openjdk-amd64/lib/libzip.so
+7fbc33332000-7fbc33349000 r-xp 00000000 08:06 14947329                   /lib/x86_64-linux-gnu/libnsl-2.27.so
+7fbc33349000-7fbc33548000 ---p 00017000 08:06 14947329                   /lib/x86_64-linux-gnu/libnsl-2.27.so
+7fbc33548000-7fbc33549000 r--p 00016000 08:06 14947329                   /lib/x86_64-linux-gnu/libnsl-2.27.so
+7fbc33549000-7fbc3354a000 rw-p 00017000 08:06 14947329                   /lib/x86_64-linux-gnu/libnsl-2.27.so
+7fbc3354a000-7fbc3354c000 rw-p 00000000 00:00 0 
+7fbc3354c000-7fbc33557000 r-xp 00000000 08:06 14947346                   /lib/x86_64-linux-gnu/libnss_nis-2.27.so
+7fbc33557000-7fbc33756000 ---p 0000b000 08:06 14947346                   /lib/x86_64-linux-gnu/libnss_nis-2.27.so
+7fbc33756000-7fbc33757000 r--p 0000a000 08:06 14947346                   /lib/x86_64-linux-gnu/libnss_nis-2.27.so
+7fbc33757000-7fbc33758000 rw-p 0000b000 08:06 14947346                   /lib/x86_64-linux-gnu/libnss_nis-2.27.so
+7fbc33758000-7fbc33760000 r-xp 00000000 08:06 14947331                   /lib/x86_64-linux-gnu/libnss_compat-2.27.so
+7fbc33760000-7fbc33960000 ---p 00008000 08:06 14947331                   /lib/x86_64-linux-gnu/libnss_compat-2.27.so
+7fbc33960000-7fbc33961000 r--p 00008000 08:06 14947331                   /lib/x86_64-linux-gnu/libnss_compat-2.27.so
+7fbc33961000-7fbc33962000 rw-p 00009000 08:06 14947331                   /lib/x86_64-linux-gnu/libnss_compat-2.27.so
+7fbc33962000-7fbc3398b000 r-xp 00000000 08:06 11667628                   /usr/lib/jvm/java-11-openjdk-amd64/lib/libjava.so
+7fbc3398b000-7fbc33b8a000 ---p 00029000 08:06 11667628                   /usr/lib/jvm/java-11-openjdk-amd64/lib/libjava.so
+7fbc33b8a000-7fbc33b8b000 r--p 00028000 08:06 11667628                   /usr/lib/jvm/java-11-openjdk-amd64/lib/libjava.so
+7fbc33b8b000-7fbc33b8d000 rw-p 00029000 08:06 11667628                   /usr/lib/jvm/java-11-openjdk-amd64/lib/libjava.so
+7fbc33b8d000-7fbc33b9a000 r-xp 00000000 08:06 11667648                   /usr/lib/jvm/java-11-openjdk-amd64/lib/libverify.so
+7fbc33b9a000-7fbc33d99000 ---p 0000d000 08:06 11667648                   /usr/lib/jvm/java-11-openjdk-amd64/lib/libverify.so
+7fbc33d99000-7fbc33d9b000 r--p 0000c000 08:06 11667648                   /usr/lib/jvm/java-11-openjdk-amd64/lib/libverify.so
+7fbc33d9b000-7fbc33d9c000 rw-p 0000e000 08:06 11667648                   /usr/lib/jvm/java-11-openjdk-amd64/lib/libverify.so
+7fbc33d9c000-7fbc4e11a000 rw-p 00000000 00:00 0 
+7fbc4e11a000-7fbc4e21a000 rw-p 00000000 00:00 0 
+7fbc4e21a000-7fbc4e231000 r-xp 00000000 08:06 14947384                   /lib/x86_64-linux-gnu/libresolv-2.27.so
+7fbc4e231000-7fbc4e431000 ---p 00017000 08:06 14947384                   /lib/x86_64-linux-gnu/libresolv-2.27.so
+7fbc4e431000-7fbc4e432000 r--p 00017000 08:06 14947384                   /lib/x86_64-linux-gnu/libresolv-2.27.so
+7fbc4e432000-7fbc4e433000 rw-p 00018000 08:06 14947384                   /lib/x86_64-linux-gnu/libresolv-2.27.so
+7fbc4e433000-7fbc4e435000 rw-p 00000000 00:00 0 
+7fbc4e435000-7fbc4e43a000 r-xp 00000000 08:06 14947333                   /lib/x86_64-linux-gnu/libnss_dns-2.27.so
+7fbc4e43a000-7fbc4e63a000 ---p 00005000 08:06 14947333                   /lib/x86_64-linux-gnu/libnss_dns-2.27.so
+7fbc4e63a000-7fbc4e63b000 r--p 00005000 08:06 14947333                   /lib/x86_64-linux-gnu/libnss_dns-2.27.so
+7fbc4e63b000-7fbc4e63c000 rw-p 00006000 08:06 14947333                   /lib/x86_64-linux-gnu/libnss_dns-2.27.so
+7fbc4e63c000-7fbc4e63e000 r-xp 00000000 08:06 14947341                   /lib/x86_64-linux-gnu/libnss_mdns4_minimal.so.2
+7fbc4e63e000-7fbc4e83d000 ---p 00002000 08:06 14947341                   /lib/x86_64-linux-gnu/libnss_mdns4_minimal.so.2
+7fbc4e83d000-7fbc4e83e000 r--p 00001000 08:06 14947341                   /lib/x86_64-linux-gnu/libnss_mdns4_minimal.so.2
+7fbc4e83e000-7fbc4e83f000 rw-p 00002000 08:06 14947341                   /lib/x86_64-linux-gnu/libnss_mdns4_minimal.so.2
+7fbc4e83f000-7fbc4e84a000 r-xp 00000000 08:06 14947335                   /lib/x86_64-linux-gnu/libnss_files-2.27.so
+7fbc4e84a000-7fbc4ea49000 ---p 0000b000 08:06 14947335                   /lib/x86_64-linux-gnu/libnss_files-2.27.so
+7fbc4ea49000-7fbc4ea4a000 r--p 0000a000 08:06 14947335                   /lib/x86_64-linux-gnu/libnss_files-2.27.so
+7fbc4ea4a000-7fbc4ea4b000 rw-p 0000b000 08:06 14947335                   /lib/x86_64-linux-gnu/libnss_files-2.27.so
+7fbc4ea4b000-7fbc4ebd1000 rw-p 00000000 00:00 0 
+7fbc4ebd1000-7fbc4edf6000 r-xp 00000000 08:06 23336751                   /home/emos-admin/.local/lib/python3.6/site-packages/_sentencepiece.cpython-36m-x86_64-linux-gnu.so
+7fbc4edf6000-7fbc4eff5000 ---p 00225000 08:06 23336751                   /home/emos-admin/.local/lib/python3.6/site-packages/_sentencepiece.cpython-36m-x86_64-linux-gnu.so
+7fbc4eff5000-7fbc4effc000 rw-p 00224000 08:06 23336751                   /home/emos-admin/.local/lib/python3.6/site-packages/_sentencepiece.cpython-36m-x86_64-linux-gnu.so
+7fbc4effc000-7fbc4f03e000 rw-p 00000000 00:00 0 
+7fbc4f03e000-7fbc4f0b8000 r-xp 00000000 08:06 24248343                   /home/emos-admin/.local/lib/python3.6/site-packages/regex/_regex.cpython-36m-x86_64-linux-gnu.so
+7fbc4f0b8000-7fbc4f2b7000 ---p 0007a000 08:06 24248343                   /home/emos-admin/.local/lib/python3.6/site-packages/regex/_regex.cpython-36m-x86_64-linux-gnu.so
+7fbc4f2b7000-7fbc4f2b8000 r--p 00079000 08:06 24248343                   /home/emos-admin/.local/lib/python3.6/site-packages/regex/_regex.cpython-36m-x86_64-linux-gnu.so
+7fbc4f2b8000-7fbc4f2c3000 rw-p 0007a000 08:06 24248343                   /home/emos-admin/.local/lib/python3.6/site-packages/regex/_regex.cpython-36m-x86_64-linux-gnu.so
+7fbc4f2c3000-7fbc4f383000 rw-p 00000000 00:00 0 
+7fbc4f383000-7fbc4f648000 r-xp 00000000 08:06 24122101                   /home/emos-admin/.local/lib/python3.6/site-packages/tokenizers/tokenizers.cpython-36m-x86_64-linux-gnu.so
+7fbc4f648000-7fbc4f848000 ---p 002c5000 08:06 24122101                   /home/emos-admin/.local/lib/python3.6/site-packages/tokenizers/tokenizers.cpython-36m-x86_64-linux-gnu.so
+7fbc4f848000-7fbc4f891000 r--p 002c5000 08:06 24122101                   /home/emos-admin/.local/lib/python3.6/site-packages/tokenizers/tokenizers.cpython-36m-x86_64-linux-gnu.so
+7fbc4f891000-7fbc4f895000 rw-p 0030e000 08:06 24122101                   /home/emos-admin/.local/lib/python3.6/site-packages/tokenizers/tokenizers.cpython-36m-x86_64-linux-gnu.so
+7fbc4f895000-7fbc4f8d5000 rw-p 00000000 00:00 0 
+7fbc4f8d5000-7fbc4f8dc000 r-xp 00000000 08:06 11666435                   /usr/lib/python3.6/lib-dynload/_csv.cpython-36m-x86_64-linux-gnu.so
+7fbc4f8dc000-7fbc4fadb000 ---p 00007000 08:06 11666435                   /usr/lib/python3.6/lib-dynload/_csv.cpython-36m-x86_64-linux-gnu.so
+7fbc4fadb000-7fbc4fadc000 r--p 00006000 08:06 11666435                   /usr/lib/python3.6/lib-dynload/_csv.cpython-36m-x86_64-linux-gnu.so
+7fbc4fadc000-7fbc4fade000 rw-p 00007000 08:06 11666435                   /usr/lib/python3.6/lib-dynload/_csv.cpython-36m-x86_64-linux-gnu.so
+7fbc4fade000-7fbc4fb1e000 rw-p 00000000 00:00 0 
+7fbc4fb1e000-7fbc4fb54000 r-xp 00000000 08:06 23465934                   /home/emos-admin/.local/lib/python3.6/site-packages/sklearn/metrics/_pairwise_fast.cpython-36m-x86_64-linux-gnu.so
+7fbc4fb54000-7fbc4fd53000 ---p 00036000 08:06 23465934                   /home/emos-admin/.local/lib/python3.6/site-packages/sklearn/metrics/_pairwise_fast.cpython-36m-x86_64-linux-gnu.so
+7fbc4fd53000-7fbc4fd57000 rw-p 00035000 08:06 23465934                   /home/emos-admin/.local/lib/python3.6/site-packages/sklearn/metrics/_pairwise_fast.cpython-36m-x86_64-linux-gnu.so
+7fbc4fd57000-7fbc4fd58000 rw-p 00000000 00:00 0 
+7fbc4fd58000-7fbc4fd5c000 rw-p 0003a000 08:06 23465934                   /home/emos-admin/.local/lib/python3.6/site-packages/sklearn/metrics/_pairwise_fast.cpython-36m-x86_64-linux-gnu.so
+7fbc4fd5c000-7fbc4fd71000 r-xp 00000000 08:06 23465947                   /home/emos-admin/.local/lib/python3.6/site-packages/sklearn/metrics/cluster/_expected_mutual_info_fast.cpython-36m-x86_64-linux-gnu.so
+7fbc4fd71000-7fbc4ff71000 ---p 00015000 08:06 23465947                   /home/emos-admin/.local/lib/python3.6/site-packages/sklearn/metrics/cluster/_expected_mutual_info_fast.cpython-36m-x86_64-linux-gnu.so
+7fbc4ff71000-7fbc4ff76000 rw-p 00015000 08:06 23465947                   /home/emos-admin/.local/lib/python3.6/site-packages/sklearn/metrics/cluster/_expected_mutual_info_fast.cpython-36m-x86_64-linux-gnu.so
+7fbc4ff76000-7fbc4ffb6000 rw-p 00000000 00:00 0 
+7fbc4ffb6000-7fbc4fff0000 r-xp 00000000 08:06 23466079                   /home/emos-admin/.local/lib/python3.6/site-packages/sklearn/preprocessing/_csr_polynomial_expansion.cpython-36m-x86_64-linux-gnu.so
+7fbc4fff0000-7fbc501f0000 ---p 0003a000 08:06 23466079                   /home/emos-admin/.local/lib/python3.6/site-packages/sklearn/preprocessing/_csr_polynomial_expansion.cpython-36m-x86_64-linux-gnu.so
+7fbc501f0000-7fbc501f4000 rw-p 0003a000 08:06 23466079                   /home/emos-admin/.local/lib/python3.6/site-packages/sklearn/preprocessing/_csr_polynomial_expansion.cpython-36m-x86_64-linux-gnu.so
+7fbc501f4000-7fbc501f5000 rw-p 00000000 00:00 0 
+7fbc501f5000-7fbc501f8000 rw-p 0003f000 08:06 23466079                   /home/emos-admin/.local/lib/python3.6/site-packages/sklearn/preprocessing/_csr_polynomial_expansion.cpython-36m-x86_64-linux-gnu.so
+7fbc501f8000-7fbc5028e000 r-xp 00000000 08:06 23466129                   /home/emos-admin/.local/lib/python3.6/site-packages/sklearn/utils/sparsefuncs_fast.cpython-36m-x86_64-linux-gnu.so
+7fbc5028e000-7fbc5048d000 ---p 00096000 08:06 23466129                   /home/emos-admin/.local/lib/python3.6/site-packages/sklearn/utils/sparsefuncs_fast.cpython-36m-x86_64-linux-gnu.so
+7fbc5048d000-7fbc50493000 rw-p 00095000 08:06 23466129                   /home/emos-admin/.local/lib/python3.6/site-packages/sklearn/utils/sparsefuncs_fast.cpython-36m-x86_64-linux-gnu.so
+7fbc50493000-7fbc50495000 rw-p 00000000 00:00 0 
+7fbc50495000-7fbc50499000 rw-p 0009c000 08:06 23466129                   /home/emos-admin/.local/lib/python3.6/site-packages/sklearn/utils/sparsefuncs_fast.cpython-36m-x86_64-linux-gnu.so
+7fbc50499000-7fbc504c0000 r-xp 00000000 08:06 23466152                   /home/emos-admin/.local/lib/python3.6/site-packages/sklearn/utils/_logistic_sigmoid.cpython-36m-x86_64-linux-gnu.so
+7fbc504c0000-7fbc506bf000 ---p 00027000 08:06 23466152                   /home/emos-admin/.local/lib/python3.6/site-packages/sklearn/utils/_logistic_sigmoid.cpython-36m-x86_64-linux-gnu.so
+7fbc506bf000-7fbc506c6000 rw-p 00026000 08:06 23466152                   /home/emos-admin/.local/lib/python3.6/site-packages/sklearn/utils/_logistic_sigmoid.cpython-36m-x86_64-linux-gnu.so
+7fbc506c6000-7fbc50706000 rw-p 00000000 00:00 0 
+7fbc50706000-7fbc5070c000 r-xp 00000000 08:06 23466118                   /home/emos-admin/.local/lib/python3.6/site-packages/sklearn/utils/_openmp_helpers.cpython-36m-x86_64-linux-gnu.so
+7fbc5070c000-7fbc5090c000 ---p 00006000 08:06 23466118                   /home/emos-admin/.local/lib/python3.6/site-packages/sklearn/utils/_openmp_helpers.cpython-36m-x86_64-linux-gnu.so
+7fbc5090c000-7fbc5090d000 rw-p 00006000 08:06 23466118                   /home/emos-admin/.local/lib/python3.6/site-packages/sklearn/utils/_openmp_helpers.cpython-36m-x86_64-linux-gnu.so
+7fbc5090d000-7fbc50910000 rw-p 00008000 08:06 23466118                   /home/emos-admin/.local/lib/python3.6/site-packages/sklearn/utils/_openmp_helpers.cpython-36m-x86_64-linux-gnu.so
+7fbc50910000-7fbc50950000 rw-p 00000000 00:00 0 
+7fbc50950000-7fbc50955000 r-xp 00000000 08:06 11666453                   /usr/lib/python3.6/lib-dynload/mmap.cpython-36m-x86_64-linux-gnu.so
+7fbc50955000-7fbc50b54000 ---p 00005000 08:06 11666453                   /usr/lib/python3.6/lib-dynload/mmap.cpython-36m-x86_64-linux-gnu.so
+7fbc50b54000-7fbc50b55000 r--p 00004000 08:06 11666453                   /usr/lib/python3.6/lib-dynload/mmap.cpython-36m-x86_64-linux-gnu.so
+7fbc50b55000-7fbc50b56000 rw-p 00005000 08:06 11666453                   /usr/lib/python3.6/lib-dynload/mmap.cpython-36m-x86_64-linux-gnu.so
+7fbc50b56000-7fbc50b69000 r-xp 00000000 08:06 23466113                   /home/emos-admin/.local/lib/python3.6/site-packages/sklearn/utils/murmurhash.cpython-36m-x86_64-linux-gnu.so
+7fbc50b69000-7fbc50d68000 ---p 00013000 08:06 23466113                   /home/emos-admin/.local/lib/python3.6/site-packages/sklearn/utils/murmurhash.cpython-36m-x86_64-linux-gnu.so
+7fbc50d68000-7fbc50d6a000 rw-p 00012000 08:06 23466113                   /home/emos-admin/.local/lib/python3.6/site-packages/sklearn/utils/murmurhash.cpython-36m-x86_64-linux-gnu.so
+7fbc50d6a000-7fbc50d6c000 rw-p 00015000 08:06 23466113                   /home/emos-admin/.local/lib/python3.6/site-packages/sklearn/utils/murmurhash.cpython-36m-x86_64-linux-gnu.so
+7fbc50d6c000-7fbc50fed000 rw-p 00000000 00:00 0 
+7fbc50fed000-7fbc50ffa000 r-xp 00000000 08:06 23465926                   /home/emos-admin/.local/lib/python3.6/site-packages/sklearn/.libs/libgomp-3300acd3.so.1.0.0
+7fbc50ffa000-7fbc511fa000 ---p 0000d000 08:06 23465926                   /home/emos-admin/.local/lib/python3.6/site-packages/sklearn/.libs/libgomp-3300acd3.so.1.0.0
+7fbc511fa000-7fbc511fd000 rw-p 0000d000 08:06 23465926                   /home/emos-admin/.local/lib/python3.6/site-packages/sklearn/.libs/libgomp-3300acd3.so.1.0.0
+7fbc511fd000-7fbc51200000 r-xp 00000000 08:06 23466345                   /home/emos-admin/.local/lib/python3.6/site-packages/sklearn/__check_build/_check_build.cpython-36m-x86_64-linux-gnu.so
+7fbc51200000-7fbc51400000 ---p 00003000 08:06 23466345                   /home/emos-admin/.local/lib/python3.6/site-packages/sklearn/__check_build/_check_build.cpython-36m-x86_64-linux-gnu.so
+7fbc51400000-7fbc51403000 rw-p 00003000 08:06 23466345                   /home/emos-admin/.local/lib/python3.6/site-packages/sklearn/__check_build/_check_build.cpython-36m-x86_64-linux-gnu.so
+7fbc51403000-7fbc51416000 r-xp 00000000 08:06 23464307                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/stats/mvn.cpython-36m-x86_64-linux-gnu.so
+7fbc51416000-7fbc51615000 ---p 00013000 08:06 23464307                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/stats/mvn.cpython-36m-x86_64-linux-gnu.so
+7fbc51615000-7fbc51617000 rw-p 00012000 08:06 23464307                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/stats/mvn.cpython-36m-x86_64-linux-gnu.so
+7fbc51617000-7fbc5170e000 rw-p 00000000 00:00 0 
+7fbc5170e000-7fbc51710000 rw-p 00015000 08:06 23464307                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/stats/mvn.cpython-36m-x86_64-linux-gnu.so
+7fbc51710000-7fbc51750000 rw-p 00000000 00:00 0 
+7fbc51750000-7fbc5175a000 r-xp 00000000 08:06 23464299                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/stats/statlib.cpython-36m-x86_64-linux-gnu.so
+7fbc5175a000-7fbc51959000 ---p 0000a000 08:06 23464299                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/stats/statlib.cpython-36m-x86_64-linux-gnu.so
+7fbc51959000-7fbc5195b000 rw-p 00009000 08:06 23464299                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/stats/statlib.cpython-36m-x86_64-linux-gnu.so
+7fbc5195b000-7fbc5195d000 rw-p 0000c000 08:06 23464299                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/stats/statlib.cpython-36m-x86_64-linux-gnu.so
+7fbc5195d000-7fbc51add000 rw-p 00000000 00:00 0 
+7fbc51add000-7fbc51b50000 r-xp 00000000 08:06 23464298                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/stats/_stats.cpython-36m-x86_64-linux-gnu.so
+7fbc51b50000-7fbc51d50000 ---p 00073000 08:06 23464298                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/stats/_stats.cpython-36m-x86_64-linux-gnu.so
+7fbc51d50000-7fbc51d56000 rw-p 00073000 08:06 23464298                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/stats/_stats.cpython-36m-x86_64-linux-gnu.so
+7fbc51d56000-7fbc51d58000 rw-p 00000000 00:00 0 
+7fbc51d58000-7fbc51dac000 r-xp 00000000 08:06 23464203                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/interpolate/interpnd.cpython-36m-x86_64-linux-gnu.so
+7fbc51dac000-7fbc51fac000 ---p 00054000 08:06 23464203                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/interpolate/interpnd.cpython-36m-x86_64-linux-gnu.so
+7fbc51fac000-7fbc51fb1000 rw-p 00054000 08:06 23464203                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/interpolate/interpnd.cpython-36m-x86_64-linux-gnu.so
+7fbc51fb1000-7fbc51ff2000 rw-p 00000000 00:00 0 
+7fbc51ff2000-7fbc52042000 r-xp 00000000 08:06 23464200                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/interpolate/_ppoly.cpython-36m-x86_64-linux-gnu.so
+7fbc52042000-7fbc52242000 ---p 00050000 08:06 23464200                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/interpolate/_ppoly.cpython-36m-x86_64-linux-gnu.so
+7fbc52242000-7fbc52248000 rw-p 00050000 08:06 23464200                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/interpolate/_ppoly.cpython-36m-x86_64-linux-gnu.so
+7fbc52248000-7fbc52249000 rw-p 00000000 00:00 0 
+7fbc52249000-7fbc52286000 r-xp 00000000 08:06 23464206                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/interpolate/_bspl.cpython-36m-x86_64-linux-gnu.so
+7fbc52286000-7fbc52485000 ---p 0003d000 08:06 23464206                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/interpolate/_bspl.cpython-36m-x86_64-linux-gnu.so
+7fbc52485000-7fbc5248b000 rw-p 0003c000 08:06 23464206                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/interpolate/_bspl.cpython-36m-x86_64-linux-gnu.so
+7fbc5248b000-7fbc5248c000 rw-p 00000000 00:00 0 
+7fbc5248c000-7fbc5248f000 rw-p 00043000 08:06 23464206                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/interpolate/_bspl.cpython-36m-x86_64-linux-gnu.so
+7fbc5248f000-7fbc524ed000 r-xp 00000000 08:06 23464204                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/interpolate/dfitpack.cpython-36m-x86_64-linux-gnu.so
+7fbc524ed000-7fbc526ed000 ---p 0005e000 08:06 23464204                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/interpolate/dfitpack.cpython-36m-x86_64-linux-gnu.so
+7fbc526ed000-7fbc526f4000 rw-p 0005e000 08:06 23464204                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/interpolate/dfitpack.cpython-36m-x86_64-linux-gnu.so
+7fbc526f4000-7fbc526f6000 rw-p 00066000 08:06 23464204                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/interpolate/dfitpack.cpython-36m-x86_64-linux-gnu.so
+7fbc526f6000-7fbc5272a000 r-xp 00000000 08:06 23464202                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/interpolate/_fitpack.cpython-36m-x86_64-linux-gnu.so
+7fbc5272a000-7fbc5292a000 ---p 00034000 08:06 23464202                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/interpolate/_fitpack.cpython-36m-x86_64-linux-gnu.so
+7fbc5292a000-7fbc5292b000 rw-p 00034000 08:06 23464202                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/interpolate/_fitpack.cpython-36m-x86_64-linux-gnu.so
+7fbc5292b000-7fbc5292d000 rw-p 00036000 08:06 23464202                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/interpolate/_fitpack.cpython-36m-x86_64-linux-gnu.so
+7fbc5292d000-7fbc52a2d000 rw-p 00000000 00:00 0 
+7fbc52a2d000-7fbc52a46000 r-xp 00000000 08:06 23465370                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/integrate/lsoda.cpython-36m-x86_64-linux-gnu.so
+7fbc52a46000-7fbc52c45000 ---p 00019000 08:06 23465370                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/integrate/lsoda.cpython-36m-x86_64-linux-gnu.so
+7fbc52c45000-7fbc52c4a000 rw-p 00018000 08:06 23465370                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/integrate/lsoda.cpython-36m-x86_64-linux-gnu.so
+7fbc52c4a000-7fbc52c65000 r-xp 00000000 08:06 23465363                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/integrate/_dop.cpython-36m-x86_64-linux-gnu.so
+7fbc52c65000-7fbc52e64000 ---p 0001b000 08:06 23465363                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/integrate/_dop.cpython-36m-x86_64-linux-gnu.so
+7fbc52e64000-7fbc52e66000 rw-p 0001a000 08:06 23465363                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/integrate/_dop.cpython-36m-x86_64-linux-gnu.so
+7fbc52e66000-7fbc52e69000 rw-p 0001d000 08:06 23465363                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/integrate/_dop.cpython-36m-x86_64-linux-gnu.so
+7fbc52e69000-7fbc52e9a000 r-xp 00000000 08:06 23465365                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/integrate/vode.cpython-36m-x86_64-linux-gnu.so
+7fbc52e9a000-7fbc53099000 ---p 00031000 08:06 23465365                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/integrate/vode.cpython-36m-x86_64-linux-gnu.so
+7fbc53099000-7fbc5309b000 rw-p 00030000 08:06 23465365                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/integrate/vode.cpython-36m-x86_64-linux-gnu.so
+7fbc5309b000-7fbc5309c000 rw-p 00000000 00:00 0 
+7fbc5309c000-7fbc530a0000 rw-p 00033000 08:06 23465365                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/integrate/vode.cpython-36m-x86_64-linux-gnu.so
+7fbc530a0000-7fbc530ba000 r-xp 00000000 08:06 23465371                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/integrate/_quadpack.cpython-36m-x86_64-linux-gnu.so
+7fbc530ba000-7fbc532ba000 ---p 0001a000 08:06 23465371                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/integrate/_quadpack.cpython-36m-x86_64-linux-gnu.so
+7fbc532ba000-7fbc532bb000 rw-p 0001a000 08:06 23465371                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/integrate/_quadpack.cpython-36m-x86_64-linux-gnu.so
+7fbc532bb000-7fbc532be000 rw-p 0001c000 08:06 23465371                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/integrate/_quadpack.cpython-36m-x86_64-linux-gnu.so
+7fbc532be000-7fbc532d4000 r-xp 00000000 08:06 23465368                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/integrate/_odepack.cpython-36m-x86_64-linux-gnu.so
+7fbc532d4000-7fbc534d3000 ---p 00016000 08:06 23465368                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/integrate/_odepack.cpython-36m-x86_64-linux-gnu.so
+7fbc534d3000-7fbc534d4000 rw-p 00015000 08:06 23465368                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/integrate/_odepack.cpython-36m-x86_64-linux-gnu.so
+7fbc534d4000-7fbc534d5000 rw-p 00000000 00:00 0 
+7fbc534d5000-7fbc534d8000 rw-p 00017000 08:06 23465368                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/integrate/_odepack.cpython-36m-x86_64-linux-gnu.so
+7fbc534d8000-7fbc53518000 rw-p 00000000 00:00 0 
+7fbc53518000-7fbc5351b000 r-xp 00000000 08:06 23464821                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/optimize/_lsap_module.cpython-36m-x86_64-linux-gnu.so
+7fbc5351b000-7fbc5371b000 ---p 00003000 08:06 23464821                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/optimize/_lsap_module.cpython-36m-x86_64-linux-gnu.so
+7fbc5371b000-7fbc5371c000 rw-p 00003000 08:06 23464821                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/optimize/_lsap_module.cpython-36m-x86_64-linux-gnu.so
+7fbc5371c000-7fbc5375e000 r-xp 00000000 08:06 23464813                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/optimize/_bglu_dense.cpython-36m-x86_64-linux-gnu.so
+7fbc5375e000-7fbc5395d000 ---p 00042000 08:06 23464813                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/optimize/_bglu_dense.cpython-36m-x86_64-linux-gnu.so
+7fbc5395d000-7fbc53962000 rw-p 00041000 08:06 23464813                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/optimize/_bglu_dense.cpython-36m-x86_64-linux-gnu.so
+7fbc53962000-7fbc539a3000 rw-p 00000000 00:00 0 
+7fbc539a3000-7fbc539ad000 r-xp 00000000 08:06 23464816                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/optimize/_nnls.cpython-36m-x86_64-linux-gnu.so
+7fbc539ad000-7fbc53bad000 ---p 0000a000 08:06 23464816                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/optimize/_nnls.cpython-36m-x86_64-linux-gnu.so
+7fbc53bad000-7fbc53bae000 rw-p 0000a000 08:06 23464816                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/optimize/_nnls.cpython-36m-x86_64-linux-gnu.so
+7fbc53bae000-7fbc53bb0000 rw-p 0000c000 08:06 23464816                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/optimize/_nnls.cpython-36m-x86_64-linux-gnu.so
+7fbc53bb0000-7fbc53bb3000 r-xp 00000000 08:06 23464811                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/optimize/_zeros.cpython-36m-x86_64-linux-gnu.so
+7fbc53bb3000-7fbc53db2000 ---p 00003000 08:06 23464811                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/optimize/_zeros.cpython-36m-x86_64-linux-gnu.so
+7fbc53db2000-7fbc53db3000 rw-p 00002000 08:06 23464811                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/optimize/_zeros.cpython-36m-x86_64-linux-gnu.so
+7fbc53db3000-7fbc53dda000 r-xp 00000000 08:06 23465024                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/optimize/_lsq/givens_elimination.cpython-36m-x86_64-linux-gnu.so
+7fbc53dda000-7fbc53fd9000 ---p 00027000 08:06 23465024                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/optimize/_lsq/givens_elimination.cpython-36m-x86_64-linux-gnu.so
+7fbc53fd9000-7fbc53fdd000 rw-p 00026000 08:06 23465024                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/optimize/_lsq/givens_elimination.cpython-36m-x86_64-linux-gnu.so
+7fbc53fdd000-7fbc5401d000 rw-p 00000000 00:00 0 
+7fbc5401d000-7fbc5403c000 r-xp 00000000 08:06 23464812                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/optimize/_minpack.cpython-36m-x86_64-linux-gnu.so
+7fbc5403c000-7fbc5423c000 ---p 0001f000 08:06 23464812                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/optimize/_minpack.cpython-36m-x86_64-linux-gnu.so
+7fbc5423c000-7fbc5423f000 rw-p 0001f000 08:06 23464812                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/optimize/_minpack.cpython-36m-x86_64-linux-gnu.so
+7fbc5423f000-7fbc54257000 r-xp 00000000 08:06 23464830                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/optimize/_slsqp.cpython-36m-x86_64-linux-gnu.so
+7fbc54257000-7fbc54456000 ---p 00018000 08:06 23464830                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/optimize/_slsqp.cpython-36m-x86_64-linux-gnu.so
+7fbc54456000-7fbc5445a000 rw-p 00017000 08:06 23464830                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/optimize/_slsqp.cpython-36m-x86_64-linux-gnu.so
+7fbc5445a000-7fbc54478000 r-xp 00000000 08:06 23464842                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/optimize/_cobyla.cpython-36m-x86_64-linux-gnu.so
+7fbc54478000-7fbc54678000 ---p 0001e000 08:06 23464842                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/optimize/_cobyla.cpython-36m-x86_64-linux-gnu.so
+7fbc54678000-7fbc54679000 rw-p 0001e000 08:06 23464842                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/optimize/_cobyla.cpython-36m-x86_64-linux-gnu.so
+7fbc54679000-7fbc5467b000 rw-p 00020000 08:06 23464842                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/optimize/_cobyla.cpython-36m-x86_64-linux-gnu.so
+7fbc5467b000-7fbc54687000 r-xp 00000000 08:06 23464840                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/optimize/moduleTNC.cpython-36m-x86_64-linux-gnu.so
+7fbc54687000-7fbc54886000 ---p 0000c000 08:06 23464840                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/optimize/moduleTNC.cpython-36m-x86_64-linux-gnu.so
+7fbc54886000-7fbc54887000 rw-p 0000b000 08:06 23464840                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/optimize/moduleTNC.cpython-36m-x86_64-linux-gnu.so
+7fbc54887000-7fbc548a4000 r-xp 00000000 08:06 23464810                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/optimize/_lbfgsb.cpython-36m-x86_64-linux-gnu.so
+7fbc548a4000-7fbc54aa4000 ---p 0001d000 08:06 23464810                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/optimize/_lbfgsb.cpython-36m-x86_64-linux-gnu.so
+7fbc54aa4000-7fbc54aa5000 rw-p 0001d000 08:06 23464810                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/optimize/_lbfgsb.cpython-36m-x86_64-linux-gnu.so
+7fbc54aa5000-7fbc54aa8000 rw-p 0001f000 08:06 23464810                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/optimize/_lbfgsb.cpython-36m-x86_64-linux-gnu.so
+7fbc54aa8000-7fbc54ae8000 rw-p 00000000 00:00 0 
+7fbc54ae8000-7fbc54b13000 r-xp 00000000 08:06 23464827                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/optimize/_group_columns.cpython-36m-x86_64-linux-gnu.so
+7fbc54b13000-7fbc54d13000 ---p 0002b000 08:06 23464827                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/optimize/_group_columns.cpython-36m-x86_64-linux-gnu.so
+7fbc54d13000-7fbc54d16000 rw-p 0002b000 08:06 23464827                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/optimize/_group_columns.cpython-36m-x86_64-linux-gnu.so
+7fbc54d16000-7fbc54d57000 rw-p 00000000 00:00 0 
+7fbc54d57000-7fbc54ddf000 r-xp 00000000 08:06 23463816                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/sparse/linalg/eigen/arpack/_arpack.cpython-36m-x86_64-linux-gnu.so
+7fbc54ddf000-7fbc54fdf000 ---p 00088000 08:06 23463816                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/sparse/linalg/eigen/arpack/_arpack.cpython-36m-x86_64-linux-gnu.so
+7fbc54fdf000-7fbc54fea000 rw-p 00088000 08:06 23463816                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/sparse/linalg/eigen/arpack/_arpack.cpython-36m-x86_64-linux-gnu.so
+7fbc54fea000-7fbc54fec000 rw-p 00000000 00:00 0 
+7fbc54fec000-7fbc54ff0000 rw-p 00094000 08:06 23463816                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/sparse/linalg/eigen/arpack/_arpack.cpython-36m-x86_64-linux-gnu.so
+7fbc54ff0000-7fbc5503d000 r-xp 00000000 08:06 23463848                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/sparse/linalg/dsolve/_superlu.cpython-36m-x86_64-linux-gnu.so
+7fbc5503d000-7fbc5523c000 ---p 0004d000 08:06 23463848                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/sparse/linalg/dsolve/_superlu.cpython-36m-x86_64-linux-gnu.so
+7fbc5523c000-7fbc5523e000 rw-p 0004c000 08:06 23463848                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/sparse/linalg/dsolve/_superlu.cpython-36m-x86_64-linux-gnu.so
+7fbc5523e000-7fbc55241000 rw-p 0004f000 08:06 23463848                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/sparse/linalg/dsolve/_superlu.cpython-36m-x86_64-linux-gnu.so
+7fbc55241000-7fbc55281000 rw-p 00000000 00:00 0 
+7fbc55281000-7fbc552b2000 r-xp 00000000 08:06 23463747                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/sparse/linalg/isolve/_iterative.cpython-36m-x86_64-linux-gnu.so
+7fbc552b2000-7fbc554b2000 ---p 00031000 08:06 23463747                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/sparse/linalg/isolve/_iterative.cpython-36m-x86_64-linux-gnu.so
+7fbc554b2000-7fbc554b9000 rw-p 00031000 08:06 23463747                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/sparse/linalg/isolve/_iterative.cpython-36m-x86_64-linux-gnu.so
+7fbc554b9000-7fbc554bb000 rw-p 00000000 00:00 0 
+7fbc554bb000-7fbc554be000 rw-p 00039000 08:06 23463747                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/sparse/linalg/isolve/_iterative.cpython-36m-x86_64-linux-gnu.so
+7fbc554be000-7fbc55507000 r-xp 00000000 08:06 23464853                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/optimize/_trlib/_trlib.cpython-36m-x86_64-linux-gnu.so
+7fbc55507000-7fbc55707000 ---p 00049000 08:06 23464853                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/optimize/_trlib/_trlib.cpython-36m-x86_64-linux-gnu.so
+7fbc55707000-7fbc5570b000 rw-p 00049000 08:06 23464853                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/optimize/_trlib/_trlib.cpython-36m-x86_64-linux-gnu.so
+7fbc5570b000-7fbc5570c000 rw-p 00000000 00:00 0 
+7fbc5570c000-7fbc55710000 rw-p 0004e000 08:06 23464853                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/optimize/_trlib/_trlib.cpython-36m-x86_64-linux-gnu.so
+7fbc55710000-7fbc55719000 r-xp 00000000 08:06 23464828                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/optimize/minpack2.cpython-36m-x86_64-linux-gnu.so
+7fbc55719000-7fbc55919000 ---p 00009000 08:06 23464828                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/optimize/minpack2.cpython-36m-x86_64-linux-gnu.so
+7fbc55919000-7fbc5591a000 rw-p 00009000 08:06 23464828                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/optimize/minpack2.cpython-36m-x86_64-linux-gnu.so
+7fbc5591a000-7fbc5591c000 rw-p 0000b000 08:06 23464828                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/optimize/minpack2.cpython-36m-x86_64-linux-gnu.so
+7fbc5591c000-7fbc5599c000 rw-p 00000000 00:00 0 
+7fbc5599c000-7fbc559e5000 r-xp 00000000 08:06 23465135                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/ndimage/_ni_label.cpython-36m-x86_64-linux-gnu.so
+7fbc559e5000-7fbc55be5000 ---p 00049000 08:06 23465135                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/ndimage/_ni_label.cpython-36m-x86_64-linux-gnu.so
+7fbc55be5000-7fbc55be9000 rw-p 00049000 08:06 23465135                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/ndimage/_ni_label.cpython-36m-x86_64-linux-gnu.so
+7fbc55be9000-7fbc55beb000 rw-p 00000000 00:00 0 
+7fbc55beb000-7fbc55c06000 r-xp 00000000 08:06 23465132                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/ndimage/_nd_image.cpython-36m-x86_64-linux-gnu.so
+7fbc55c06000-7fbc55e06000 ---p 0001b000 08:06 23465132                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/ndimage/_nd_image.cpython-36m-x86_64-linux-gnu.so
+7fbc55e06000-7fbc55e07000 rw-p 0001b000 08:06 23465132                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/ndimage/_nd_image.cpython-36m-x86_64-linux-gnu.so
+7fbc55e07000-7fbc55e87000 rw-p 00000000 00:00 0 
+7fbc55e87000-7fbc55e99000 r-xp 00000000 08:06 23464476                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/special/_ellip_harm_2.cpython-36m-x86_64-linux-gnu.so
+7fbc55e99000-7fbc56099000 ---p 00012000 08:06 23464476                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/special/_ellip_harm_2.cpython-36m-x86_64-linux-gnu.so
+7fbc56099000-7fbc5609e000 rw-p 00012000 08:06 23464476                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/special/_ellip_harm_2.cpython-36m-x86_64-linux-gnu.so
+7fbc5609e000-7fbc560a4000 r-xp 00000000 08:06 23464488                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/special/_comb.cpython-36m-x86_64-linux-gnu.so
+7fbc560a4000-7fbc562a4000 ---p 00006000 08:06 23464488                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/special/_comb.cpython-36m-x86_64-linux-gnu.so
+7fbc562a4000-7fbc562a5000 rw-p 00006000 08:06 23464488                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/special/_comb.cpython-36m-x86_64-linux-gnu.so
+7fbc562a5000-7fbc5635a000 r-xp 00000000 08:06 23464487                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/special/specfun.cpython-36m-x86_64-linux-gnu.so
+7fbc5635a000-7fbc5655a000 ---p 000b5000 08:06 23464487                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/special/specfun.cpython-36m-x86_64-linux-gnu.so
+7fbc5655a000-7fbc56563000 rw-p 000b5000 08:06 23464487                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/special/specfun.cpython-36m-x86_64-linux-gnu.so
+7fbc56563000-7fbc565a3000 rw-p 00000000 00:00 0 
+7fbc565a3000-7fbc565c0000 r-xp 00000000 08:06 23464491                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/special/_ufuncs_cxx.cpython-36m-x86_64-linux-gnu.so
+7fbc565c0000-7fbc567c0000 ---p 0001d000 08:06 23464491                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/special/_ufuncs_cxx.cpython-36m-x86_64-linux-gnu.so
+7fbc567c0000-7fbc567c1000 rw-p 0001d000 08:06 23464491                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/special/_ufuncs_cxx.cpython-36m-x86_64-linux-gnu.so
+7fbc567c1000-7fbc567c2000 rw-p 00000000 00:00 0 
+7fbc567c2000-7fbc56965000 r-xp 00000000 08:06 23464485                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/special/_ufuncs.cpython-36m-x86_64-linux-gnu.so
+7fbc56965000-7fbc56b65000 ---p 001a3000 08:06 23464485                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/special/_ufuncs.cpython-36m-x86_64-linux-gnu.so
+7fbc56b65000-7fbc56b6f000 rw-p 001a3000 08:06 23464485                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/special/_ufuncs.cpython-36m-x86_64-linux-gnu.so
+7fbc56b6f000-7fbc56b78000 rw-p 00000000 00:00 0 
+7fbc56b78000-7fbc56b7d000 rw-p 001ae000 08:06 23464485                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/special/_ufuncs.cpython-36m-x86_64-linux-gnu.so
+7fbc56b7d000-7fbc56ba7000 r-xp 00000000 08:06 23464696                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/spatial/_hausdorff.cpython-36m-x86_64-linux-gnu.so
+7fbc56ba7000-7fbc56da7000 ---p 0002a000 08:06 23464696                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/spatial/_hausdorff.cpython-36m-x86_64-linux-gnu.so
+7fbc56da7000-7fbc56daa000 rw-p 0002a000 08:06 23464696                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/spatial/_hausdorff.cpython-36m-x86_64-linux-gnu.so
+7fbc56daa000-7fbc56dab000 rw-p 00000000 00:00 0 
+7fbc56dab000-7fbc56dc2000 r-xp 00000000 08:06 23464693                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/spatial/_distance_wrap.cpython-36m-x86_64-linux-gnu.so
+7fbc56dc2000-7fbc56fc2000 ---p 00017000 08:06 23464693                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/spatial/_distance_wrap.cpython-36m-x86_64-linux-gnu.so
+7fbc56fc2000-7fbc56fc3000 rw-p 00017000 08:06 23464693                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/spatial/_distance_wrap.cpython-36m-x86_64-linux-gnu.so
+7fbc56fc3000-7fbc57003000 rw-p 00000000 00:00 0 
+7fbc57003000-7fbc5709d000 r-xp 00000000 08:06 23465191                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/linalg/cython_lapack.cpython-36m-x86_64-linux-gnu.so
+7fbc5709d000-7fbc5729c000 ---p 0009a000 08:06 23465191                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/linalg/cython_lapack.cpython-36m-x86_64-linux-gnu.so
+7fbc5729c000-7fbc572a0000 rw-p 00099000 08:06 23465191                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/linalg/cython_lapack.cpython-36m-x86_64-linux-gnu.so
+7fbc572a0000-7fbc572b5000 rw-p 0009e000 08:06 23465191                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/linalg/cython_lapack.cpython-36m-x86_64-linux-gnu.so
+7fbc572b5000-7fbc572ee000 r-xp 00000000 08:06 23465212                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/linalg/cython_blas.cpython-36m-x86_64-linux-gnu.so
+7fbc572ee000-7fbc574ee000 ---p 00039000 08:06 23465212                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/linalg/cython_blas.cpython-36m-x86_64-linux-gnu.so
+7fbc574ee000-7fbc574f8000 rw-p 00039000 08:06 23465212                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/linalg/cython_blas.cpython-36m-x86_64-linux-gnu.so
+7fbc574f8000-7fbc57540000 r-xp 00000000 08:06 23465185                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/linalg/_decomp_update.cpython-36m-x86_64-linux-gnu.so
+7fbc57540000-7fbc57740000 ---p 00048000 08:06 23465185                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/linalg/_decomp_update.cpython-36m-x86_64-linux-gnu.so
+7fbc57740000-7fbc57746000 rw-p 00048000 08:06 23465185                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/linalg/_decomp_update.cpython-36m-x86_64-linux-gnu.so
+7fbc57746000-7fbc57787000 rw-p 00000000 00:00 0 
+7fbc57787000-7fbc577bb000 r-xp 00000000 08:06 23465195                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/linalg/_solve_toeplitz.cpython-36m-x86_64-linux-gnu.so
+7fbc577bb000-7fbc579bb000 ---p 00034000 08:06 23465195                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/linalg/_solve_toeplitz.cpython-36m-x86_64-linux-gnu.so
+7fbc579bb000-7fbc579bf000 rw-p 00034000 08:06 23465195                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/linalg/_solve_toeplitz.cpython-36m-x86_64-linux-gnu.so
+7fbc579bf000-7fbc579c0000 rw-p 00000000 00:00 0 
+7fbc579c0000-7fbc579cd000 r-xp 00000000 08:06 23465182                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/linalg/_flinalg.cpython-36m-x86_64-linux-gnu.so
+7fbc579cd000-7fbc57bcd000 ---p 0000d000 08:06 23465182                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/linalg/_flinalg.cpython-36m-x86_64-linux-gnu.so
+7fbc57bcd000-7fbc57bd0000 rw-p 0000d000 08:06 23465182                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/linalg/_flinalg.cpython-36m-x86_64-linux-gnu.so
+7fbc57bd0000-7fbc57bd3000 rw-p 00011000 08:06 23465182                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/linalg/_flinalg.cpython-36m-x86_64-linux-gnu.so
+7fbc57bd3000-7fbc57cf1000 r-xp 00000000 08:06 23465200                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/linalg/_flapack.cpython-36m-x86_64-linux-gnu.so
+7fbc57cf1000-7fbc57ef0000 ---p 0011e000 08:06 23465200                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/linalg/_flapack.cpython-36m-x86_64-linux-gnu.so
+7fbc57ef0000-7fbc57f5a000 rw-p 0011d000 08:06 23465200                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/linalg/_flapack.cpython-36m-x86_64-linux-gnu.so
+7fbc57f5a000-7fbc57f5b000 rw-p 00000000 00:00 0 
+7fbc57f5b000-7fbc57f64000 rw-p 00188000 08:06 23465200                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/linalg/_flapack.cpython-36m-x86_64-linux-gnu.so
+7fbc57f64000-7fbc57fa4000 rw-p 00000000 00:00 0 
+7fbc57fa4000-7fbc58010000 r-xp 00000000 08:06 23465188                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/linalg/_fblas.cpython-36m-x86_64-linux-gnu.so
+7fbc58010000-7fbc58210000 ---p 0006c000 08:06 23465188                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/linalg/_fblas.cpython-36m-x86_64-linux-gnu.so
+7fbc58210000-7fbc58236000 rw-p 0006c000 08:06 23465188                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/linalg/_fblas.cpython-36m-x86_64-linux-gnu.so
+7fbc58236000-7fbc5823a000 rw-p 00093000 08:06 23465188                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/linalg/_fblas.cpython-36m-x86_64-linux-gnu.so
+7fbc5823a000-7fbc58263000 r-xp 00000000 08:06 23464698                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/spatial/_voronoi.cpython-36m-x86_64-linux-gnu.so
+7fbc58263000-7fbc58463000 ---p 00029000 08:06 23464698                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/spatial/_voronoi.cpython-36m-x86_64-linux-gnu.so
+7fbc58463000-7fbc58466000 rw-p 00029000 08:06 23464698                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/spatial/_voronoi.cpython-36m-x86_64-linux-gnu.so
+7fbc58466000-7fbc58467000 rw-p 00000000 00:00 0 
+7fbc58467000-7fbc58470000 r-xp 00000000 08:06 23464618                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/_lib/messagestream.cpython-36m-x86_64-linux-gnu.so
+7fbc58470000-7fbc5866f000 ---p 00009000 08:06 23464618                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/_lib/messagestream.cpython-36m-x86_64-linux-gnu.so
+7fbc5866f000-7fbc58671000 rw-p 00008000 08:06 23464618                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/_lib/messagestream.cpython-36m-x86_64-linux-gnu.so
+7fbc58671000-7fbc5875c000 r-xp 00000000 08:06 23464697                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/spatial/qhull.cpython-36m-x86_64-linux-gnu.so
+7fbc5875c000-7fbc5895b000 ---p 000eb000 08:06 23464697                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/spatial/qhull.cpython-36m-x86_64-linux-gnu.so
+7fbc5895b000-7fbc58964000 rw-p 000ea000 08:06 23464697                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/spatial/qhull.cpython-36m-x86_64-linux-gnu.so
+7fbc58964000-7fbc58967000 rw-p 00000000 00:00 0 
+7fbc58967000-7fbc5896b000 rw-p 000f4000 08:06 23464697                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/spatial/qhull.cpython-36m-x86_64-linux-gnu.so
+7fbc5896b000-7fbc58a1b000 r-xp 00000000 08:06 23464690                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/spatial/ckdtree.cpython-36m-x86_64-linux-gnu.so
+7fbc58a1b000-7fbc58c1a000 ---p 000b0000 08:06 23464690                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/spatial/ckdtree.cpython-36m-x86_64-linux-gnu.so
+7fbc58c1a000-7fbc58c24000 rw-p 000af000 08:06 23464690                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/spatial/ckdtree.cpython-36m-x86_64-linux-gnu.so
+7fbc58c24000-7fbc58c66000 rw-p 00000000 00:00 0 
+7fbc58c66000-7fbc58ca1000 r-xp 00000000 08:06 23463661                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/sparse/csgraph/_reordering.cpython-36m-x86_64-linux-gnu.so
+7fbc58ca1000-7fbc58ea1000 ---p 0003b000 08:06 23463661                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/sparse/csgraph/_reordering.cpython-36m-x86_64-linux-gnu.so
+7fbc58ea1000-7fbc58ea6000 rw-p 0003b000 08:06 23463661                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/sparse/csgraph/_reordering.cpython-36m-x86_64-linux-gnu.so
+7fbc58ea6000-7fbc58ea7000 rw-p 00000000 00:00 0 
+7fbc58ea7000-7fbc58ed5000 r-xp 00000000 08:06 23463653                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/sparse/csgraph/_matching.cpython-36m-x86_64-linux-gnu.so
+7fbc58ed5000-7fbc590d5000 ---p 0002e000 08:06 23463653                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/sparse/csgraph/_matching.cpython-36m-x86_64-linux-gnu.so
+7fbc590d5000-7fbc590d9000 rw-p 0002e000 08:06 23463653                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/sparse/csgraph/_matching.cpython-36m-x86_64-linux-gnu.so
+7fbc590d9000-7fbc590da000 rw-p 00000000 00:00 0 
+7fbc590da000-7fbc59112000 r-xp 00000000 08:06 23463655                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/sparse/csgraph/_flow.cpython-36m-x86_64-linux-gnu.so
+7fbc59112000-7fbc59312000 ---p 00038000 08:06 23463655                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/sparse/csgraph/_flow.cpython-36m-x86_64-linux-gnu.so
+7fbc59312000-7fbc59318000 rw-p 00038000 08:06 23463655                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/sparse/csgraph/_flow.cpython-36m-x86_64-linux-gnu.so
+7fbc59318000-7fbc59319000 rw-p 00000000 00:00 0 
+7fbc59319000-7fbc59344000 r-xp 00000000 08:06 23463660                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/sparse/csgraph/_min_spanning_tree.cpython-36m-x86_64-linux-gnu.so
+7fbc59344000-7fbc59544000 ---p 0002b000 08:06 23463660                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/sparse/csgraph/_min_spanning_tree.cpython-36m-x86_64-linux-gnu.so
+7fbc59544000-7fbc59548000 rw-p 0002b000 08:06 23463660                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/sparse/csgraph/_min_spanning_tree.cpython-36m-x86_64-linux-gnu.so
+7fbc59548000-7fbc59549000 rw-p 00000000 00:00 0 
+7fbc59549000-7fbc5956a000 r-xp 00000000 08:06 23463656                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/sparse/csgraph/_traversal.cpython-36m-x86_64-linux-gnu.so
+7fbc5956a000-7fbc59769000 ---p 00021000 08:06 23463656                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/sparse/csgraph/_traversal.cpython-36m-x86_64-linux-gnu.so
+7fbc59769000-7fbc5976e000 rw-p 00020000 08:06 23463656                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/sparse/csgraph/_traversal.cpython-36m-x86_64-linux-gnu.so
+7fbc5976e000-7fbc59790000 r-xp 00000000 08:06 23463657                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/sparse/csgraph/_tools.cpython-36m-x86_64-linux-gnu.so
+7fbc59790000-7fbc59990000 ---p 00022000 08:06 23463657                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/sparse/csgraph/_tools.cpython-36m-x86_64-linux-gnu.so
+7fbc59990000-7fbc59995000 rw-p 00022000 08:06 23463657                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/sparse/csgraph/_tools.cpython-36m-x86_64-linux-gnu.so
+7fbc59995000-7fbc59996000 rw-p 00000000 00:00 0 
+7fbc59996000-7fbc599f3000 r-xp 00000000 08:06 23463654                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/sparse/csgraph/_shortest_path.cpython-36m-x86_64-linux-gnu.so
+7fbc599f3000-7fbc59bf2000 ---p 0005d000 08:06 23463654                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/sparse/csgraph/_shortest_path.cpython-36m-x86_64-linux-gnu.so
+7fbc59bf2000-7fbc59bfb000 rw-p 0005c000 08:06 23463654                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/sparse/csgraph/_shortest_path.cpython-36m-x86_64-linux-gnu.so
+7fbc59bfb000-7fbc59c3d000 rw-p 00000000 00:00 0 
+7fbc59c3d000-7fbc59ca9000 r-xp 00000000 08:06 23463650                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/sparse/_csparsetools.cpython-36m-x86_64-linux-gnu.so
+7fbc59ca9000-7fbc59ea8000 ---p 0006c000 08:06 23463650                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/sparse/_csparsetools.cpython-36m-x86_64-linux-gnu.so
+7fbc59ea8000-7fbc59eae000 rw-p 0006b000 08:06 23463650                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/sparse/_csparsetools.cpython-36m-x86_64-linux-gnu.so
+7fbc59eae000-7fbc59ef0000 rw-p 00000000 00:00 0 
+7fbc59ef0000-7fbc5a239000 r-xp 00000000 08:06 23463648                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/sparse/_sparsetools.cpython-36m-x86_64-linux-gnu.so
+7fbc5a239000-7fbc5a439000 ---p 00349000 08:06 23463648                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/sparse/_sparsetools.cpython-36m-x86_64-linux-gnu.so
+7fbc5a439000-7fbc5a43a000 rw-p 00349000 08:06 23463648                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/sparse/_sparsetools.cpython-36m-x86_64-linux-gnu.so
+7fbc5a43a000-7fbc5a47a000 rw-p 00000000 00:00 0 
+7fbc5a47a000-7fbc5a52c000 r-xp 00000000 08:06 23465315                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/fft/_pocketfft/pypocketfft.cpython-36m-x86_64-linux-gnu.so
+7fbc5a52c000-7fbc5a72c000 ---p 000b2000 08:06 23465315                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/fft/_pocketfft/pypocketfft.cpython-36m-x86_64-linux-gnu.so
+7fbc5a72c000-7fbc5a72e000 rw-p 000b2000 08:06 23465315                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/fft/_pocketfft/pypocketfft.cpython-36m-x86_64-linux-gnu.so
+7fbc5a72e000-7fbc5a772000 rw-p 00000000 00:00 0 
+7fbc5a772000-7fbc5a77b000 r-xp 00000000 08:06 23464681                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/_lib/_uarray/_uarray.cpython-36m-x86_64-linux-gnu.so
+7fbc5a77b000-7fbc5a97b000 ---p 00009000 08:06 23464681                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/_lib/_uarray/_uarray.cpython-36m-x86_64-linux-gnu.so
+7fbc5a97b000-7fbc5a97c000 rw-p 00009000 08:06 23464681                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/_lib/_uarray/_uarray.cpython-36m-x86_64-linux-gnu.so
+7fbc5a97c000-7fbc5a98b000 r-xp 00000000 08:06 23464625                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/_lib/_ccallback_c.cpython-36m-x86_64-linux-gnu.so
+7fbc5a98b000-7fbc5ab8b000 ---p 0000f000 08:06 23464625                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/_lib/_ccallback_c.cpython-36m-x86_64-linux-gnu.so
+7fbc5ab8b000-7fbc5ab8d000 rw-p 0000f000 08:06 23464625                   /home/emos-admin/.local/lib/python3.6/site-packages/scipy/_lib/_ccallback_c.cpython-36m-x86_64-linux-gnu.so
+7fbc5ab8d000-7fbc5afcd000 rw-p 00000000 00:00 0 
+7fbc5afcd000-7fbc5afd1000 r-xp 00000000 08:06 11666459                   /usr/lib/python3.6/lib-dynload/termios.cpython-36m-x86_64-linux-gnu.so
+7fbc5afd1000-7fbc5b1d0000 ---p 00004000 08:06 11666459                   /usr/lib/python3.6/lib-dynload/termios.cpython-36m-x86_64-linux-gnu.so
+7fbc5b1d0000-7fbc5b1d1000 r--p 00003000 08:06 11666459                   /usr/lib/python3.6/lib-dynload/termios.cpython-36m-x86_64-linux-gnu.so
+7fbc5b1d1000-7fbc5b1d3000 rw-p 00004000 08:06 11666459                   /usr/lib/python3.6/lib-dynload/termios.cpython-36m-x86_64-linux-gnu.so
+7fbc5b1d3000-7fbc5b4d3000 rw-p 00000000 00:00 0 
+7fbc5b4d3000-7fbc5b4d6000 r-xp 00000000 08:06 11666446                   /usr/lib/python3.6/lib-dynload/_multiprocessing.cpython-36m-x86_64-linux-gnu.so
+7fbc5b4d6000-7fbc5b6d5000 ---p 00003000 08:06 11666446                   /usr/lib/python3.6/lib-dynload/_multiprocessing.cpython-36m-x86_64-linux-gnu.so
+7fbc5b6d5000-7fbc5b6d6000 r--p 00002000 08:06 11666446                   /usr/lib/python3.6/lib-dynload/_multiprocessing.cpython-36m-x86_64-linux-gnu.so
+7fbc5b6d6000-7fbc5b6d7000 rw-p 00003000 08:06 11666446                   /usr/lib/python3.6/lib-dynload/_multiprocessing.cpython-36m-x86_64-linux-gnu.so
+7fbc5b6d7000-7fbc5b9d7000 rw-p 00000000 00:00 0 
+7fbc5b9d8000-7fbc5bb58000 rw-p 00000000 00:00 0 
+7fbc5bb58000-7fbc5bb7d000 r-xp 00000000 08:06 24120456                   /home/emos-admin/.local/lib/python3.6/site-packages/torch/lib/libgomp-7c85b1e2.so.1
+7fbc5bb7d000-7fbc5bd7c000 ---p 00025000 08:06 24120456                   /home/emos-admin/.local/lib/python3.6/site-packages/torch/lib/libgomp-7c85b1e2.so.1
+7fbc5bd7c000-7fbc5bd7d000 r--p 00024000 08:06 24120456                   /home/emos-admin/.local/lib/python3.6/site-packages/torch/lib/libgomp-7c85b1e2.so.1
+7fbc5bd7d000-7fbc5bd82000 rw-p 00025000 08:06 24120456                   /home/emos-admin/.local/lib/python3.6/site-packages/torch/lib/libgomp-7c85b1e2.so.1
+7fbc5bd82000-7fbc5bdf9000 r-xp 00000000 08:06 24120461                   /home/emos-admin/.local/lib/python3.6/site-packages/torch/lib/libcudart-1b201d85.so.10.1
+7fbc5bdf9000-7fbc5bff9000 ---p 00077000 08:06 24120461                   /home/emos-admin/.local/lib/python3.6/site-packages/torch/lib/libcudart-1b201d85.so.10.1
+7fbc5bff9000-7fbc5bffd000 rw-p 00077000 08:06 24120461                   /home/emos-admin/.local/lib/python3.6/site-packages/torch/lib/libcudart-1b201d85.so.10.1
+7fbc5bffd000-7fbc5bffe000 rw-p 00000000 00:00 0 
+7fbc5bffe000-7fbc5c001000 rw-p 0007c000 08:06 24120461                   /home/emos-admin/.local/lib/python3.6/site-packages/torch/lib/libcudart-1b201d85.so.10.1
+7fbc5c001000-7fbc5c009000 r-xp 00000000 08:06 24120460                   /home/emos-admin/.local/lib/python3.6/site-packages/torch/lib/libnvToolsExt-3965bdd0.so.1
+7fbc5c009000-7fbc5c209000 ---p 00008000 08:06 24120460                   /home/emos-admin/.local/lib/python3.6/site-packages/torch/lib/libnvToolsExt-3965bdd0.so.1
+7fbc5c209000-7fbc5c20a000 rw-p 00008000 08:06 24120460                   /home/emos-admin/.local/lib/python3.6/site-packages/torch/lib/libnvToolsExt-3965bdd0.so.1
+7fbc5c20a000-7fbc5c20b000 rw-p 0000a000 08:06 24120460                   /home/emos-admin/.local/lib/python3.6/site-packages/torch/lib/libnvToolsExt-3965bdd0.so.1
+7fbc5c20b000-7fbc5c252000 r-xp 00000000 08:06 24120459                   /home/emos-admin/.local/lib/python3.6/site-packages/torch/lib/libc10.so
+7fbc5c252000-7fbc5c452000 ---p 00047000 08:06 24120459                   /home/emos-admin/.local/lib/python3.6/site-packages/torch/lib/libc10.so
+7fbc5c452000-7fbc5c453000 r--p 00047000 08:06 24120459                   /home/emos-admin/.local/lib/python3.6/site-packages/torch/lib/libc10.so
+7fbc5c453000-7fbc5c454000 rw-p 00048000 08:06 24120459                   /home/emos-admin/.local/lib/python3.6/site-packages/torch/lib/libc10.so
+7fbc5c454000-7fbc5c455000 rw-p 00000000 00:00 0 
+7fbc5c455000-7fbc5c460000 rw-p 00062000 08:06 24120459                   /home/emos-admin/.local/lib/python3.6/site-packages/torch/lib/libc10.so
+7fbc5c460000-7fbc5c484000 r-xp 00000000 08:06 24120454                   /home/emos-admin/.local/lib/python3.6/site-packages/torch/lib/libc10_cuda.so
+7fbc5c484000-7fbc5c683000 ---p 00024000 08:06 24120454                   /home/emos-admin/.local/lib/python3.6/site-packages/torch/lib/libc10_cuda.so
+7fbc5c683000-7fbc5c684000 r--p 00023000 08:06 24120454                   /home/emos-admin/.local/lib/python3.6/site-packages/torch/lib/libc10_cuda.so
+7fbc5c684000-7fbc5c689000 rw-p 00024000 08:06 24120454                   /home/emos-admin/.local/lib/python3.6/site-packages/torch/lib/libc10_cuda.so
+7fbc5c689000-7fbc5c68d000 rw-p 00031000 08:06 24120454                   /home/emos-admin/.local/lib/python3.6/site-packages/torch/lib/libc10_cuda.so
+7fbc5c68d000-7fbc5c694000 r-xp 00000000 08:06 14947386                   /lib/x86_64-linux-gnu/librt-2.27.so
+7fbc5c694000-7fbc5c893000 ---p 00007000 08:06 14947386                   /lib/x86_64-linux-gnu/librt-2.27.so
+7fbc5c893000-7fbc5c894000 r--p 00006000 08:06 14947386                   /lib/x86_64-linux-gnu/librt-2.27.so
+7fbc5c894000-7fbc5c895000 rw-p 00007000 08:06 14947386                   /lib/x86_64-linux-gnu/librt-2.27.so
+7fbc5c895000-7fbca2c67000 r-xp 00000000 08:06 24120464                   /home/emos-admin/.local/lib/python3.6/site-packages/torch/lib/libtorch.so
+7fbca2c67000-7fbca2e66000 ---p 463d2000 08:06 24120464                   /home/emos-admin/.local/lib/python3.6/site-packages/torch/lib/libtorch.so
+7fbca2e66000-7fbca306c000 r--p 463d1000 08:06 24120464                   /home/emos-admin/.local/lib/python3.6/site-packages/torch/lib/libtorch.so
+7fbca306c000-7fbca4560000 rw-p 465d7000 08:06 24120464                   /home/emos-admin/.local/lib/python3.6/site-packages/torch/lib/libtorch.so
+7fbca4560000-7fbca4c65000 rw-p 00000000 00:00 0 
+7fbca4c65000-7fbca6e36000 rw-p 4bd12000 08:06 24120464                   /home/emos-admin/.local/lib/python3.6/site-packages/torch/lib/libtorch.so
+7fbca6e36000-7fbca6faf000 r-xp 00000000 08:06 11403852                   /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25
+7fbca6faf000-7fbca71af000 ---p 00179000 08:06 11403852                   /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25
+7fbca71af000-7fbca71b9000 r--p 00179000 08:06 11403852                   /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25
+7fbca71b9000-7fbca71bb000 rw-p 00183000 08:06 11403852                   /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25
+7fbca71bb000-7fbca72bf000 rw-p 00000000 00:00 0 
+7fbca72bf000-7fbca7364000 r-xp 00000000 08:06 23333240                   /home/emos-admin/.local/lib/python3.6/site-packages/numpy/random/_generator.cpython-36m-x86_64-linux-gnu.so
+7fbca7364000-7fbca7564000 ---p 000a5000 08:06 23333240                   /home/emos-admin/.local/lib/python3.6/site-packages/numpy/random/_generator.cpython-36m-x86_64-linux-gnu.so
+7fbca7564000-7fbca7588000 rw-p 000a5000 08:06 23333240                   /home/emos-admin/.local/lib/python3.6/site-packages/numpy/random/_generator.cpython-36m-x86_64-linux-gnu.so
+7fbca7588000-7fbca758b000 rw-p 00000000 00:00 0 
+7fbca758b000-7fbca7597000 r-xp 00000000 08:06 23333244                   /home/emos-admin/.local/lib/python3.6/site-packages/numpy/random/_sfc64.cpython-36m-x86_64-linux-gnu.so
+7fbca7597000-7fbca7796000 ---p 0000c000 08:06 23333244                   /home/emos-admin/.local/lib/python3.6/site-packages/numpy/random/_sfc64.cpython-36m-x86_64-linux-gnu.so
+7fbca7796000-7fbca7798000 rw-p 0000b000 08:06 23333244                   /home/emos-admin/.local/lib/python3.6/site-packages/numpy/random/_sfc64.cpython-36m-x86_64-linux-gnu.so
+7fbca7798000-7fbca77a7000 r-xp 00000000 08:06 23333243                   /home/emos-admin/.local/lib/python3.6/site-packages/numpy/random/_pcg64.cpython-36m-x86_64-linux-gnu.so
+7fbca77a7000-7fbca79a7000 ---p 0000f000 08:06 23333243                   /home/emos-admin/.local/lib/python3.6/site-packages/numpy/random/_pcg64.cpython-36m-x86_64-linux-gnu.so
+7fbca79a7000-7fbca79a9000 rw-p 0000f000 08:06 23333243                   /home/emos-admin/.local/lib/python3.6/site-packages/numpy/random/_pcg64.cpython-36m-x86_64-linux-gnu.so
+7fbca79a9000-7fbca79bb000 r-xp 00000000 08:06 23333246                   /home/emos-admin/.local/lib/python3.6/site-packages/numpy/random/_philox.cpython-36m-x86_64-linux-gnu.so
+7fbca79bb000-7fbca7bba000 ---p 00012000 08:06 23333246                   /home/emos-admin/.local/lib/python3.6/site-packages/numpy/random/_philox.cpython-36m-x86_64-linux-gnu.so
+7fbca7bba000-7fbca7bbc000 rw-p 00011000 08:06 23333246                   /home/emos-admin/.local/lib/python3.6/site-packages/numpy/random/_philox.cpython-36m-x86_64-linux-gnu.so
+7fbca7bbc000-7fbca7bbd000 rw-p 00000000 00:00 0 
+7fbca7bbd000-7fbca7bd6000 r-xp 00000000 08:06 23333247                   /home/emos-admin/.local/lib/python3.6/site-packages/numpy/random/_mt19937.cpython-36m-x86_64-linux-gnu.so
+7fbca7bd6000-7fbca7dd5000 ---p 00019000 08:06 23333247                   /home/emos-admin/.local/lib/python3.6/site-packages/numpy/random/_mt19937.cpython-36m-x86_64-linux-gnu.so
+7fbca7dd5000-7fbca7dd7000 rw-p 00018000 08:06 23333247                   /home/emos-admin/.local/lib/python3.6/site-packages/numpy/random/_mt19937.cpython-36m-x86_64-linux-gnu.so
+7fbca7dd7000-7fbca7dd8000 rw-p 00000000 00:00 0 
+7fbca7dd8000-7fbca7e34000 r-xp 00000000 08:06 23333250                   /home/emos-admin/.local/lib/python3.6/site-packages/numpy/random/_bounded_integers.cpython-36m-x86_64-linux-gnu.so
+7fbca7e34000-7fbca8033000 ---p 0005c000 08:06 23333250                   /home/emos-admin/.local/lib/python3.6/site-packages/numpy/random/_bounded_integers.cpython-36m-x86_64-linux-gnu.so
+7fbca8033000-7fbca8035000 rw-p 0005b000 08:06 23333250                   /home/emos-admin/.local/lib/python3.6/site-packages/numpy/random/_bounded_integers.cpython-36m-x86_64-linux-gnu.so
+7fbca8035000-7fbca8037000 rw-p 00000000 00:00 0 
+7fbca8037000-7fbca8073000 r-xp 00000000 08:06 23333241                   /home/emos-admin/.local/lib/python3.6/site-packages/numpy/random/_common.cpython-36m-x86_64-linux-gnu.so
+7fbca8073000-7fbca8272000 ---p 0003c000 08:06 23333241                   /home/emos-admin/.local/lib/python3.6/site-packages/numpy/random/_common.cpython-36m-x86_64-linux-gnu.so
+7fbca8272000-7fbca8274000 rw-p 0003b000 08:06 23333241                   /home/emos-admin/.local/lib/python3.6/site-packages/numpy/random/_common.cpython-36m-x86_64-linux-gnu.so
+7fbca8274000-7fbca8275000 rw-p 00000000 00:00 0 
+7fbca8275000-7fbca829e000 r-xp 00000000 08:06 23333249                   /home/emos-admin/.local/lib/python3.6/site-packages/numpy/random/_bit_generator.cpython-36m-x86_64-linux-gnu.so
+7fbca829e000-7fbca849e000 ---p 00029000 08:06 23333249                   /home/emos-admin/.local/lib/python3.6/site-packages/numpy/random/_bit_generator.cpython-36m-x86_64-linux-gnu.so
+7fbca849e000-7fbca84a3000 rw-p 00029000 08:06 23333249                   /home/emos-admin/.local/lib/python3.6/site-packages/numpy/random/_bit_generator.cpython-36m-x86_64-linux-gnu.so
+7fbca84a3000-7fbca84a4000 rw-p 00000000 00:00 0 
+7fbca84a4000-7fbca8528000 r-xp 00000000 08:06 23333238                   /home/emos-admin/.local/lib/python3.6/site-packages/numpy/random/mtrand.cpython-36m-x86_64-linux-gnu.so
+7fbca8528000-7fbca8728000 ---p 00084000 08:06 23333238                   /home/emos-admin/.local/lib/python3.6/site-packages/numpy/random/mtrand.cpython-36m-x86_64-linux-gnu.so
+7fbca8728000-7fbca874e000 rw-p 00084000 08:06 23333238                   /home/emos-admin/.local/lib/python3.6/site-packages/numpy/random/mtrand.cpython-36m-x86_64-linux-gnu.so
+7fbca874e000-7fbca87d1000 rw-p 00000000 00:00 0 
+7fbca87d1000-7fbca87e7000 r-xp 00000000 08:06 23333543                   /home/emos-admin/.local/lib/python3.6/site-packages/numpy/fft/_pocketfft_internal.cpython-36m-x86_64-linux-gnu.so
+7fbca87e7000-7fbca89e6000 ---p 00016000 08:06 23333543                   /home/emos-admin/.local/lib/python3.6/site-packages/numpy/fft/_pocketfft_internal.cpython-36m-x86_64-linux-gnu.so
+7fbca89e6000-7fbca89e7000 rw-p 00015000 08:06 23333543                   /home/emos-admin/.local/lib/python3.6/site-packages/numpy/fft/_pocketfft_internal.cpython-36m-x86_64-linux-gnu.so
+7fbca89e7000-7fbca8aa7000 rw-p 00000000 00:00 0 
+7fbca8aa7000-7fbca8ad2000 r-xp 00000000 08:06 23333518                   /home/emos-admin/.local/lib/python3.6/site-packages/numpy/linalg/_umath_linalg.cpython-36m-x86_64-linux-gnu.so
+7fbca8ad2000-7fbca8cd2000 ---p 0002b000 08:06 23333518                   /home/emos-admin/.local/lib/python3.6/site-packages/numpy/linalg/_umath_linalg.cpython-36m-x86_64-linux-gnu.so
+7fbca8cd2000-7fbca8cd4000 rw-p 0002b000 08:06 23333518                   /home/emos-admin/.local/lib/python3.6/site-packages/numpy/linalg/_umath_linalg.cpython-36m-x86_64-linux-gnu.so
+7fbca8cd4000-7fbca8cd7000 rw-p 000d4000 08:06 23333518                   /home/emos-admin/.local/lib/python3.6/site-packages/numpy/linalg/_umath_linalg.cpython-36m-x86_64-linux-gnu.so
+7fbca8cd7000-7fbca8cdb000 r-xp 00000000 08:06 23333520                   /home/emos-admin/.local/lib/python3.6/site-packages/numpy/linalg/lapack_lite.cpython-36m-x86_64-linux-gnu.so
+7fbca8cdb000-7fbca8edb000 ---p 00004000 08:06 23333520                   /home/emos-admin/.local/lib/python3.6/site-packages/numpy/linalg/lapack_lite.cpython-36m-x86_64-linux-gnu.so
+7fbca8edb000-7fbca8edc000 rw-p 00004000 08:06 23333520                   /home/emos-admin/.local/lib/python3.6/site-packages/numpy/linalg/lapack_lite.cpython-36m-x86_64-linux-gnu.so
+7fbca8edc000-7fbca8ede000 rw-p 00019000 08:06 23333520                   /home/emos-admin/.local/lib/python3.6/site-packages/numpy/linalg/lapack_lite.cpython-36m-x86_64-linux-gnu.so
+7fbca8ede000-7fbca8f1e000 rw-p 00000000 00:00 0 
+7fbca8f1e000-7fbca8f3d000 r-xp 00000000 08:06 23333314                   /home/emos-admin/.local/lib/python3.6/site-packages/numpy/core/_multiarray_tests.cpython-36m-x86_64-linux-gnu.so
+7fbca8f3d000-7fbca913d000 ---p 0001f000 08:06 23333314                   /home/emos-admin/.local/lib/python3.6/site-packages/numpy/core/_multiarray_tests.cpython-36m-x86_64-linux-gnu.so
+7fbca913d000-7fbca913f000 rw-p 0001f000 08:06 23333314                   /home/emos-admin/.local/lib/python3.6/site-packages/numpy/core/_multiarray_tests.cpython-36m-x86_64-linux-gnu.so
+7fbca913f000-7fbca923f000 rw-p 00000000 00:00 0 
+7fbca923f000-7fbcab23f000 rw-p 00000000 00:00 0 
+7fbcab23f000-7fbcab2bf000 rw-p 00000000 00:00 0 
+7fbcab2bf000-7fbcad2bf000 rw-p 00000000 00:00 0 
+7fbcad2bf000-7fbcad2c0000 ---p 00000000 00:00 0 
+7fbcad2c0000-7fbcadac0000 rw-p 00000000 00:00 0 
+7fbcadac0000-7fbcafac0000 rw-p 00000000 00:00 0 
+7fbcafac0000-7fbcafac1000 ---p 00000000 00:00 0 
+7fbcafac1000-7fbcb02c1000 rw-p 00000000 00:00 0 
+7fbcb02c1000-7fbcb22c1000 rw-p 00000000 00:00 0 
+7fbcb22c1000-7fbcb22c2000 ---p 00000000 00:00 0 
+7fbcb22c2000-7fbcb2ac2000 rw-p 00000000 00:00 0 
+7fbcb2ac2000-7fbcb8ac2000 rw-p 00000000 00:00 0 
+7fbcb8ac2000-7fbcb8ac3000 ---p 00000000 00:00 0 
+7fbcb8ac3000-7fbcb92c3000 rw-p 00000000 00:00 0 
+7fbcb92eb000-7fbcb932b000 rw-p 00000000 00:00 0 
+7fbcb932b000-7fbcb942b000 rwxp 00000000 00:00 0 
+7fbcb942b000-7fbcb9442000 r-xp 00000000 08:06 14943290                   /lib/x86_64-linux-gnu/libgcc_s.so.1
+7fbcb9442000-7fbcb9641000 ---p 00017000 08:06 14943290                   /lib/x86_64-linux-gnu/libgcc_s.so.1
+7fbcb9641000-7fbcb9642000 r--p 00016000 08:06 14943290                   /lib/x86_64-linux-gnu/libgcc_s.so.1
+7fbcb9642000-7fbcb9643000 rw-p 00017000 08:06 14943290                   /lib/x86_64-linux-gnu/libgcc_s.so.1
+7fbcb9643000-7fbcba3a2000 r-xp 00000000 08:06 24120466                   /home/emos-admin/.local/lib/python3.6/site-packages/torch/lib/libtorch_python.so
+7fbcba3a2000-7fbcba5a1000 ---p 00d5f000 08:06 24120466                   /home/emos-admin/.local/lib/python3.6/site-packages/torch/lib/libtorch_python.so
+7fbcba5a1000-7fbcba5b6000 r--p 00d5e000 08:06 24120466                   /home/emos-admin/.local/lib/python3.6/site-packages/torch/lib/libtorch_python.so
+7fbcba5b6000-7fbcba5d2000 rw-p 00d73000 08:06 24120466                   /home/emos-admin/.local/lib/python3.6/site-packages/torch/lib/libtorch_python.so
+7fbcba5d2000-7fbcba627000 rw-p 00000000 00:00 0 
+7fbcba627000-7fbcba69a000 rw-p 01059000 08:06 24120466                   /home/emos-admin/.local/lib/python3.6/site-packages/torch/lib/libtorch_python.so
+7fbcba69a000-7fbcba6a2000 r-xp 00000000 08:06 24120462                   /home/emos-admin/.local/lib/python3.6/site-packages/torch/lib/libshm.so
+7fbcba6a2000-7fbcba8a1000 ---p 00008000 08:06 24120462                   /home/emos-admin/.local/lib/python3.6/site-packages/torch/lib/libshm.so
+7fbcba8a1000-7fbcba8a2000 r--p 00007000 08:06 24120462                   /home/emos-admin/.local/lib/python3.6/site-packages/torch/lib/libshm.so
+7fbcba8a2000-7fbcba8a3000 rw-p 00008000 08:06 24120462                   /home/emos-admin/.local/lib/python3.6/site-packages/torch/lib/libshm.so
+7fbcba8a3000-7fbcba8a9000 rw-p 0000c000 08:06 24120462                   /home/emos-admin/.local/lib/python3.6/site-packages/torch/lib/libshm.so
+7fbcba8a9000-7fbcba8bd000 r-xp 00000000 08:06 24118845                   /home/emos-admin/.local/lib/python3.6/site-packages/torch/_C.cpython-36m-x86_64-linux-gnu.so
+7fbcba8bd000-7fbcbaabd000 ---p 00014000 08:06 24118845                   /home/emos-admin/.local/lib/python3.6/site-packages/torch/_C.cpython-36m-x86_64-linux-gnu.so
+7fbcbaabd000-7fbcbaabe000 r--p 00014000 08:06 24118845                   /home/emos-admin/.local/lib/python3.6/site-packages/torch/_C.cpython-36m-x86_64-linux-gnu.so
+7fbcbaabe000-7fbcbaabf000 rw-p 00015000 08:06 24118845                   /home/emos-admin/.local/lib/python3.6/site-packages/torch/_C.cpython-36m-x86_64-linux-gnu.so
+7fbcbaabf000-7fbcbaac6000 rw-p 00026000 08:06 24118845                   /home/emos-admin/.local/lib/python3.6/site-packages/torch/_C.cpython-36m-x86_64-linux-gnu.so
+7fbcbaac6000-7fbcbabb6000 r-xp 00000000 08:06 23332988                   /home/emos-admin/.local/lib/python3.6/site-packages/numpy/.libs/libgfortran-ed201abd.so.3.0.0
+7fbcbabb6000-7fbcbadb5000 ---p 000f0000 08:06 23332988                   /home/emos-admin/.local/lib/python3.6/site-packages/numpy/.libs/libgfortran-ed201abd.so.3.0.0
+7fbcbadb5000-7fbcbadb7000 rw-p 000ef000 08:06 23332988                   /home/emos-admin/.local/lib/python3.6/site-packages/numpy/.libs/libgfortran-ed201abd.so.3.0.0
+7fbcbadb7000-7fbcbadb8000 rw-p 00000000 00:00 0 
+7fbcbadb8000-7fbcbadc0000 rw-p 000f2000 08:06 23332988                   /home/emos-admin/.local/lib/python3.6/site-packages/numpy/.libs/libgfortran-ed201abd.so.3.0.0
+7fbcbadc0000-7fbcbc8b6000 r-xp 00000000 08:06 23332989                   /home/emos-admin/.local/lib/python3.6/site-packages/numpy/.libs/libopenblasp-r0-34a18dc3.3.7.so
+7fbcbc8b6000-7fbcbcab5000 ---p 01af6000 08:06 23332989                   /home/emos-admin/.local/lib/python3.6/site-packages/numpy/.libs/libopenblasp-r0-34a18dc3.3.7.so
+7fbcbcab5000-7fbcbcace000 rw-p 01af5000 08:06 23332989                   /home/emos-admin/.local/lib/python3.6/site-packages/numpy/.libs/libopenblasp-r0-34a18dc3.3.7.so
+7fbcbcace000-7fbcbcad9000 rw-p 00000000 00:00 0 
+7fbcbcad9000-7fbcbcb51000 rw-p 01be1000 08:06 23332989                   /home/emos-admin/.local/lib/python3.6/site-packages/numpy/.libs/libopenblasp-r0-34a18dc3.3.7.so
+7fbcbcb51000-7fbcbcef6000 r-xp 00000000 08:06 23333339                   /home/emos-admin/.local/lib/python3.6/site-packages/numpy/core/_multiarray_umath.cpython-36m-x86_64-linux-gnu.so
+7fbcbcef6000-7fbcbd0f5000 ---p 003a5000 08:06 23333339                   /home/emos-admin/.local/lib/python3.6/site-packages/numpy/core/_multiarray_umath.cpython-36m-x86_64-linux-gnu.so
+7fbcbd0f5000-7fbcbd114000 rw-p 003a4000 08:06 23333339                   /home/emos-admin/.local/lib/python3.6/site-packages/numpy/core/_multiarray_umath.cpython-36m-x86_64-linux-gnu.so
+7fbcbd114000-7fbcbd135000 rw-p 00000000 00:00 0 
+7fbcbd135000-7fbcbd13c000 rw-p 01476000 08:06 23333339                   /home/emos-admin/.local/lib/python3.6/site-packages/numpy/core/_multiarray_umath.cpython-36m-x86_64-linux-gnu.so
+7fbcbd13c000-7fbcbd23c000 rw-p 00000000 00:00 0 
+7fbcbd23c000-7fbcbd245000 r-xp 00000000 08:06 11539145                   /usr/lib/python3/dist-packages/simplejson/_speedups.cpython-36m-x86_64-linux-gnu.so
+7fbcbd245000-7fbcbd444000 ---p 00009000 08:06 11539145                   /usr/lib/python3/dist-packages/simplejson/_speedups.cpython-36m-x86_64-linux-gnu.so
+7fbcbd444000-7fbcbd445000 r--p 00008000 08:06 11539145                   /usr/lib/python3/dist-packages/simplejson/_speedups.cpython-36m-x86_64-linux-gnu.so
+7fbcbd445000-7fbcbd446000 rw-p 00009000 08:06 11539145                   /usr/lib/python3/dist-packages/simplejson/_speedups.cpython-36m-x86_64-linux-gnu.so
+7fbcbd446000-7fbcbd44c000 r-xp 00000000 08:06 14943611                   /lib/x86_64-linux-gnu/libuuid.so.1.3.0
+7fbcbd44c000-7fbcbd64b000 ---p 00006000 08:06 14943611                   /lib/x86_64-linux-gnu/libuuid.so.1.3.0
+7fbcbd64b000-7fbcbd64c000 r--p 00005000 08:06 14943611                   /lib/x86_64-linux-gnu/libuuid.so.1.3.0
+7fbcbd64c000-7fbcbd64d000 rw-p 00006000 08:06 14943611                   /lib/x86_64-linux-gnu/libuuid.so.1.3.0
+7fbcbd64d000-7fbcbd68d000 rw-p 00000000 00:00 0 
+7fbcbd68d000-7fbcbd694000 r-xp 00000000 08:06 11411410                   /usr/lib/x86_64-linux-gnu/libffi.so.6.0.4
+7fbcbd694000-7fbcbd893000 ---p 00007000 08:06 11411410                   /usr/lib/x86_64-linux-gnu/libffi.so.6.0.4
+7fbcbd893000-7fbcbd894000 r--p 00006000 08:06 11411410                   /usr/lib/x86_64-linux-gnu/libffi.so.6.0.4
+7fbcbd894000-7fbcbd895000 rw-p 00007000 08:06 11411410                   /usr/lib/x86_64-linux-gnu/libffi.so.6.0.4
+7fbcbd895000-7fbcbd8b0000 r-xp 00000000 08:06 11666436                   /usr/lib/python3.6/lib-dynload/_ctypes.cpython-36m-x86_64-linux-gnu.so
+7fbcbd8b0000-7fbcbdaaf000 ---p 0001b000 08:06 11666436                   /usr/lib/python3.6/lib-dynload/_ctypes.cpython-36m-x86_64-linux-gnu.so
+7fbcbdaaf000-7fbcbdab0000 r--p 0001a000 08:06 11666436                   /usr/lib/python3.6/lib-dynload/_ctypes.cpython-36m-x86_64-linux-gnu.so
+7fbcbdab0000-7fbcbdab4000 rw-p 0001b000 08:06 11666436                   /usr/lib/python3.6/lib-dynload/_ctypes.cpython-36m-x86_64-linux-gnu.so
+7fbcbdab4000-7fbcbdcf4000 rw-p 00000000 00:00 0 
+7fbcbdcf4000-7fbcbdd74000 r-xp 00000000 08:06 11405899                   /usr/lib/x86_64-linux-gnu/libssl.so.1.1
+7fbcbdd74000-7fbcbdf74000 ---p 00080000 08:06 11405899                   /usr/lib/x86_64-linux-gnu/libssl.so.1.1
+7fbcbdf74000-7fbcbdf7d000 r--p 00080000 08:06 11405899                   /usr/lib/x86_64-linux-gnu/libssl.so.1.1
+7fbcbdf7d000-7fbcbdf81000 rw-p 00089000 08:06 11405899                   /usr/lib/x86_64-linux-gnu/libssl.so.1.1
+7fbcbdf81000-7fbcbdf99000 r-xp 00000000 08:06 11666761                   /usr/lib/python3.6/lib-dynload/_ssl.cpython-36m-x86_64-linux-gnu.so
+7fbcbdf99000-7fbcbe198000 ---p 00018000 08:06 11666761                   /usr/lib/python3.6/lib-dynload/_ssl.cpython-36m-x86_64-linux-gnu.so
+7fbcbe198000-7fbcbe199000 r--p 00017000 08:06 11666761                   /usr/lib/python3.6/lib-dynload/_ssl.cpython-36m-x86_64-linux-gnu.so
+7fbcbe199000-7fbcbe19e000 rw-p 00018000 08:06 11666761                   /usr/lib/python3.6/lib-dynload/_ssl.cpython-36m-x86_64-linux-gnu.so
+7fbcbe19e000-7fbcbe21e000 rw-p 00000000 00:00 0 
+7fbcbe22f000-7fbcbe3af000 rw-p 00000000 00:00 0 
+7fbcbe3af000-7fbcbe3b0000 r-xp 00000000 08:06 11666760                   /usr/lib/python3.6/lib-dynload/_opcode.cpython-36m-x86_64-linux-gnu.so
+7fbcbe3b0000-7fbcbe5af000 ---p 00001000 08:06 11666760                   /usr/lib/python3.6/lib-dynload/_opcode.cpython-36m-x86_64-linux-gnu.so
+7fbcbe5af000-7fbcbe5b0000 r--p 00000000 08:06 11666760                   /usr/lib/python3.6/lib-dynload/_opcode.cpython-36m-x86_64-linux-gnu.so
+7fbcbe5b0000-7fbcbe5b1000 rw-p 00001000 08:06 11666760                   /usr/lib/python3.6/lib-dynload/_opcode.cpython-36m-x86_64-linux-gnu.so
+7fbcbe5b1000-7fbcbe6b1000 rw-p 00000000 00:00 0 
+7fbcbe6b1000-7fbcbe6e8000 r-xp 00000000 08:06 11411801                   /usr/lib/x86_64-linux-gnu/libmpdec.so.2.4.2
+7fbcbe6e8000-7fbcbe8e7000 ---p 00037000 08:06 11411801                   /usr/lib/x86_64-linux-gnu/libmpdec.so.2.4.2
+7fbcbe8e7000-7fbcbe8e8000 r--p 00036000 08:06 11411801                   /usr/lib/x86_64-linux-gnu/libmpdec.so.2.4.2
+7fbcbe8e8000-7fbcbe8e9000 rw-p 00037000 08:06 11411801                   /usr/lib/x86_64-linux-gnu/libmpdec.so.2.4.2
+7fbcbe8e9000-7fbcbe90b000 r-xp 00000000 08:06 11666441                   /usr/lib/python3.6/lib-dynload/_decimal.cpython-36m-x86_64-linux-gnu.so
+7fbcbe90b000-7fbcbeb0a000 ---p 00022000 08:06 11666441                   /usr/lib/python3.6/lib-dynload/_decimal.cpython-36m-x86_64-linux-gnu.so
+7fbcbeb0a000-7fbcbeb0b000 r--p 00021000 08:06 11666441                   /usr/lib/python3.6/lib-dynload/_decimal.cpython-36m-x86_64-linux-gnu.so
+7fbcbeb0b000-7fbcbeb14000 rw-p 00022000 08:06 11666441                   /usr/lib/python3.6/lib-dynload/_decimal.cpython-36m-x86_64-linux-gnu.so
+7fbcbeb14000-7fbcbebd4000 rw-p 00000000 00:00 0 
+7fbcbebd4000-7fbcbebe5000 r-xp 00000000 08:06 11666442                   /usr/lib/python3.6/lib-dynload/_json.cpython-36m-x86_64-linux-gnu.so
+7fbcbebe5000-7fbcbede4000 ---p 00011000 08:06 11666442                   /usr/lib/python3.6/lib-dynload/_json.cpython-36m-x86_64-linux-gnu.so
+7fbcbede4000-7fbcbede5000 r--p 00010000 08:06 11666442                   /usr/lib/python3.6/lib-dynload/_json.cpython-36m-x86_64-linux-gnu.so
+7fbcbede5000-7fbcbede6000 rw-p 00011000 08:06 11666442                   /usr/lib/python3.6/lib-dynload/_json.cpython-36m-x86_64-linux-gnu.so
+7fbcbede6000-7fbcbee66000 rw-p 00000000 00:00 0 
+7fbcbee66000-7fbcbf101000 r-xp 00000000 08:06 11405898                   /usr/lib/x86_64-linux-gnu/libcrypto.so.1.1
+7fbcbf101000-7fbcbf300000 ---p 0029b000 08:06 11405898                   /usr/lib/x86_64-linux-gnu/libcrypto.so.1.1
+7fbcbf300000-7fbcbf32c000 r--p 0029a000 08:06 11405898                   /usr/lib/x86_64-linux-gnu/libcrypto.so.1.1
+7fbcbf32c000-7fbcbf32e000 rw-p 002c6000 08:06 11405898                   /usr/lib/x86_64-linux-gnu/libcrypto.so.1.1
+7fbcbf32e000-7fbcbf331000 rw-p 00000000 00:00 0 
+7fbcbf331000-7fbcbf337000 r-xp 00000000 08:06 11666759                   /usr/lib/python3.6/lib-dynload/_hashlib.cpython-36m-x86_64-linux-gnu.so
+7fbcbf337000-7fbcbf536000 ---p 00006000 08:06 11666759                   /usr/lib/python3.6/lib-dynload/_hashlib.cpython-36m-x86_64-linux-gnu.so
+7fbcbf536000-7fbcbf537000 r--p 00005000 08:06 11666759                   /usr/lib/python3.6/lib-dynload/_hashlib.cpython-36m-x86_64-linux-gnu.so
+7fbcbf537000-7fbcbf538000 rw-p 00006000 08:06 11666759                   /usr/lib/python3.6/lib-dynload/_hashlib.cpython-36m-x86_64-linux-gnu.so
+7fbcbf538000-7fbcbf55c000 r-xp 00000000 08:06 14947305                   /lib/x86_64-linux-gnu/liblzma.so.5.2.2
+7fbcbf55c000-7fbcbf75c000 ---p 00024000 08:06 14947305                   /lib/x86_64-linux-gnu/liblzma.so.5.2.2
+7fbcbf75c000-7fbcbf75d000 r--p 00024000 08:06 14947305                   /lib/x86_64-linux-gnu/liblzma.so.5.2.2
+7fbcbf75d000-7fbcbf75e000 rw-p 00025000 08:06 14947305                   /lib/x86_64-linux-gnu/liblzma.so.5.2.2
+7fbcbf75e000-7fbcbf764000 r-xp 00000000 08:06 11666444                   /usr/lib/python3.6/lib-dynload/_lzma.cpython-36m-x86_64-linux-gnu.so
+7fbcbf764000-7fbcbf963000 ---p 00006000 08:06 11666444                   /usr/lib/python3.6/lib-dynload/_lzma.cpython-36m-x86_64-linux-gnu.so
+7fbcbf963000-7fbcbf964000 r--p 00005000 08:06 11666444                   /usr/lib/python3.6/lib-dynload/_lzma.cpython-36m-x86_64-linux-gnu.so
+7fbcbf964000-7fbcbf966000 rw-p 00006000 08:06 11666444                   /usr/lib/python3.6/lib-dynload/_lzma.cpython-36m-x86_64-linux-gnu.so
+7fbcbf966000-7fbcbf975000 r-xp 00000000 08:06 14947244                   /lib/x86_64-linux-gnu/libbz2.so.1.0.4
+7fbcbf975000-7fbcbfb74000 ---p 0000f000 08:06 14947244                   /lib/x86_64-linux-gnu/libbz2.so.1.0.4
+7fbcbfb74000-7fbcbfb75000 r--p 0000e000 08:06 14947244                   /lib/x86_64-linux-gnu/libbz2.so.1.0.4
+7fbcbfb75000-7fbcbfb76000 rw-p 0000f000 08:06 14947244                   /lib/x86_64-linux-gnu/libbz2.so.1.0.4
+7fbcbfb76000-7fbcbfb7a000 r-xp 00000000 08:06 11666427                   /usr/lib/python3.6/lib-dynload/_bz2.cpython-36m-x86_64-linux-gnu.so
+7fbcbfb7a000-7fbcbfd79000 ---p 00004000 08:06 11666427                   /usr/lib/python3.6/lib-dynload/_bz2.cpython-36m-x86_64-linux-gnu.so
+7fbcbfd79000-7fbcbfd7a000 r--p 00003000 08:06 11666427                   /usr/lib/python3.6/lib-dynload/_bz2.cpython-36m-x86_64-linux-gnu.so
+7fbcbfd7a000-7fbcbfd7b000 rw-p 00004000 08:06 11666427                   /usr/lib/python3.6/lib-dynload/_bz2.cpython-36m-x86_64-linux-gnu.so
+7fbcbfd84000-7fbcbfe44000 rw-p 00000000 00:00 0 
+7fbcbfe44000-7fbcbfe46000 r-xp 00000000 08:06 23593915                   /home/emos-admin/.local/lib/python3.6/site-packages/markupsafe/_speedups.cpython-36m-x86_64-linux-gnu.so
+7fbcbfe46000-7fbcc0046000 ---p 00002000 08:06 23593915                   /home/emos-admin/.local/lib/python3.6/site-packages/markupsafe/_speedups.cpython-36m-x86_64-linux-gnu.so
+7fbcc0046000-7fbcc0047000 rw-p 00002000 08:06 23593915                   /home/emos-admin/.local/lib/python3.6/site-packages/markupsafe/_speedups.cpython-36m-x86_64-linux-gnu.so
+7fbcc0047000-7fbcc0107000 rw-p 00000000 00:00 0 
+7fbcc0107000-7fbcc0ad6000 r--p 00000000 08:06 11410013                   /usr/lib/locale/locale-archive
+7fbcc0ad6000-7fbcc0c73000 r-xp 00000000 08:06 14947308                   /lib/x86_64-linux-gnu/libm-2.27.so
+7fbcc0c73000-7fbcc0e72000 ---p 0019d000 08:06 14947308                   /lib/x86_64-linux-gnu/libm-2.27.so
+7fbcc0e72000-7fbcc0e73000 r--p 0019c000 08:06 14947308                   /lib/x86_64-linux-gnu/libm-2.27.so
+7fbcc0e73000-7fbcc0e74000 rw-p 0019d000 08:06 14947308                   /lib/x86_64-linux-gnu/libm-2.27.so
+7fbcc0e74000-7fbcc0e90000 r-xp 00000000 08:06 14947417                   /lib/x86_64-linux-gnu/libz.so.1.2.11
+7fbcc0e90000-7fbcc108f000 ---p 0001c000 08:06 14947417                   /lib/x86_64-linux-gnu/libz.so.1.2.11
+7fbcc108f000-7fbcc1090000 r--p 0001b000 08:06 14947417                   /lib/x86_64-linux-gnu/libz.so.1.2.11
+7fbcc1090000-7fbcc1091000 rw-p 0001c000 08:06 14947417                   /lib/x86_64-linux-gnu/libz.so.1.2.11
+7fbcc1091000-7fbcc10c0000 r-xp 00000000 08:06 14943442                   /lib/x86_64-linux-gnu/libexpat.so.1.6.7
+7fbcc10c0000-7fbcc12c0000 ---p 0002f000 08:06 14943442                   /lib/x86_64-linux-gnu/libexpat.so.1.6.7
+7fbcc12c0000-7fbcc12c2000 r--p 0002f000 08:06 14943442                   /lib/x86_64-linux-gnu/libexpat.so.1.6.7
+7fbcc12c2000-7fbcc12c3000 rw-p 00031000 08:06 14943442                   /lib/x86_64-linux-gnu/libexpat.so.1.6.7
+7fbcc12c3000-7fbcc12c5000 r-xp 00000000 08:06 14947410                   /lib/x86_64-linux-gnu/libutil-2.27.so
+7fbcc12c5000-7fbcc14c4000 ---p 00002000 08:06 14947410                   /lib/x86_64-linux-gnu/libutil-2.27.so
+7fbcc14c4000-7fbcc14c5000 r--p 00001000 08:06 14947410                   /lib/x86_64-linux-gnu/libutil-2.27.so
+7fbcc14c5000-7fbcc14c6000 rw-p 00002000 08:06 14947410                   /lib/x86_64-linux-gnu/libutil-2.27.so
+7fbcc14c6000-7fbcc14c9000 r-xp 00000000 08:06 14947268                   /lib/x86_64-linux-gnu/libdl-2.27.so
+7fbcc14c9000-7fbcc16c8000 ---p 00003000 08:06 14947268                   /lib/x86_64-linux-gnu/libdl-2.27.so
+7fbcc16c8000-7fbcc16c9000 r--p 00002000 08:06 14947268                   /lib/x86_64-linux-gnu/libdl-2.27.so
+7fbcc16c9000-7fbcc16ca000 rw-p 00003000 08:06 14947268                   /lib/x86_64-linux-gnu/libdl-2.27.so
+7fbcc16ca000-7fbcc16e4000 r-xp 00000000 08:06 14947378                   /lib/x86_64-linux-gnu/libpthread-2.27.so
+7fbcc16e4000-7fbcc18e3000 ---p 0001a000 08:06 14947378                   /lib/x86_64-linux-gnu/libpthread-2.27.so
+7fbcc18e3000-7fbcc18e4000 r--p 00019000 08:06 14947378                   /lib/x86_64-linux-gnu/libpthread-2.27.so
+7fbcc18e4000-7fbcc18e5000 rw-p 0001a000 08:06 14947378                   /lib/x86_64-linux-gnu/libpthread-2.27.so
+7fbcc18e5000-7fbcc18e9000 rw-p 00000000 00:00 0 
+7fbcc18e9000-7fbcc1ad0000 r-xp 00000000 08:06 14947245                   /lib/x86_64-linux-gnu/libc-2.27.so
+7fbcc1ad0000-7fbcc1cd0000 ---p 001e7000 08:06 14947245                   /lib/x86_64-linux-gnu/libc-2.27.so
+7fbcc1cd0000-7fbcc1cd4000 r--p 001e7000 08:06 14947245                   /lib/x86_64-linux-gnu/libc-2.27.so
+7fbcc1cd4000-7fbcc1cd6000 rw-p 001eb000 08:06 14947245                   /lib/x86_64-linux-gnu/libc-2.27.so
+7fbcc1cd6000-7fbcc1cda000 rw-p 00000000 00:00 0 
+7fbcc1cda000-7fbcc1d01000 r-xp 00000000 08:06 14947217                   /lib/x86_64-linux-gnu/ld-2.27.so
+7fbcc1d01000-7fbcc1d81000 rw-p 00000000 00:00 0 
+7fbcc1d97000-7fbcc1d98000 r--s 00000000 08:06 24117319                   /home/emos-admin/Documents/covid19data/lucene-index-covid-2020-03-20/_0.dim
+7fbcc1d98000-7fbcc1d9a000 r--s 00000000 08:06 24379409                   /home/emos-admin/Documents/covid19data/lucene-index-covid-paragraph-2020-03-20/_0.dim
+7fbcc1d9a000-7fbcc1d9f000 rw-p 00000000 00:00 0 
+7fbcc1d9f000-7fbcc1da6000 ---p 00000000 00:00 0 
+7fbcc1da6000-7fbcc1eed000 rw-p 00000000 00:00 0 
+7fbcc1eed000-7fbcc1eef000 r--s 00007000 08:06 11797508                   /usr/share/java/java-atk-wrapper.jar
+7fbcc1eef000-7fbcc1ef7000 rw-s 00000000 08:06 29753724                   /tmp/hsperfdata_emos-admin/31072
+7fbcc1ef7000-7fbcc1ef8000 ---p 00000000 00:00 0 
+7fbcc1ef8000-7fbcc1ef9000 r--p 00000000 00:00 0 
+7fbcc1ef9000-7fbcc1efa000 rwxp 00000000 00:00 0 
+7fbcc1efa000-7fbcc1f01000 r--s 00000000 08:06 11668721                   /usr/lib/x86_64-linux-gnu/gconv/gconv-modules.cache
+7fbcc1f01000-7fbcc1f02000 r--p 00027000 08:06 14947217                   /lib/x86_64-linux-gnu/ld-2.27.so
+7fbcc1f02000-7fbcc1f03000 rw-p 00028000 08:06 14947217                   /lib/x86_64-linux-gnu/ld-2.27.so
+7fbcc1f03000-7fbcc1f04000 rw-p 00000000 00:00 0 
+7ffca1726000-7ffca172a000 ---p 00000000 00:00 0 
+7ffca172a000-7ffca1826000 rw-p 00000000 00:00 0                          [stack]
+7ffca1971000-7ffca1974000 r--p 00000000 00:00 0                          [vvar]
+7ffca1974000-7ffca1975000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 --xp 00000000 00:00 0                  [vsyscall]
+
+
+VM Arguments:
+java_command: <unknown>
+java_class_path (initial): /home/emos-admin/.local/lib/python3.6/site-packages/pyserini/resources/jars/anserini-0.8.1-fatjar.jar:/home/emos-admin/.local/lib/python3.6/site-packages/jnius/src
+Launcher Type: generic
+
+[Global flags]
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 2                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 8                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 2097152                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 526385152                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 8413773824                                {product} {ergonomic}
+   size_t MaxNewSize                               = 5047844864                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 2097152                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5836300                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122910970                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122910970                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+     bool UseCompressedClassPointers               = true                                 {lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                                 {lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+USERNAME=emos-admin
+SHELL=/bin/bash
+DISPLAY=:1
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0xdf1470], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGBUS: [libjvm.so+0xdf1470], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGFPE: [libjvm.so+0xdf1470], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGPIPE: [libjvm.so+0xbc5560], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGXFSZ: [libjvm.so+0xbc5560], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGILL: [libjvm.so+0xdf1470], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGUSR2: [libjvm.so+0xbc5400], sa_mask[0]=00100000000000000000000000000000, sa_flags=SA_RESTART|SA_SIGINFO
+SIGHUP: [libjvm.so+0xbc5760], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGINT: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGTERM: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGQUIT: [libjvm.so+0xbc5760], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+
+
+---------------  S Y S T E M  ---------------
+
+OS:DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=18.04
+DISTRIB_CODENAME=bionic
+DISTRIB_DESCRIPTION="Ubuntu 18.04.4 LTS"
+uname:Linux 5.3.0-40-generic #32~18.04.1-Ubuntu SMP Mon Feb 3 14:05:59 UTC 2020 x86_64
+libc:glibc 2.27 NPTL 2.27 
+rlimit: STACK 8192k, CORE 0k, NPROC 128188, NOFILE 4096, AS infinity, DATA infinity, FSIZE infinity
+load average:0.20 0.07 0.02
+
+/proc/meminfo:
+MemTotal:       32865100 kB
+MemFree:         4179896 kB
+MemAvailable:   27919276 kB
+Buffers:          205328 kB
+Cached:         23150008 kB
+SwapCached:            0 kB
+Active:         12438900 kB
+Inactive:       14902420 kB
+Active(anon):    3988000 kB
+Inactive(anon):   133676 kB
+Active(file):    8450900 kB
+Inactive(file): 14768744 kB
+Unevictable:          16 kB
+Mlocked:              16 kB
+SwapTotal:       2097148 kB
+SwapFree:        2097148 kB
+Dirty:            221228 kB
+Writeback:           256 kB
+AnonPages:       3986012 kB
+Mapped:           833244 kB
+Shmem:            136112 kB
+KReclaimable:     983880 kB
+Slab:            1068036 kB
+SReclaimable:     983880 kB
+SUnreclaim:        84156 kB
+KernelStack:       17600 kB
+PageTables:        64784 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:    18529696 kB
+Committed_AS:   10623824 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:       38536 kB
+VmallocChunk:          0 kB
+Percpu:             3168 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:         0 kB
+ShmemHugePages:        0 kB
+ShmemPmdMapped:        0 kB
+CmaTotal:              0 kB
+CmaFree:               0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+Hugetlb:               0 kB
+DirectMap4k:      323412 kB
+DirectMap2M:    10139648 kB
+DirectMap1G:    23068672 kB
+
+
+/proc/sys/kernel/threads-max (system-wide limit on the number of threads):
+256377
+
+
+/proc/sys/vm/max_map_count (maximum number of memory map areas a process may have):
+65530
+
+
+/proc/sys/kernel/pid_max (system-wide limit on number of process identifiers):
+32768
+
+
+
+container (cgroup) information:
+container_type: cgroupv1
+cpu_cpuset_cpus: 0-7
+cpu_memory_nodes: 0
+active_processor_count: 8
+cpu_quota: -1
+cpu_period: 100000
+cpu_shares: -1
+memory_limit_in_bytes: -1
+memory_and_swap_limit_in_bytes: -2
+memory_soft_limit_in_bytes: -1
+memory_usage_in_bytes: 27997302784
+memory_max_usage_in_bytes: 0
+
+Steal ticks since vm start: 0
+Steal ticks percentage since vm start:  0.000
+
+CPU:total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 45 stepping 7, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, aes, clmul, ht, tsc, tscinvbit, tscinv
+CPU Model and flags from /proc/cpuinfo:
+model name	: Intel(R) Core(TM) i7-3820 CPU @ 3.60GHz
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx lahf_lm epb pti ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid xsaveopt dtherm ida arat pln pts md_clear flush_l1d
+
+Memory: 4k page, physical 32865100k(4179896k free), swap 2097148k(2097148k free)
+
+vm_info: OpenJDK 64-Bit Server VM (11.0.6+10-post-Ubuntu-1ubuntu118.04.1) for linux-amd64 JRE (11.0.6+10-post-Ubuntu-1ubuntu118.04.1), built on Jan 15 2020 15:14:00 by "unknown" with gcc 7.4.0
+
+END.
