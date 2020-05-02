@@ -16,7 +16,6 @@ from abstractive_config import set_config
 from abstractive_bart_model import *
 
 
-
 args = set_config()
 
 def get_summary_list(article_list, abstractive_model):
