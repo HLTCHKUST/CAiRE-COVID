@@ -1,5 +1,6 @@
 # CAiRE-COVID
 A machine learning-based system that uses state-of-the-art natural language processing (NLP) question answering (QA) techniques combined with summarization for mining the available scientific literature
+
 <img src="img/tensorflow.png" width="12%"> <img src="img/pytorch-logo-dark.png" width="12%"> [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
 
 
@@ -7,7 +8,7 @@ A machine learning-based system that uses state-of-the-art natural language proc
 
 # requirements
 <pre>
-tensorflow(-gpu)==1.13.1
+tensorflow(-gpu)==1.15.2
 </pre>
 
 ## Install
