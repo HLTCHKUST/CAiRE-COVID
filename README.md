@@ -8,7 +8,8 @@ A machine learning-based system that uses state-of-the-art natural language proc
 
 # System Online!
 Currently the CAiRE-COVID system has already been launched online. Please access the system by [http://caire.ust.hk/covid](http://caire.ust.hk/covid).
-
+# Kaggle CORD-19 Task Winner
+We are honored to be informed that our submission has won as the best response for the task [What has been published about information sharing and inter-sectoral collaboration?](https://www.kaggle.com/sudansudan/caire-cord-task10)!
 
 # Install
 1. You can install the requirements by:
@@ -20,10 +21,10 @@ pip install -r requirements.txt
 # System Modules Usage
 If you are interested in trying out the system modules yourself, you can utilize the system module by the following methods:
 ## Document Retriever
-**1. Query Paraphrasing**
-For this part, you can implement your own methods or skip this step if your queries are relatively short and simple or you don't persuit SOTA performance. To set up the search engine,
-
-**1.1 install Python dependencies and pre-built index**  
+**1. Query Paraphrasing**  
+For this part, you can implement your own methods or skip this step if your queries are relatively short and simple or you don't persuit SOTA performance. 
+**2. Search Engine** 
+**2.1 install Python dependencies and pre-built index**  
 Following the lucene+answerini information retrieval as described in: [https://github.com/castorini/anserini/blob/master/docs/experiments-covid.md](https://github.com/castorini/anserini/blob/master/docs/experiments-covid.md), set up JAVA sdk 11 first:
 ```
 curl -O https://download.java.net/java/GA/jdk11/9/GPL/openjdk-11.0.2_linux-x64_bin.tar.gz
@@ -36,7 +37,7 @@ import os
 os.environ["JAVA_HOME"] = "/usr/lib/jvm/jdk-11.0.2"
 ```
 
-**1.2 Get the pyserini library, which is anserini wrapped with python:**
+**2.2 Get the pyserini library, which is anserini wrapped with python:**
 ```
 pip install pyserini==0.8.1.0
 ```
@@ -51,7 +52,7 @@ The indexing is done based on each paragraph merged with the title and abstract.
 + docid.00002: title + abstract + 2nd paragraph
 + docid.00003: title + abstract + 3rd paragraph
 
-**1.3 Try the example!**  
+**2.3 Try the example!**  
 ```
 python project/retrieval.py
 ```
