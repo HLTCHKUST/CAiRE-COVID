@@ -87,7 +87,10 @@ python project/qa.py
 Keyword highlighting is mainly implemented by term matching, of which the code could be found in ```src/covidQA/highlights.py```.
 
 ### Summarization
-TBC
+You can use our package by install with ```pip``` or use the source code.
+```
+pip install covidSumm
+```
 
 We provide the example scripts for both abstractive and extractive summarization.
 ```
