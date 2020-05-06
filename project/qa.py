@@ -4,7 +4,7 @@ import pprint
 
 import json
 from .retrieval import information_retrieval
-from ..src.covidQA import QaModule, print_answers_in_file, rankAnswers, rankAnswersList
+from ..src import QaModule, print_answers_in_file, rankAnswers, rankAnswersList
 
 pp = pprint.PrettyPrinter(indent=4)
 

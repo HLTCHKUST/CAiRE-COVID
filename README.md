@@ -6,17 +6,62 @@ A machine learning-based system that uses state-of-the-art natural language proc
 
 <img align="right" src="img/HKUST.jpg" width="12%">
 
-# requirements
-<pre>
-tensorflow(-gpu)==1.15.2
-</pre>
+# System Online!
+Currently the CAiRE-COVID system has already been launched online. Please access the system by [http://caire.ust.hk/covid](http://caire.ust.hk/covid).
 
-## Install
+
+# Install
+1. You can install the requirements by:
+```
+pip install -r requirements.txt
+```
+2. In addition, you also need to install [pytorch](https://pytorch.org/).
+
+# System Modules Usage
+If you are interested in trying out the system modules yourself, you can utilize the system module by the following methods:
+## Document Retriever
+1. Query Paraphrasing
+For this part, you can implement your own methods or skip this step if your queries are relatively short and simple or you don't persuit SOTA performance. To set up the search engine,
+
+1.1 install Python dependencies and pre-built index  
+Following the lucene+answerini information retrieval as described in: [https://github.com/castorini/anserini/blob/master/docs/experiments-covid.md](https://github.com/castorini/anserini/blob/master/docs/experiments-covid.md), set up JAVA sdk 11 first:
+```
+curl -O https://download.java.net/java/GA/jdk11/9/GPL/openjdk-11.0.2_linux-x64_bin.tar.gz
+mv openjdk-11.0.2_linux-x64_bin.tar.gz /usr/lib/jvm/; cd /usr/lib/jvm/; tar -zxvf openjdk-11.0.2_linux-x64_bin.tar.gz
+update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk-11.0.2/bin/java 1
+update-alternatives --set java /usr/lib/jvm/jdk-11.0.2/bin/java
+```
+```python
+import os
+os.environ["JAVA_HOME"] = "/usr/lib/jvm/jdk-11.0.2"
+```
+
+1.2 Get the pyserini library, which is anserini wrapped with python:
+```
+pip install pyserini==0.8.1.0
+```
+We can build the lucene index of the COVID-19 dataset from scratch, or get one of the pre-built indexes. Using the paragraph indexing which indexes each paragraph of an article (already uploaded the index as a dataset to use), can be downloaded from: [https://www.dropbox.com/s/xg2b4aapjvmx3ve/lucene-index-cord19-paragraph-2020-04-24.tar.gz](https://www.dropbox.com/s/xg2b4aapjvmx3ve/lucene-index-cord19-paragraph-2020-04-24.tar.gz).
+```python
+from pyserini.search import pysearch
+COVID_INDEX = '../input/luceneindexcovidparagraph20200410/lucene-index-covid-paragraph-2020-04-24'
+```
+The indexing is done based on each paragraph merged with the title and abstract. Given an article with id doc_id, the index will be as follows:
++ doc_id : title + abstract
++ doc_id.00001 : title + abstract + 1st paragraph
++ docid.00002: title + abstract + 2nd paragraph
++ docid.00003: title + abstract + 3rd paragraph
+
+1.3 Try the example!  
+```
+python project/retrieval.py
+```
+
+## Relevent Snippet Selection
 You can use our package by install with ```pip```
 ```
 pip install caireCovid
 ```
-## Question Answering System
+### Question Answering System
 In this system, we build QA modules by a ensemble of two QA models, which are [BioBERT](https://github.com/dmis-lab/bioasq-biobert) model which fine-tuned on SQuAD, and MRQA model which is our submission to MRQA@EMNLP 2019. 
 
 The MRQA model and the exported BioBERT model that are utilized in this project can bo downloaded by this [link](https://drive.google.com/drive/folders/1yjzYN_KCz8uLobqaUddftBGPAZ6uSDDj?usp=sharing).
@@ -31,5 +76,15 @@ If you want to use our MRQA model in your work, please cite the following paper.
   year={2019}
 }
 </pre>
+
+We provide the example script, while you need to change the paths to the QA models in ```project/qa.py```. Note that the final output is already re-ranked based on re-ranking score.
+```
+python project/qa.py
+```
+
+### Hightlighting
+Keyword highlighting is mainly implemented by term matching, of which the code could be found in ```src/covidQA/highlights.py```.
+
+## Summarization
 
 

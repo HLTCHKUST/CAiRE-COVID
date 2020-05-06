@@ -1,21 +1,5 @@
-
 import json
-import requests
-
-def retrieve_paragraph(query):
-    url = "http://hlt027.ece.ust.hk:5000/query_paragraph"
-
-    payload = "{\n\t\"text\": \""+query+"\"\n}"
-    headers = {
-        'Content-Type': "application/json",
-        'cache-control': "no-cache",
-        'Postman-Token': "696fa512-5fed-45ca-bbe7-b7a1b4d19fe4"
-    }
-    response = requests.request("POST", url, data=payload, headers=headers)
-
-    response = response.json()
-    return response
-
+from ..src import get_para_results
 
 def information_retrieval(file_name):
     """
@@ -47,7 +31,7 @@ def information_retrieval(file_name):
         questions = item["questions"]
         for query in questions:
             result_item = {"question" : query}
-            retri_result = retrieve_paragraph(query)
+            retri_result = get_para_results(query)
             result_item["data"] = retri_result
 
             qa_item = {"question": query}
@@ -75,3 +59,11 @@ def information_retrieval(file_name):
             data_for_qa.append(qa_item)
 
     return all_results, data_for_qa
+
+if __name__ == "__main__":
+    '''
+    Here we provide a simple example to show the method to use the Search Engine.
+    '''
+    query = "How long is the incubation period of covid-19?"
+    retri_result = get_para_results(query)
+    print(retri_result)
