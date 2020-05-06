@@ -4,7 +4,7 @@ A machine learning-based system that uses state-of-the-art natural language proc
 <img src="img/tensorflow.png" width="12%"> <img src="img/pytorch-logo-dark.png" width="12%"> [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
 
 
-<img align="right" src="plot/HKUST.jpg" width="12%">
+<img align="right" src="img/HKUST.jpg" width="12%">
 
 # requirements
 <pre>
