@@ -56,7 +56,6 @@ def information_retrieval(file_name):
             doi = []
             count = 1
             for item in retri_result:
-                #context.append(item["paragraph"] if "paragraph" in item and len(item["paragraph"]) > 0 else item["abstract"])
                 if count>20:
                     break
                 if 'abstract' in item and len(item['abstract']) > 0:
@@ -65,11 +64,6 @@ def information_retrieval(file_name):
                     titles.append(item["title"])
                     count+=1
                 if 'paragraphs' in item:
-                    # for para in item['paragraphs']:
-                    #     context.append(para['text'])
-                    #     count+=1
-                    #     if count>20:
-                    #         break
                     context.append(item['paragraphs'][0]['text'])   
                     doi.append(item["doi"])
                     titles.append(item["title"])

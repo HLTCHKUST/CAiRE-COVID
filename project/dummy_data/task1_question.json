@@ -1,0 +1,67 @@
+{
+	"task_id": 1,
+	"task_question": "What is known about transmission, incubation, and environmental stability?",
+	"task_des": "What is known about transmission, incubation, and environmental stability? What do we know about natural history, transmission, and diagnostics for the virus? What have we learned about infection prevention and control?",
+	"sub_task":[
+		{"original_text": "Range of incubation periods for the disease in humans (and how this varies across age and health status) and how long individuals are contagious, even after recovery",
+		"questions": ["What is the range of incubation periods for COVID-19 in humans?",
+		"How incubation period for COVID-19 varies across age?",
+		"How incubation period for COVID-19 varies across health status?"
+		]
+		},
+		{"original_text": "Prevalence of asymptomatic shedding and transmission (e.g., particularly children)",
+		"questions": ["How is prevalence of asymptomatic shedding and transmission?",
+		"How is prevalence of asymptomatic shedding and transmission for children?"
+		]
+		},
+		{"original_text": "Seasonality of transmission",
+		"questions": ["How Seasonality affects COVID-19 transmission?"
+		]
+		},
+		{"original_text": "Physical science of the coronavirus (e.g., charge distribution, adhesion to hydrophilic/phobic surfaces, environmental survival to inform decontamination efforts for affected areas and provide information about viral shedding).",
+		"questions": ["What do we know about Physical science of the COVID-19, including charge distribution, adhesion to hydrophilic/phobic surfaces, environmental survival and viral shedding?"
+		]
+		},
+		{"original_text": "Persistence and stability on a multitude of substrates and sources (e.g., nasal discharge, sputum, urine, fecal matter, blood).",
+		"questions": ["What do we know about persistence and stability of COVID-19 on different substrates and sources, including nasal discharge, sputum, urine, fecal matter, blood?"
+		]
+		},
+		{"original_text": "Persistence of virus on surfaces of different materials (e,g., copper, stainless steel, plastic)",
+		"questions": ["What do we know about persistence of COVID-19 on surfaces of different materials including copper, stainless steel, plastic?"
+		]
+		},
+		{"original_text": "Natural history of the virus and shedding of it from an infected person",
+		"questions": ["What do we know about Natural history of COVID-19 and shedding of it from an infected person?"
+		]
+		},
+		{"original_text": "Implementation of diagnostics and products to improve clinical processes",
+		"questions": ["What do we know about implementation of diagnostics and products to improve clinical processes for COVID-19?"
+		]
+		},
+		{"original_text": "Disease models, including animal models for infection, disease and transmission",
+		"questions": ["what do we know about COVID-19 models, including animal models for infection, disease and transmission?"
+		]
+		},
+		{"original_text": "Tools and studies to monitor phenotypic change and potential adaptation of the virus",
+		"questions": ["What are tools and studies to monitor phenotypic change and potential adaptation of COVID-19?"
+		]
+		},
+		{"original_text": "Immune response and immunity",
+		"questions": ["What do we know about immune response and immunity for COVID-19?"
+		]
+		},
+		{"original_text": "Effectiveness of movement control strategies to prevent secondary transmission in health care and community settings",
+		"questions": ["How movement control strategies help to prevent COVID-19 secondary transmission in health care and community settings?"
+		]
+		},
+		{"original_text": "Effectiveness of personal protective equipment (PPE) and its usefulness to reduce risk of transmission in health care and community settings",
+		"questions": ["How personal protective equipment (PPE) helps to reduce risk of COVID-19 transmission in health care and community settings?"
+		]
+		},
+		{"original_text": "Role of the environment in transmission",
+		"questions": ["What is role of the environment in COVID-19 transmission?"
+		]
+		}
+
+		]
+}

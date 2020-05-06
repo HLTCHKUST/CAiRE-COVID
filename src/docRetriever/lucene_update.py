@@ -23,9 +23,6 @@ def printResults():
 # printResults()
 
 def get_para_results(query):
-    '''
-    
-    '''
     max_articles = 1000
     hits = searcher_para.search(query, max_articles)
     print(len(hits))

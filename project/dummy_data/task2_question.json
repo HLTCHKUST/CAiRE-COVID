@@ -1,0 +1,53 @@
+{
+	"task_id": 2,
+	"task_question": "What is known about transmission, incubation, and environmental stability?",
+	"task_des": "What do we know about COVID-19 risk factors? What have we learned from epidemiological studies?",
+	"sub_task":[
+		{"original_text": "Data on potential risks factors, Smoking, pre-existing pulmonary disease",
+		"questions": ["Is smoking a risk factor for COVID-19?",
+		"is pre-existing pulmonary disease a risk factor for COVID-19?"
+		]
+		},
+		{"original_text": "Data on potential risks factors, Co-infections (determine whether co-existing respiratory/viral infections make the virus more transmissible or virulent) and other co-morbidities",
+		"questions": ["Is smoking a risk factor for COVID-19?",
+		"is pre-existing pulmonary disease a risk factor for COVID-19?",
+		"Does co-morbidities make COVID-19 more transmissible or virulent"
+		]
+		},
+		{"original_text": "Data on potential risks factors, Neonates and pregnant women",
+		"questions": ["Are Neonates more potential for COVID-19?",
+		"Are pregnant women more potential for COVID-19?"
+		]
+		},
+		{"original_text": "Data on potential risks factors, Socio-economic and behavioral factors to understand the economic impact of the virus and whether there were differences",
+		"questions": ["What are Socio-economic factors and economic impact of COVID-19?",
+		"What are behavioral factors for COVID-19?",
+		"What are the differences of Socio-economic and behavioral factors for COVID-19?"
+		]
+		},
+		{"original_text": "Transmission dynamics of the virus, including the basic reproductive number, incubation period, serial interval, modes of transmission and environmental factors",
+		"questions": ["What do we know about the transmission dynamics of the COVID-19?",
+		"What is the basic reproductive number of COVID-19?",
+		"What is the incubation period of COVID-19?",
+		"What is the serial interval  of COVID-19?",
+		"What are the modes of transmission of COVID-19?",
+		"What are the environmental factors of COVID-19?"
+		]
+		},
+		{"original_text": "Severity of disease, including risk of fatality among symptomatic hospitalized patients, and high-risk patient groups",
+		"questions": ["What do we know about Severity of COVID-19?",
+		"What is risk of fatality among symptomatic hospitalized COVID-19 patients?",
+		"What is risk of fatality among high-risk COVID-19 patient groups?"
+		]
+		},
+		{"original_text": "Susceptibility of populations",
+		"questions": ["What do we know about susceptibility of populations for COVID-19?"
+		]
+		},
+		{"original_text": "Public health mitigation measures that could be effective for control",
+		"questions": ["What are public health mitigation measures effective for controlling COVID-19?"
+		]
+		}
+	
+		]
+}
