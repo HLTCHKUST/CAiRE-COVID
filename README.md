@@ -9,7 +9,7 @@ A machine learning-based system that uses state-of-the-art natural language proc
 # System Online!
 Currently the CAiRE-COVID system has already been launched online. Please access the system by [http://caire.ust.hk/covid](http://caire.ust.hk/covid).
 # Kaggle CORD-19 Task Winner
-We are honored to be informed that our submission has won as the best response for the task [What has been published about information sharing and inter-sectoral collaboration?](https://www.kaggle.com/sudansudan/caire-cord-task10)!
+We are honored to be informed that our submission has won as the best response for the task [What has been published about information sharing and inter-sectoral collaboration?](https://www.kaggle.com/sudansudan/caire-cord-task10)
 
 # Install
 1. You can install the requirements by:
