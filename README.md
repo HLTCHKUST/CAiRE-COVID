@@ -6,21 +6,21 @@ A machine learning-based system that uses state-of-the-art natural language proc
 
 <img align="right" src="img/HKUST.jpg" width="12%">
 
-# System Online!
+## System Online!
 Currently the CAiRE-COVID system has already been launched online. Please access the system by [http://caire.ust.hk/covid](http://caire.ust.hk/covid).
-# Kaggle CORD-19 Task Winner
+## Kaggle CORD-19 Task Winner
 We are honored to be informed that our submission has won as the best response for the task [What has been published about information sharing and inter-sectoral collaboration?](https://www.kaggle.com/sudansudan/caire-cord-task10)
 
-# Install
+## Install
 1. You can install the requirements by:
 ```
 pip install -r requirements.txt
 ```
 2. In addition, you also need to install [pytorch](https://pytorch.org/).
 
-# System Modules Usage
+## System Modules Usage
 If you are interested in trying out the system modules yourself, you can utilize the system module by the following methods:
-## Document Retriever
+### Document Retriever
 **1. Query Paraphrasing**  
 For this part, you can implement your own methods or skip this step if your queries are relatively short and simple or you don't persuit SOTA performance. 
 **2. Search Engine** 
@@ -57,12 +57,12 @@ The indexing is done based on each paragraph merged with the title and abstract.
 python project/retrieval.py
 ```
 
-## Relevent Snippet Selection
+### Relevent Snippet Selection
 You can use our package by install with ```pip``` or use the source code.
 ```
 pip install caireCovid
 ```
-### Question Answering System
+#### Question Answering System
 In this system, we build QA modules by a ensemble of two QA models, which are [BioBERT](https://github.com/dmis-lab/bioasq-biobert) model which fine-tuned on SQuAD, and MRQA model which is our submission to MRQA@EMNLP 2019. 
 
 The MRQA model and the exported BioBERT model that are utilized in this project can bo downloaded by this [link](https://drive.google.com/drive/folders/1yjzYN_KCz8uLobqaUddftBGPAZ6uSDDj?usp=sharing).
@@ -83,10 +83,10 @@ We provide the example script, while you need to change the paths to the QA mode
 python project/qa.py
 ```
 
-### Hightlighting
+#### Hightlighting
 Keyword highlighting is mainly implemented by term matching, of which the code could be found in ```src/covidQA/highlights.py```.
 
-## Summarization
+### Summarization
 TBC
 
 We provide the example scripts for both abstractive and extractive summarization.
