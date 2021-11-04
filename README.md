@@ -41,11 +41,11 @@ os.environ["JAVA_HOME"] = "/usr/lib/jvm/jdk-11.0.2"
 ```
 pip install pyserini==0.8.1.0
 ```
-We can build the lucene index of the COVID-19 dataset from scratch, or get one of the pre-built indexes. Using the paragraph indexing which indexes each paragraph of an article (already uploaded the index as a dataset to use), can be downloaded from: [link](**https://hkustconnect-my.sharepoint.com/:u:/g/personal/dsu_connect_ust_hk/EXGGMqssOiJEjAi8BYGMmHwBHBewM5V38-A41Qw7tBbn8Q**).
+We can build the lucene index of the COVID-19 dataset from scratch, or get one of the pre-built indexes. Using the paragraph indexing which indexes each paragraph of an article (already uploaded the index as a dataset to use), can be downloaded from: [link](https://hkustconnect-my.sharepoint.com/:u:/g/personal/dsu_connect_ust_hk/EXGGMqssOiJEjAi8BYGMmHwBHBewM5V38-A41Qw7tBbn8Q).
 
 ```python
 from pyserini.search import pysearch
-COVID_INDEX = '../input/luceneindexcovidparagraph20200410/lucene-index-covid-paragraph-2020-04-24'
+COVID_INDEX = 'the directory name of the index you downloaded from the above link'
 ```
 The indexing is done based on each paragraph merged with the title and abstract. Given an article with id doc_id, the index will be as follows:
 + doc_id : title + abstract
