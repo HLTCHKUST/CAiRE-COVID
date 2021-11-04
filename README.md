@@ -41,7 +41,8 @@ os.environ["JAVA_HOME"] = "/usr/lib/jvm/jdk-11.0.2"
 ```
 pip install pyserini==0.8.1.0
 ```
-We can build the lucene index of the COVID-19 dataset from scratch, or get one of the pre-built indexes. Using the paragraph indexing which indexes each paragraph of an article (already uploaded the index as a dataset to use), can be downloaded from: [https://www.dropbox.com/s/xg2b4aapjvmx3ve/lucene-index-cord19-paragraph-2020-04-24.tar.gz](https://www.dropbox.com/s/xg2b4aapjvmx3ve/lucene-index-cord19-paragraph-2020-04-24.tar.gz).
+We can build the lucene index of the COVID-19 dataset from scratch, or get one of the pre-built indexes. Using the paragraph indexing which indexes each paragraph of an article (already uploaded the index as a dataset to use), can be downloaded from: [link](**https://hkustconnect-my.sharepoint.com/:u:/g/personal/dsu_connect_ust_hk/EXGGMqssOiJEjAi8BYGMmHwBHBewM5V38-A41Qw7tBbn8Q**).
+
 ```python
 from pyserini.search import pysearch
 COVID_INDEX = '../input/luceneindexcovidparagraph20200410/lucene-index-covid-paragraph-2020-04-24'
