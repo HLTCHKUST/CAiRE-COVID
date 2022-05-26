@@ -2,7 +2,7 @@
 pyserini==0.8.1.0
 
 # Question Answering
-tensorflow-gpu == 1.15.2
+tensorflow-gpu == 2.7.2
 numpy
 unidecode
 requests
